@@ -15,6 +15,8 @@
 
 * [Custom CSS for Qiita(for JP)](https://github.com/SARDONYX-sard/stylus-css/blob/main/src/qiita.css)
 
+- [niconico](https://github.com/SARDONYX-sard/stylus-css/blob/main/src/niconico.css)
+
 ## License
 
 The library is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
