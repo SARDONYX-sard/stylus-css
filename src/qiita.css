@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           Qiita 和風スタイル
+@name           Qiita 和風スタイル - 2021/7/12 17:53:34
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        0.9.0
+@version        1.0.0-alpha.1
 @description    Qiita用の和風イメージスタイル
 @author         SARDONYX
 ==/UserStyle== */
@@ -9,6 +9,8 @@
   --icon-br-color: #94956c;
   --icon-bg-color: #98ad42;
   --char-color: #fff;
+  --bg-image: url("https://s1.1zoom.me/big3/790/Butterflies_436362.jpg");
+  /* --bg-image: url("https://flowerillust.com/img/flower/flower-back1253.jpg"); */
 }
 @-moz-document domain("qiita.com") {
   /* Qiita内全URI */
@@ -117,8 +119,7 @@
   .allWrapper,
   .p-items_wrapper,
   .st-RenewalHeader {
-    /*     background: url("https://flowerillust.com/img/flower/flower-back1253.jpg") #1C1C1C bottom fixed !important; */
-    background: url("https://s1.1zoom.me/big3/790/Butterflies_436362.jpg") #1c1c1c bottom fixed !important;
+    background: var(--bg-image) #1c1c1c bottom fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
