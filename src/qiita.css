@@ -5,15 +5,15 @@
 @description    Qiita用の和風イメージスタイル
 @author         SARDONYX
 ==/UserStyle== */
-:root {
-  --icon-br-color: #94956c;
-  --icon-bg-color: #98ad42;
-  --char-color: #fff;
-  --bg-image: url("https://s1.1zoom.me/big3/790/Butterflies_436362.jpg");
-  /* --bg-image: url("https://flowerillust.com/img/flower/flower-back1253.jpg"); */
-}
 @-moz-document domain("qiita.com") {
   /* Qiita内全URI */
+  :root {
+    --icon-br-color: #94956c;
+    --icon-bg-color: #98ad42;
+    --char-color: #fff;
+    --bg-image: url("https://s1.1zoom.me/big3/790/Butterflies_436362.jpg");
+    /* --bg-image: url("https://flowerillust.com/img/flower/flower-back1253.jpg"); */
+  }
   /* ------------------------------------------------------------------- */
   /* 文字 */
   /* ------------------------------------------------------------------- */
