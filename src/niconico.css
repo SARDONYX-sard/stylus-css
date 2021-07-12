@@ -1,0 +1,91 @@
+/* ==UserStyle==
+@name           ニコニコ静画ダークモード - 2021/7/12 17:53:34
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Niconico seiga Dark Mode
+@author         SARDONYX
+==/UserStyle== */
+@-moz-document domain("seiga.nicovideo.jp") {
+  /*ニコニコ静画ホームページ */
+  .watch_bottom,
+  #footer,
+  #detail {
+    background-color: #fff0;
+  }
+
+  .social_block .share > .blog,
+  #header,
+  body {
+    background: url("https://i.imgur.com/PtJ6fl7.jpg") #1c1c1c bottom fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+
+  #ko_head_bar_min {
+    background-color: #00000087 !important;
+  }
+
+  .content_list > .after_player > .episode_navigation > .episodes > a,
+  .related_info .manga_info dl dd.user_box .user_message,
+  .box,
+  .after_player,
+  .watch_head_bar .inner .manga_info {
+    background-color: #312f2f !important;
+    background-image: -webkit-linear-gradient(#1d1d1ddb, #1d1d1ddb) !important;
+  }
+
+  .social_block .share,
+  .tag {
+    background: #312f2f;
+  }
+
+  .controls .inner .spread_hide .comment_list {
+    background: url("https://i.imgur.com/PtJ6fl7.jpg") #1c1c1c bottom fixed !important;
+    color: #000000 !important;
+  }
+
+  .controls .inner .spread_hide .comment_list .comment_list_item {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #7e8398;
+  }
+
+  #sg_global_navi li .active,
+  .btn.normal,
+  a.btn.normal,
+  button.btn.normal {
+    color: #343333 !important;
+  }
+}
+@-moz-document regexp("https://seiga.nicovideo.jp/(?:watch|comic)/.*")
+{
+  /*漫画内 */
+  #wrapper div,
+  #wrapper span,
+  #wrapper dl {
+    color: #d9d9d9 !important;
+  }
+
+  #wrapper a {
+    color: #a1afce !important;
+  }
+
+  .author_list .author .comment .comment_content,
+  #episode_list.line_view .episode_item .description .comment_summary {
+    background: #4c57729e;
+  }
+
+  .info_block > .inner,
+  .name,
+  .info_block {
+    background: #4a4a4a;
+  }
+
+  #ko_bookmark_player,
+  .button_bookmark,
+  .btn,
+  a.btn,
+  button.btn {
+    background-image: -webkit-linear-gradient(#25323e, #25323e) !important;
+    text-shadow: none !important;
+  }
+}
