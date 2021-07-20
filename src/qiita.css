@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0-alpha.2
-@description    Qiita用の和風イメージスタイル - 2021/7/12 17:53:34
+@version        1.0.0-alpha.3
+@description    Qiita用の和風イメージスタイル - 2021/7/21 updated
 @author         SARDONYX
 
 @advanced dropdown custom_wallpaper "Background Image" {
@@ -181,6 +181,8 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
+    .css-1uvbhws #logly-lift-4279494 #logly-lift-widget-header,
+    #logly-lift-4279494 .logly-lift-ad-title,
     .p-items_wrapper h1,
     .p-items_wrapper h2,
     .p-items_wrapper h3,
