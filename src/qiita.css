@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0-alpha.4
+@version        1.0.0-alpha.3.1
 @description    Qiita用の和風イメージスタイル - 2021/7/21 updated
 @author         SARDONYX
 
@@ -16,6 +16,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
 @advanced text custom_wallpaper-custom "Background Image (Custom)" "https://example.com/image.png"
 ==/UserStyle== */
 @-moz-document domain("qiita.com") {
+    /* Qiita内全URI */
     :root {
         --char-color: #fff;
         --bg-color: #50505099;
@@ -24,7 +25,6 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         --icon-bg-color: #98ad42;
     }
 
-    /* Qiita内全URI */
     /* ------------------------------------------------------------------- */
     /* 文字 */
     /* ------------------------------------------------------------------- */
@@ -366,6 +366,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     }
 }
 @-moz-document regexp("^https?://(www\\.)*qiita.com/drafts.*") {
+    /*   Qiita記事編集ページ   */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
@@ -427,6 +428,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
 }
 
 @-moz-document regexp("^https?://(www\\.)*qiita.com/settings.*") {
+    /*   Qiita設定ページ   */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
