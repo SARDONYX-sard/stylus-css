@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0-alpha.3.2
-@description    Qiita用の和風イメージスタイル - 2021/7/21 updated
+@version        1.0.0-alpha.3.3
+@description    Qiita用の和風イメージスタイル - 2021/7/24 updated
 @author         SARDONYX
 
 @advanced dropdown custom_wallpaper "Background Image" {
@@ -35,6 +35,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     time,
     body,
     a,
+    .it-MdContent code,
     .co-Item_text,
     .p-home_menuHead,
     .p-home_menu a,
@@ -427,8 +428,8 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/settings.*") {
-    /*   Qiita設定ページ   */
+@-moz-document regexp("^https?://(www\\.)*qiita.com/(?:search|settings).*") {
+    /*   Qiita設定ページ or サーチページ   */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
@@ -443,13 +444,27 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         color: var(--char-color) !important;
     }
 
+    /*  薄い文字色    */
+    .searchResult em,
     .us-ListItem_detailTitle {
         color: #b7b7b7;
     }
 
     /*   全リンクの色   */
-    .p-settings_main a {
+    .searchResult a em {
+        color: #00b8ff;
+    }
+    a {
         color: #00ffe6 !important;
+    }
+
+    /* ------------------------------------------------------------------- */
+    /* サイト背景 */
+    /* ------------------------------------------------------------------- */
+    body {
+        background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
     }
 
     .us-OAuth_button,
@@ -457,6 +472,30 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         background-color: inherit;
     }
 
+
+    /*  関連順のモーダル    */
+    .dropdown-menu {
+        background-color: #89a909;
+    }
+    .dropdown-menu a {
+        background-color: #89a909;
+        color: #fff !important;
+    }
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+        background-color: #a0dd10;
+    }
+
+    /* search */
+    .pagination > li > a,
+    .pagination > li > span,
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus,
+    .radiusWidget_title,
+    .searchResultContainer,
+    /*  settings    */
+    .st-Form_text[disabled="disabled"],
     .st-Form_groupText,
     .st-Form_text,
     .st-Form_groupBefore,
@@ -469,6 +508,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         background-color: var(--bg-color);
     }
 
+    .nav-tabs > li > a:hover,
     .st-Form_submit-mono:hover,
     .us-OAuth_button:hover {
         background-color: var(--hover-bg-color);
