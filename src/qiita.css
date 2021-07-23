@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0-alpha.3
+@version        1.0.0-alpha.4
 @description    Qiita用の和風イメージスタイル - 2021/7/21 updated
 @author         SARDONYX
 
@@ -17,9 +17,11 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
 ==/UserStyle== */
 @-moz-document domain("qiita.com") {
     :root {
+        --char-color: #fff;
+        --bg-color: #50505099;
+        --hover-bg-color: #5a6e4aab;
         --icon-br-color: #94956c;
         --icon-bg-color: #98ad42;
-        --char-color: #fff;
     }
 
     /* Qiita内全URI */
@@ -70,6 +72,22 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     /* からリンク */
     .css-1w5fqid {
         color: var(--char-color) !important;
+    }
+
+    /* ------------------------------------------------------------------- */
+    /*UI */
+    /* ------------------------------------------------------------------- */
+    /* ドロップメニュー */
+    .st-RenewalHeader_dropdownItem {
+        color: var(--char-color) !important;
+    }
+
+    .st-RenewalHeader_dropdown.is-open {
+        background-color: #9fa852;
+    }
+
+    .st-RenewalHeader_dropdownItem:hover {
+        background-color: var(--hover-bg-color);
     }
 
     /* ------------------------------------------------------------------- */
@@ -176,7 +194,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     }
 }
 
-@-moz-document regexp("https?://(www\\.)*qiita.com/.*/(?:items|private)/.*") {
+@-moz-document regexp("https?://(www\\.)*qiita.com/.*(?:items|private|drafts|settings).*") {
     /* Qiita内記事 or  限定記事 */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
@@ -231,12 +249,14 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         color: #fff !important;
     }
 
+
     .css-136ytem {
         background-color: #43773f;
     }
     .css-154zy0m:hover {
         background-color: #6a7957;
     }
+
 
     /* ------------------------------------------------------------------- */
     /*マークダウン */
@@ -264,11 +284,20 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!drafts|patches|questions|settings|ja|tags).)+).*(?<!\\.md)$") {
+@-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!patches|questions|settings|ja).)+).*(?<!\\.md)$") {
     /*  Qiita内CSSカスタマイズ未完成以外  */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
+    .tsr-OrganizationList_tabItem.is-active,
+    .tsr-Organization_contribCount,
+    .tsr-User_contribCount,
+    .tsr-UserList_tabItem.is-active,
+    .css-84pwg2,
+    .css-5yh2x6,
+    .css-eebxa,
+    .tsa-Content_heading,
+    .tsa-MdContent,
     body,
     .css-ahbqk3,
     .css-1qbvpe9,
@@ -307,6 +336,16 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         color: #d7d7d7;
     }
 
+    .p-tagShow_mainMiddle,
+    .p-tagShow .tsa-Content {
+        background-color: inherit;
+    }
+
+    .p-tagShow .tsr-OrganizationList,
+    .p-tagShow .tsr-UserList,
+    .css-1oaoxet,
+    .css-1oi7jw6,
+    .p-tagShow_mainTop,
     .css-10v1rem,
     .css-1cw2pgk,
     .css-1we24g0,
@@ -324,5 +363,110 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.71);
         padding: 16px;
+    }
+}
+@-moz-document regexp("^https?://(www\\.)*qiita.com/drafts.*") {
+    /* ------------------------------------------------------------------- */
+    /* 文字色 */
+    /* ------------------------------------------------------------------- */
+    .css-btzqj0,
+    .css-1512sq3,
+    .css-3g2l7q span,
+    .css-1rbyfv8,
+    .css-10fmwne,
+    .css-mmklm6,
+    .css-3mbgw8,
+    .css-w26z1l,
+    input,
+    .css-1l1d2dq,
+    .css-4x6uk2,
+    .css-r2e1s7,
+    .css-1iu5ybx,
+    .it-MdContent {
+        color: var(--char-color)!important;
+    }
+
+    .css-10raq17:hover,
+    .css-mxdort:hover,
+    .css-4x6uk2:hover,
+    .css-1l1d2dq:hover {
+        background-color: var(--hover-bg-color)
+    }
+
+    input,
+    .css-umnzf5,
+    .css-1flxy3t,
+    .css-1r0wl4y {
+        background-color: inherit;
+        border: inherit;
+    }
+
+    .it-MdContent blockquote {
+        color: #c3c3c3;
+    }
+
+    .css-10raq17,
+    .css-mxdort,
+    .css-s2u1gg,
+    .css-1qa0ke5,
+    .css-13otb0q,
+    .css-iafcpv,
+    .st-RenewalHeader_searchInput,
+    .css-1l1d2dq,
+    .css-4x6uk2,
+    .css-r2e1s7,
+    .css-1iu5ybx,
+    .css-c498su,
+    .css-84k02h {
+        background-color: var(--bg-color)
+    }
+
+    .css-19f8k5z {
+        background-color: #5050504f;
+    }
+}
+
+@-moz-document regexp("^https?://(www\\.)*qiita.com/settings.*") {
+    /* ------------------------------------------------------------------- */
+    /* 文字色 */
+    /* ------------------------------------------------------------------- */
+    .st-Form_groupText,
+    .st-Form_text,
+    body,
+    p,
+    div,
+    .p-settings_userName,
+    .p-settings,
+    .p-settings_menuItem {
+        color: var(--char-color) !important;
+    }
+
+
+    /*   全リンクの色   */
+    .p-settings_main a {
+        color: #00ffe6 !important;
+    }
+
+    .us-OAuth_button,
+    .st-Form_submit-mono {
+        background-color: inherit;
+    }
+
+
+    .st-Form_groupText,
+    .st-Form_text,
+    .st-Form_groupBefore,
+    .st-Form_groupAfter,
+    .us-Form_tip-gray,
+    .st-Alert-note,
+    .st-Alert,
+    .p-settings_main,
+    .p-settings_menu {
+        background-color: var(--bg-color);
+    }
+
+    .st-Form_submit-mono:hover,
+    .us-OAuth_button:hover {
+        background-color: var(--hover-bg-color);
     }
 }
