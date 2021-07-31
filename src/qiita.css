@@ -1,15 +1,19 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0-alpha.3.3
-@description    Qiita用の和風イメージスタイル - 2021/7/24 updated
+@version        1.0.0-beta
+@description    Qiita用の和風イメージスタイル - 2021/08/01 updated
 @author         SARDONYX
 
 @advanced dropdown custom_wallpaper "Background Image" {
-C1 "Butterflies (Default)*" <<<EOT https://s1.1zoom.me/big3/790/Butterflies_436362.jpg  EOT;
-C2 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
-C3 "safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
-C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
+C1 "神社(Default)*" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
+C2 "Bamboo"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C3 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
+C4 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C5 "Butterflies" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
+C6 "Autumn leaves"  <<<EOT https://cdn.wallpapersafari.com/72/79/4uV7vy.jpg EOT;
+C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
+
 
 	custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
 }
@@ -19,10 +23,14 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     /* Qiita内全URI */
     :root {
         --char-color: #fff;
+        --anchor-color: #bbd10d;
+        --anchor-hover-color: #e5f947;
         --bg-color: #50505099;
         --hover-bg-color: #5a6e4aab;
         --icon-br-color: #94956c;
         --icon-bg-color: #98ad42;
+
+        --toc-active-color: #5d6f42b8;
     }
 
     /* ------------------------------------------------------------------- */
@@ -63,6 +71,11 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         font-size: 1.67rem;
     }
 
+    /*  Qiitaお知らせ    */
+    .wb-CampaignLink {
+        display: none;
+    }
+
     /* 文字色 */
     /* 左サイドバー */
     .css-1ncw05o,
@@ -98,8 +111,9 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .css-1nlu9zn,
     .p-home_menuItem-active,
     .it-Toc a.focus {
-        background-color: #d5e3d4bd !important;
+        background-color: var(--toc-active-color) !important;
     }
+
     /* 目次にホバーしたとき */
     .css-1mj0lc3:hover,
     .css-1nlu9zn:hover,
@@ -122,6 +136,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .css-11t2ec1 {
         background-color: #2c3115d4;
     }
+
     /* 右 */
     .css-1417f9l,
     .p-home_menu,
@@ -161,9 +176,11 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .css-1vlpknv {
         border-color: var(--icon-br-color);
     }
+
     .css-18lkoru {
         background-color: var(--char-color);
     }
+
     .css-le4d8r,
     .css-17mv0yr,
     .css-1g4cku8 {
@@ -242,9 +259,11 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     }
 
     /*   全リンクの色   */
+    .it-MdContent a,
     .p-items_wrapper a {
-        color: #00ffe6 !important;
+        color: var(--anchor-color) !important;
     }
+
     /*  右目次のリンクの色  */
     .it-Toc_nav a {
         color: #fff !important;
@@ -254,6 +273,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .css-136ytem {
         background-color: #43773f;
     }
+
     .css-154zy0m:hover {
         background-color: #6a7957;
     }
@@ -262,6 +282,21 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     /* ------------------------------------------------------------------- */
     /*マークダウン */
     /* ------------------------------------------------------------------- */
+    .it-MdContent {
+        font-size: 1.6rem;
+    }
+
+    br {
+        background: #fff0 !important;
+        padding: 0 0 !important;
+    }
+
+    .it-MdContent code {
+        background-color: var(--bg-color);
+        color: #fff;
+        padding: 0.1em 0.4em;
+    }
+
     /* スライド */
     .slideMode-Dashboard {
         background: linear-gradient(#778f657d, #5ba72033);
@@ -280,13 +315,26 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .it-MdContent th {
         background-color: #c1b7b7;
     }
+
     .it-MdContent tr:nth-child(odd) {
         background-color: #676464;
+    }
+
+    .co-Item_text .highlight,
+    /*   コード内背景   */
+    .it-MdContent .highlight {
+        background-color: #363839a1;
+        color: #e3e3e3;
+    }
+
+    .co-Item_text .code-frame,
+    .it-MdContent .code-frame {
+        background-color: #36383900;
     }
 }
 
 @-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!patches|questions|ja).)+).*(?<!\\.md)$") {
-    /*  Qiita内CSSカスタマイズ未完成以外  */
+    /*  Qiita内 編集リクエスト or   */
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
@@ -342,6 +390,11 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         background-color: inherit;
     }
 
+    /*  編集ページのタグの色    */
+    .css-84k02h .textoverlay span {
+        background-color: #a2cec499 !important;
+    }
+
     .p-tagShow .tsr-OrganizationList,
     .p-tagShow .tsr-UserList,
     .css-1oaoxet,
@@ -366,6 +419,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         padding: 16px;
     }
 }
+
 @-moz-document regexp("^https?://(www\\.)*qiita.com/drafts.*") {
     /*   Qiita記事編集ページ   */
     /* ------------------------------------------------------------------- */
@@ -395,6 +449,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         background-color: var(--hover-bg-color)
     }
 
+    .css-bsp10c,
     input,
     .css-umnzf5,
     .css-1flxy3t,
@@ -407,6 +462,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
         color: #c3c3c3;
     }
 
+    .css-dsewbi,
     .css-10raq17,
     .css-mxdort,
     .css-s2u1gg,
@@ -454,6 +510,7 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .searchResult a em {
         color: #00b8ff;
     }
+
     a {
         color: #00ffe6 !important;
     }
@@ -477,10 +534,12 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .dropdown-menu {
         background-color: #89a909;
     }
+
     .dropdown-menu a {
         background-color: #89a909;
         color: #fff !important;
     }
+
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus {
         background-color: #a0dd10;
@@ -512,5 +571,51 @@ C4 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-20495
     .st-Form_submit-mono:hover,
     .us-OAuth_button:hover {
         background-color: var(--hover-bg-color);
+    }
+}
+
+@-moz-document regexp("^https?://(www\\.)*qiita.com/.*(?:patches|questions|revisions|likers).*") {
+    /* 編集リクエスト、LTGM押した全ユーザー一覧ページ     */
+    /*  文字色    */
+    .tableList,
+    .tableList-bordered,
+    body {
+        color: var(--char-color);
+    }
+
+    .tableList,
+    .tableList-bordered {
+        color: #b2b1b1;
+    }
+
+    html,
+    body,
+    #globalFooter,
+    #main {
+        background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+    .pagination > li > a,
+    .pagination > li > span,
+    .breadcrumb,
+    .row {
+        background-color: var(--bg-color);
+    }
+
+    .pagination > li > a:hover,
+    .pagination > li > span:hover {
+        background-color: #627f45;
+    }
+
+
+    a {
+        color: var(--anchor-color) !important;
+    }
+
+    a:hover {
+        color: var(--anchor-hover-color) !important;
     }
 }
