@@ -1,13 +1,23 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.0
+@version        1.0.1
 @description    Qiita用の和風イメージスタイル - 2021/08/01 updated
 @author         SARDONYX
 
+
+@advanced color custom-char-color "文字の色" #fff
+@advanced color custom-anchor-color "リンクの色" #e5f947
+@advanced color custom-anchor-hover-color "リンクをホバーしたときの色" #e5f947
+@advanced color custom-bg-color "背景色" #50505099
+@advanced color custom-hover-bg-color "背景色をホバーしたときの色" #5a6e4aab
+@advanced color custom-icon-br-color "アイコンの色" #94956c
+@advanced color custom-icon-bg-color "アイコンをホバーしたときの色" #98ad42
+@advanced color custom-toc-active-color "現在見ている目次の色" #5d6f42b8
+
 @advanced dropdown custom_wallpaper "Background Image" {
-C1 "神社(Default)*" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
-C2 "Bamboo"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C1 "Bamboo(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C2 "神社(Default)*" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
 C3 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
 C4 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
 C5 "Butterflies" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
@@ -22,15 +32,15 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
 @-moz-document domain("qiita.com") {
     /* Qiita内全URI */
     :root {
-        --char-color: #fff;
-        --anchor-color: #bbd10d;
-        --anchor-hover-color: #e5f947;
-        --bg-color: #50505099;
-        --hover-bg-color: #5a6e4aab;
-        --icon-br-color: #94956c;
-        --icon-bg-color: #98ad42;
+        --char-color: /*[[custom-char-color]]*/;
+        --anchor-color: /*[[custom-anchor-color]]*/;
+        --anchor-hover-color: /*[[custom-anchor-hover-color]]*/;
+        --bg-color: /*[[custom-bg-color]]*/;
+        --hover-bg-color: /*[[custom-hover-bg-color]]*/;
+        --icon-br-color: /*[[custom-icon-br-color]]*/;
+        --icon-bg-color: /*[[custom-icon-bg-color]]*/;
 
-        --toc-active-color: #5d6f42b8;
+        --toc-active-color: /*[[custom-toc-active-color]]*/;
     }
 
     /* ------------------------------------------------------------------- */
@@ -72,10 +82,28 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     }
 
     /*  Qiitaお知らせ    */
+    .css-s3gw6j,
     .wb-CampaignLink {
         display: none;
     }
 
+    /*  ユーザーページの切り替えボタン    */
+    .css-vzb2sn .css-1a5dffc {
+        background-color: #fff0;
+    }
+
+    /*  アクティブ中のユーザーページの切り替えボタン    */
+    .css-b2dqaf {
+        background-color: #95a520;
+    }
+
+    .css-b2dqaf:hover {
+        background-color: #b0c54d;
+    }
+
+    /*ユーザーページの切り替えボタン */
+    .css-b2dqaf,
+    .css-1a5dffc,
     /* 文字色 */
     /* 左サイドバー */
     .css-1ncw05o,
@@ -113,6 +141,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .it-Toc a.focus {
         background-color: var(--toc-active-color) !important;
     }
+
 
     /* 目次にホバーしたとき */
     .css-1mj0lc3:hover,
@@ -155,7 +184,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-s3gw6j,
     .css-19lfbe3,
     .css-helsa7 {
-        background-color: #555555c2;
+        background-color: var(--bg-color);
     }
 
     /* サイト背景 */
@@ -165,6 +194,29 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
         background-size: cover !important;
         background-repeat: no-repeat !important;
+    }
+
+
+    /*   記事についてのコメント欄   */
+    .css-17eyz22,
+    .css-oso7pa,
+    .css-1umj3dl,
+    .css-in84e8,
+    .css-8rqrv2 {
+        color: var(--char-color);
+        background-color: inherit;
+    }
+
+
+
+    /*   投稿ボタン   */
+    .css-x9b6b8 {
+        background-color: var(--icon-bg-color);
+        border-color: var(--icon-br-color);
+    }
+
+    .css-1om56vo {
+        background-color: var(--bg-color);
     }
 
     /* ------------------------------------------------------------------- */
@@ -278,6 +330,11 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background-color: #6a7957;
     }
 
+    /*  余分な項目の削除    */
+    .p-items_main > .css-helsa7:nth-child(3) {
+        display: none;
+    }
+
 
     /* ------------------------------------------------------------------- */
     /*マークダウン */
@@ -292,7 +349,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     }
 
     .it-MdContent code {
-        background-color: var(--bg-color);
+        background-color: #aaa9a96e;
         color: #fff;
         padding: 0.1em 0.4em;
     }
@@ -389,6 +446,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .p-tagShow .tsa-Content {
         background-color: inherit;
     }
+
 
     /*  編集ページのタグの色    */
     .css-84k02h .textoverlay span {
