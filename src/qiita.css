@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.1
+@version        1.0.2
 @description    Qiita用の和風イメージスタイル - 2021/08/01 updated
 @author         SARDONYX
 
 
 @advanced color custom-char-color "文字の色" #fff
 @advanced color custom-anchor-color "リンクの色" #e5f947
-@advanced color custom-anchor-hover-color "リンクをホバーしたときの色" #e5f947
-@advanced color custom-bg-color "背景色" #50505099
+@advanced color custom-anchor-hover-color "リンクをホバーしたときの色" #9ca83a
+@advanced color custom-bg-color "背景色" #505050c9
 @advanced color custom-hover-bg-color "背景色をホバーしたときの色" #5a6e4aab
 @advanced color custom-icon-br-color "アイコンの色" #94956c
 @advanced color custom-icon-bg-color "アイコンをホバーしたときの色" #98ad42
@@ -17,7 +17,7 @@
 
 @advanced dropdown custom_wallpaper "Background Image" {
 C1 "Bamboo(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
-C2 "神社(Default)*" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
+C2 "神社" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
 C3 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
 C4 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
 C5 "Butterflies" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
@@ -94,13 +94,23 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
 
     /*  アクティブ中のユーザーページの切り替えボタン    */
     .css-b2dqaf {
-        background-color: #95a520;
+        background-color: #497301;
     }
 
     .css-b2dqaf:hover {
         background-color: #b0c54d;
     }
 
+    .qzf-ItemList_label,
+    .p-home .qzf-ItemList,
+    .p-home .ra-UserList,
+    .p-home_main,
+    .p-home .ra-TagList,
+    .css-1laxd2k,
+    .css-1hmn1pl,
+    .css-y8q94p,
+    .css-vvapww,
+    .css-1j37wyh,
     /*ユーザーページの切り替えボタン */
     .css-b2dqaf,
     .css-1a5dffc,
@@ -120,17 +130,30 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     /*UI */
     /* ------------------------------------------------------------------- */
     /* ドロップメニュー */
+    .st-Header_dropdownItem,
     .st-RenewalHeader_dropdownItem {
-        color: var(--char-color) !important;
+        color: var(--char-color)t;
     }
 
+    .st-Header_dropdownItem:hover,
+    .st-Header_dropdownItem:hover {
+        color: #e8e8e8;
+    }
+
+    .css-136ytem,
+    .st-Header_dropdown.is-open,
     .st-RenewalHeader_dropdown.is-open {
         background-color: #9fa852;
     }
 
+    .css-154zy0m:hover,
+    .st-Header_dropdownItem:hover,
+    .st-Header_dropdownItem:hover,
     .st-RenewalHeader_dropdownItem:hover {
         background-color: var(--hover-bg-color);
     }
+
+
 
     /* ------------------------------------------------------------------- */
     /* 目次 */
@@ -162,10 +185,12 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
 
     /* 目次背景 */
     /* 左 */
+    .st-Header,
     .css-11t2ec1 {
         background-color: #2c3115d4;
     }
 
+    #wrapper,
     /* 右 */
     .css-1417f9l,
     .p-home_menu,
@@ -179,6 +204,11 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background-color: #adb90cdb;
     }
 
+
+    .p-home .qzf-ItemList,
+    .p-home .ra-UserList,
+    .p-home_main,
+    .p-home .ra-TagList,
     /* 記事内背景 */
     .slideMode-Viewer,
     .css-s3gw6j,
@@ -269,6 +299,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
+    .co-Item_like,
     .css-1uvbhws #logly-lift-4279494 #logly-lift-widget-header,
     #logly-lift-4279494 .logly-lift-ad-title,
     .p-items_wrapper h1,
@@ -316,19 +347,17 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         color: var(--anchor-color) !important;
     }
 
+
+    .p-items_main a:hover {
+        color: var(--anchor-hover-color) !important;
+    }
+
+
     /*  右目次のリンクの色  */
     .it-Toc_nav a {
         color: #fff !important;
     }
 
-
-    .css-136ytem {
-        background-color: #43773f;
-    }
-
-    .css-154zy0m:hover {
-        background-color: #6a7957;
-    }
 
     /*  余分な項目の削除    */
     .p-items_main > .css-helsa7:nth-child(3) {
@@ -395,6 +424,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     /* ------------------------------------------------------------------- */
     /* 文字色 */
     /* ------------------------------------------------------------------- */
+    .css-j7ysqm,
     .tsr-OrganizationList_tabItem.is-active,
     .tsr-Organization_contribCount,
     .tsr-User_contribCount,
@@ -432,6 +462,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-y8q94p,
     .css-1hmn1pl,
     .css-1j37wyh,
+    .css-2on3xo,
     .css-1j37wyh {
         color: var(--char-color) !important;
     }
@@ -453,6 +484,22 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background-color: #a2cec499 !important;
     }
 
+    .css-kav51v .textoverlay span {
+
+        background-color: rgb(104 111 0) !important;
+    }
+
+    .css-93uq2k,
+    #ArticleEditorPage-react-component-70a1765b-debb-496c-bd14-2f3359ddc254 > div > div.css-8atqhb.e1l6jxqq0 > div > div.css-7wgncr,
+    .css-j7ysqm,
+    #ArticleEditorPage-react-component-70a1765b-debb-496c-bd14-2f3359ddc254 > div > div.css-8atqhb.e1l6jxqq0 > div > div.css-1j00d1a > div.css-93uq2k,
+    .css-1f36es4,
+    .css-1qlva0w,
+    .css-kav51v,
+    .css-1j00d1a,
+    .css-2on3xo,
+    .css-puhmrl,
+    .css-7wgncr,
     .p-tagShow .tsr-OrganizationList,
     .p-tagShow .tsr-UserList,
     .css-1oaoxet,
@@ -566,11 +613,17 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
 
     /*   全リンクの色   */
     .searchResult a em {
-        color: #00b8ff;
+        /*         color: #00b8ff; */
+        color: var(--anchor-color);
     }
 
     a {
-        color: #00ffe6 !important;
+        /*         color: #00ffe6 !important; */
+        color: var(--anchor-color) !important;
+    }
+
+    .searchResultContainer_sortButton {
+        background-color: #fff0;
     }
 
     /* ------------------------------------------------------------------- */
@@ -625,6 +678,30 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background-color: var(--bg-color);
     }
 
+    .pagination > .active > a,
+    .pagination > .active > a:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span,
+    .pagination > .active > span:hover,
+    .pagination > .active > span:focus,
+    .pagination > .disabled > span,
+    .pagination > .disabled > span:hover,
+    .pagination > .disabled > span:focus,
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > a:focus {
+        background-color: var(--hover-bg-color);
+        border-color: #ddd0;
+    }
+
+    .pagination > li > a:hover,
+    .pagination > li > a:focus,
+    .pagination > li > span:hover,
+    .pagination > li > span:focus {
+        background-color: var(--hover-bg-color);
+        border-color: #ddd0;
+    }
+
     .nav-tabs > li > a:hover,
     .st-Form_submit-mono:hover,
     .us-OAuth_button:hover {
@@ -635,6 +712,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
 @-moz-document regexp("^https?://(www\\.)*qiita.com/.*(?:patches|questions|revisions|likers).*") {
     /* 編集リクエスト、LTGM押した全ユーザー一覧ページ     */
     /*  文字色    */
+    .panel-default > .panel-heading,
     .tableList,
     .tableList-bordered,
     body {
@@ -655,6 +733,11 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
         background-repeat: no-repeat !important;
     }
 
+
+    .panel-default > .panel-heading,
+    .panel {
+        background-color: #fff0;
+    }
 
     .pagination > li > a,
     .pagination > li > span,
