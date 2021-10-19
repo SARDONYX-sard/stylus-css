@@ -1,58 +1,199 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        1.0.2
-@description    Qiita用の和風イメージスタイル - 2021/08/01 updated
+@version        2.0.0
+@description    Qiita用の和風イメージスタイル - 2021/10/20 updated
 @author         SARDONYX
 
 
-@advanced color custom-char-color "文字の色" #fff
-@advanced color custom-anchor-color "リンクの色" #e5f947
-@advanced color custom-anchor-hover-color "リンクをホバーしたときの色" #9ca83a
-@advanced color custom-bg-color "背景色" #505050c9
-@advanced color custom-hover-bg-color "背景色をホバーしたときの色" #5a6e4aab
-@advanced color custom-icon-br-color "アイコンの色" #94956c
-@advanced color custom-icon-bg-color "アイコンをホバーしたときの色" #98ad42
-@advanced color custom-toc-active-color "現在見ている目次の色" #5d6f42b8
-
-@advanced dropdown custom_wallpaper "Background Image" {
-C1 "Bamboo(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
-C2 "神社" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/HD-Japan-Wallpapers-Free-Download.jpg  EOT;
-C3 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
-C4 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
-C5 "Butterflies" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
-C6 "Autumn leaves"  <<<EOT https://cdn.wallpapersafari.com/72/79/4uV7vy.jpg EOT;
-C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
-
-
-	custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
-}
-@advanced text custom_wallpaper-custom "Background Image (Custom)" "https://example.com/image.png"
-==/UserStyle== */
-@-moz-document domain("qiita.com") {
-    /* Qiita内全URI */
+@advanced dropdown Atom-One-DarkStyle "Atom-One-Dark(like) Style" {
+Yup "Yes*" <<<EOT
     :root {
-        --char-color: /*[[custom-char-color]]*/;
-        --anchor-color: /*[[custom-anchor-color]]*/;
-        --anchor-hover-color: /*[[custom-anchor-hover-color]]*/;
-        --bg-color: /*[[custom-bg-color]]*/;
-        --hover-bg-color: /*[[custom-hover-bg-color]]*/;
-        --icon-br-color: /*[[custom-icon-br-color]]*/;
-        --icon-bg-color: /*[[custom-icon-bg-color]]*/;
-
-        --toc-active-color: /*[[custom-toc-active-color]]*/;
+        --blue: #4ebbff;
+        --aqua: #55d8e4;
+        --orange: #e6a260;
+        --violet: #be77ea;
+        --white: #e3e3e3;
     }
 
-    /* ------------------------------------------------------------------- */
-    /* 文字 */
-    /* ------------------------------------------------------------------- */
-    /* フォント& フォントサイズ------------- */
-    h1,
+
+    .it-MdContent .highlight .na {
+        color: var(--white) !important;
+    }
+
+
+    .it-MdContent .highlight .se,
+
+    .it-MdContent .highlight .mi,
+
+    .it-MdContent .highlight .kc {
+        color: var(--orange) !important;
+    }
+
+    .it-MdContent .highlight .sr {
+        color: var(--aqua);
+    }
+
+    .it-MdContent .highlight .kr {
+        color: var(--violet);
+    }
+
+    .it-MdContent .highlight .k,
+    .it-MdContent .highlight .kd,
+    .it-MdContent .highlight .kp,
+    .it-MdContent .highlight .kt,
+    .it-MdContent .highlight .no {
+        color: var(--violet);
+    }
+
+    .it-MdContent .highlight .fm,
+    .it-MdContent .highlight .gi,
+    .it-MdContent .highlight .nc,
+    .it-MdContent .highlight .nd,
+    .it-MdContent .highlight .ne,
+    .it-MdContent .highlight .nf,
+    .it-MdContent .highlight .nx {
+        color: var(--blue);
+    }
+
+    .it-MdContent .highlight .n,
+    .it-MdContent .highlight .p,
+    .it-MdContent .highlight .nb,
+    .it-MdContent .highlight .ni,
+    .it-MdContent .highlight .nl,
+    .it-MdContent .highlight .nn,
+    .it-MdContent .highlight .py,
+    .it-MdContent .highlight .nv,
+    .it-MdContent .highlight .w,
+    .it-MdContent .highlight .bp,
+    .it-MdContent .highlight .vc,
+    .it-MdContent .highlight .vg,
+    .it-MdContent .highlight .vi,
+    .it-MdContent .highlight .vm {
+        color: #e3e3e3;
+    }
+
+    .it-MdContent .highlight .ld,
+    .it-MdContent .highlight .s,
+    .it-MdContent .highlight .sa,
+    .it-MdContent .highlight .sb,
+    .it-MdContent .highlight .sc,
+    .it-MdContent .highlight .dl,
+    .it-MdContent .highlight .sd,
+    .it-MdContent .highlight .s2,
+    .it-MdContent .highlight .sh,
+    .it-MdContent .highlight .si,
+    .it-MdContent .highlight .sx,
+    .it-MdContent .highlight .s1,
+    .it-MdContent .highlight .ss {
+        color: #a6ea61;
+    }
+
+    .it-MdContent .highlight .l,
+    .it-MdContent .highlight .m,
+    .it-MdContent .highlight .mb,
+    .it-MdContent .highlight .mf,
+    .it-MdContent .highlight .mh,
+
+    .it-MdContent .highlight .mo,
+
+    .it-MdContent .highlight .il {
+        color: var(--violet);
+    }
+
+    .it-MdContent .highlight .o,
+    .it-MdContent .highlight .gd,
+    .it-MdContent .highlight .kn,
+    .it-MdContent .highlight .nt,
+    .it-MdContent .highlight .ow {
+        color: var(--violet);
+        color: #f77;
+    }
+EOT;
+Nope "No" <<<EOT  EOT;
+}
+
+
+@advanced color custom-char-color "文字の色" #fff
+@advanced color custom-bg-color "背景色" #505050c9
+@advanced color custom-anchor-color "リンクの色" #e5f947
+@advanced color custom-anchor-hover-color "リンク: (ホバー時)" #9ca83a
+@advanced color custom-header-color "ヘッダーの色" #5d7452ab
+@advanced color custom-toc-bg-color"メニューの背景" #9fa852
+@advanced color custom-toc-active-color "目次の色: (アクティブ時)" #5d6f42b8
+@advanced color custom-hover-bg-color "目次の色: (ホバー時)" #5a6e4aab
+@advanced color custom-icon-br-color "アイコンの色" #94956c
+@advanced color custom-icon-bg-color "アイコン: (ホバー時)" #98ad42
+
+@advanced dropdown custom_wallpaper "背景" {
+C1 "手水舎(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C2 "神社" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C3 "都会"  <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C4 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
+C5 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C6 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
+C7 "猫と蝶"  <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C8 "桜"  <<<EOT https://images5.alphacoders.com/110/thumb-1920-1105001.jpg EOT;
+C9 "紅葉"  <<<EOT https://cdn.wallpapersafari.com/72/79/4uV7vy.jpg EOT;
+
+custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_wallpaper-custom "背景(カスタム)" "https://cdn.wallpapersafari.com/48/32/YLptDi.jpg"
+==/UserStyle== */
+@-moz-document domain("qiita.com") {
+  /* Qiita内全URI */
+  /* ------------------------------------------------------------------- */
+  /* 変数定義 */
+  /* ------------------------------------------------------------------- */
+  :root {
+    --char-color: /*[[custom-char-color]]*/ ;
+    --anchor-color: /*[[custom-anchor-color]]*/ ;
+    --anchor-hover-color: /*[[custom-anchor-hover-color]]*/ ;
+    --bg-color: /*[[custom-bg-color]]*/ ;
+    --header-color: /*[[custom-header-color]]*/ ;
+    --hover-bg-color: /*[[custom-hover-bg-color]]*/ ;
+    --icon-br-color: /*[[custom-icon-br-color]]*/ ;
+    --icon-bg-color: /*[[custom-icon-bg-color]]*/ ;
+
+    --toc-active-color: /*[[custom-toc-active-color]]*/ ;
+    --toc-bg-color: /*[[custom-toc-bg-color]]*/ ;
+  }
+
+  /*  Atom-One-Dark Styleの適用    */
+  /*[[Atom-One-DarkStyle]]*/
+  /* ------------------------------------------------------------------- */
+  /* スクロールバー */
+  /* ------------------------------------------------------------------- */
+  ::-webkit-scrollbar {
+    background-color: #262a2b;
+    color: #cdc5b8;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: #262a2b;
+    color: #cdc5b8;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: #1d1f20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #53595c;
+  }
+
+  /* ------------------------------------------------------------------- */
+  /* 文字 */
+  /* ------------------------------------------------------------------- */
+  /* フォント& フォントサイズ------------- */
+  h1,
     h2,
     h3,
     time,
     body,
     a,
+    input,
+    .st-Header_searchInput,
     .it-MdContent code,
     .co-Item_text,
     .p-home_menuHead,
@@ -77,30 +218,54 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-1iupg5d,
     .css-1b8uj5v,
     .css-16hhh7b {
-        font-family: Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif !important;
-        font-size: 1.67rem;
-    }
+    font-family: Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif !important;
+    font-size: 1.67rem;
+  }
 
-    /*  Qiitaお知らせ    */
-    .css-s3gw6j,
-    .wb-CampaignLink {
-        display: none;
-    }
+  /*   アンカーリンク   */
+  .css-1xh4v9b,
+  .css-169mx63,
+  .css-hiept0 {
+    color: var(--anchor-color);
+  }
 
-    /*  ユーザーページの切り替えボタン    */
-    .css-vzb2sn .css-1a5dffc {
-        background-color: #fff0;
-    }
+  .css-1xh4v9b:hover,
+  .css-169mx63:hover,
+  .css-hiept0:hover {
+    color: var(--anchor-hover-color);
+  }
 
-    /*  アクティブ中のユーザーページの切り替えボタン    */
-    .css-b2dqaf {
-        background-color: #497301;
-    }
+  /*  Qiitaお知らせ    */
+  .an-Item_body > div > p,
+  #HomeSidebar-react-component-e589ad8c-1b63-47c2-8237-51439d030fa7
+    > div.an-Item.p-2
+    > div.an-Item_title
+    > p,
+  .css-bibwyp,
+  .css-cikcz {
+    color: var(--char-color);
+  }
 
-    .css-b2dqaf:hover {
-        background-color: #b0c54d;
-    }
+  .css-s3gw6j,
+  .wb-CampaignLink {
+    display: none;
+  }
 
+  /*  ユーザーページの切り替えボタン    */
+  .css-vzb2sn .css-1a5dffc {
+    background-color: #fff0;
+  }
+
+  /*  アクティブ中のユーザーページの切り替えボタン    */
+  .css-b2dqaf {
+    background-color: #497301;
+  }
+
+  .css-b2dqaf:hover {
+    background-color: #b0c54d;
+  }
+
+  .st-Header_searchInput,
     .qzf-ItemList_label,
     .p-home .qzf-ItemList,
     .p-home .ra-UserList,
@@ -111,6 +276,9 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-y8q94p,
     .css-vvapww,
     .css-1j37wyh,
+    .css-1qxtz39,
+    .css-1dtnjt5,
+    .css-1at84s3,
     /*ユーザーページの切り替えボタン */
     .css-b2dqaf,
     .css-1a5dffc,
@@ -123,89 +291,102 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .p-home_menu a,
     /* からリンク */
     .css-1w5fqid {
-        color: var(--char-color) !important;
-    }
+    color: var(--char-color) !important;
+  }
 
-    /* ------------------------------------------------------------------- */
-    /*UI */
-    /* ------------------------------------------------------------------- */
-    /* ドロップメニュー */
-    .st-Header_dropdownItem,
-    .st-RenewalHeader_dropdownItem {
-        color: var(--char-color)t;
-    }
+  /*   ヘッダーサーチ   */
+  .st-Header_search > ::-webkit-input-placeholder {
+    color: #adadab;
+  }
 
-    .st-Header_dropdownItem:hover,
-    .st-Header_dropdownItem:hover {
-        color: #e8e8e8;
-    }
+  .st-Header_searchInput {
+    background-color: inherit;
+  }
 
-    .css-136ytem,
-    .st-Header_dropdown.is-open,
-    .st-RenewalHeader_dropdown.is-open {
-        background-color: #9fa852;
-    }
+  .st-Header_start {
+    background-color: #6f6f6f36;
+  }
 
-    .css-154zy0m:hover,
-    .st-Header_dropdownItem:hover,
-    .st-Header_dropdownItem:hover,
-    .st-RenewalHeader_dropdownItem:hover {
-        background-color: var(--hover-bg-color);
-    }
+  /* ------------------------------------------------------------------- */
+  /*UI */
+  /* ------------------------------------------------------------------- */
+  /* ドロップメニュー */
+  .st-Header_dropdownItem,
+  .st-RenewalHeader_dropdownItem {
+    color: var(--char-color) t;
+  }
 
+  .st-Header_dropdownItem:hover,
+  .st-Header_dropdownItem:hover {
+    color: #e8e8e8;
+  }
 
+  .css-136ytem,
+  .st-Header_dropdown.is-open,
+  .st-RenewalHeader_dropdown.is-open {
+    background-color: var(--toc-bg-color);
+  }
 
-    /* ------------------------------------------------------------------- */
-    /* 目次 */
-    /* ------------------------------------------------------------------- */
-    /* アクティブ状態の目次 */
-    .css-1nlu9zn,
-    .p-home_menuItem-active,
-    .it-Toc a.focus {
-        background-color: var(--toc-active-color) !important;
-    }
+  .css-154zy0m:hover,
+  .st-Header_dropdownItem:hover,
+  .st-Header_dropdownItem:hover,
+  .st-RenewalHeader_dropdownItem:hover {
+    background-color: var(--hover-bg-color);
+  }
 
+  /* ------------------------------------------------------------------- */
+  /* 目次 */
+  /* ------------------------------------------------------------------- */
+  /* アクティブ状態の目次 */
+  .css-1nlu9zn,
+  .p-home_menuItem-active,
+  .it-Toc a.focus {
+    background-color: var(--toc-active-color) !important;
+  }
 
-    /* 目次にホバーしたとき */
-    .css-1mj0lc3:hover,
-    .css-1nlu9zn:hover,
-    .p-home_menuItem:hover,
-    .it-Toc a:hover {
-        background-color: #8da954bd;
-    }
+  /* 目次にホバーしたとき */
+  .css-1mj0lc3:hover,
+  .css-1nlu9zn:hover,
+  .p-home_menuItem:hover,
+  .it-Toc a:hover {
+    background-color: #8da954bd;
+  }
 
-    /* ------------------------------------------------------------------- */
-    /* 背景 */
-    /* ------------------------------------------------------------------- */
-    /* ヘッダーボタン背景 */
-    .st-RenewalHeader_communitySelector,
-    .st-RenewalHeader_postButton {
-        background-color: #4fa0a0;
-    }
+  /* ------------------------------------------------------------------- */
+  /* 背景 */
+  /* ------------------------------------------------------------------- */
+  /*   ヘッダー   */
+  .st-Header {
+    background-color: var(--header-color);
+  }
 
-    /* 目次背景 */
-    /* 左 */
-    .st-Header,
-    .css-11t2ec1 {
-        background-color: #2c3115d4;
-    }
+  /* ヘッダーボタン背景 */
+  .st-RenewalHeader_communitySelector,
+  .st-RenewalHeader_postButton {
+    background-color: #4fa0a0;
+  }
 
-    #wrapper,
+  /* 目次背景 */
+  /* 左 */
+  .css-11t2ec1 {
+    background-color: #2c3115d4;
+  }
+
+  #wrapper,
     /* 右 */
     .css-1417f9l,
     .p-home_menu,
     .it-Toc {
-        background-color: #55555582;
-    }
+    background-color: #55555582;
+  }
 
-    /* 「 この記事は最終更新日から1年以上が経過しています。」などの一番上の注釈 */
-    .css-45lq7d,
-    .css-1nzh4zz {
-        background-color: #adb90cdb;
-    }
+  /* 「 この記事は最終更新日から1年以上が経過しています。」などの一番上の注釈 */
+  .css-45lq7d,
+  .css-1nzh4zz {
+    background-color: #adb90cdb;
+  }
 
-
-    .p-home .qzf-ItemList,
+  .p-home .qzf-ItemList,
     .p-home .ra-UserList,
     .p-home_main,
     .p-home .ra-TagList,
@@ -214,92 +395,178 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-s3gw6j,
     .css-19lfbe3,
     .css-helsa7 {
-        background-color: var(--bg-color);
-    }
+    background-color: var(--bg-color);
+  }
 
-    /* サイト背景 */
-    .allWrapper,
-    .p-items_wrapper,
-    .st-RenewalHeader {
-        background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
+  /*   画像内背景   */
+  img {
+    background-color: #efefef;
+  }
 
+  /* サイト背景 */
+  .allWrapper,
+  .p-items_wrapper,
+  .st-RenewalHeader {
+    background: url("/*[[custom_wallpaper]]*/") #1c1c1c bottom fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
 
-    /*   記事についてのコメント欄   */
-    .css-17eyz22,
-    .css-oso7pa,
-    .css-1umj3dl,
-    .css-in84e8,
-    .css-8rqrv2 {
-        color: var(--char-color);
-        background-color: inherit;
-    }
+  /*   タブ背景   */
+  .css-61xfyg {
+    background-color: #0000003d;
+  }
 
+  /*  　右横のお知らせ   */
+  .css-1x31e1o,
+  .p-home .an-Item,
+  .css-1om56vo {
+    background-color: var(--bg-color);
+  }
 
+  .css-hm64qx,
+  .css-xt7hoz {
+    color: var(--char-color);
+  }
 
-    /*   投稿ボタン   */
-    .css-x9b6b8 {
-        background-color: var(--icon-bg-color);
-        border-color: var(--icon-br-color);
-    }
+  .qzf-Item_footer span {
+    color: inherit;
+  }
 
-    .css-1om56vo {
-        background-color: var(--bg-color);
-    }
+  /* ------------------------------------------------------------------- */
+  /*   ヘッダー「投稿する」ボタン横のお知らせ   */
+  /* ------------------------------------------------------------------- */
+  .st-Header a,
+  .st-Header div,
+  .st-Header_notiFooter,
+  .css-1ovl61n,
+  .css-lfdr4t {
+    color: var(--char-color);
+  }
 
-    /* ------------------------------------------------------------------- */
-    /* アイコン */
-    /* ------------------------------------------------------------------- */
-    /* LGTM */
-    /* 押す前 */
-    .css-18lkoru,
-    .css-1vlpknv {
-        border-color: var(--icon-br-color);
-    }
+  .st-Header_notiFooter,
+  .st-Header_notiIframe.is-open,
+  .css-9s27j6 {
+    background-color: var(--toc-bg-color);
+  }
 
-    .css-18lkoru {
-        background-color: var(--char-color);
-    }
+  .css-9s27j6:hover {
+    background-color: var(--hover-bg-color);
+  }
 
-    .css-le4d8r,
-    .css-17mv0yr,
-    .css-1g4cku8 {
-        fill: #98ad42;
-    }
+  /* ------------------------------------------------------------------- */
+  /*   記事についてのコメント欄   */
+  /* ------------------------------------------------------------------- */
+  .css-hssvyv,
+  .css-15gjckr,
+  .css-bc6lwv,
+  .css-17eyz22,
+  .css-oso7pa,
+  .css-1umj3dl,
+  .css-in84e8,
+  .css-8rqrv2 {
+    color: var(--char-color);
+    background-color: inherit;
+  }
 
-    /* 押した後 */
-    .css-3bz6kw,
-    .css-1cguqpk {
-        border-color: var(--icon-br-color);
-        background-color: var(--icon-bg-color);
-    }
+  /*   画像選択ボタン   */
+  .css-i27xm0,
+    /*   投稿タブ   */
+    .css-cz4p72,
+    .css-bjholz {
+    color: var(--char-color);
+    background-color: var(--hover-bg-color);
+  }
 
-    /* Qiitaアイコン */
-    .st-RenewalHeader_logo {
-        background-color: var(--icon-bg-color);
-        padding: 1rem;
-    }
+  /*   画像選択ボタン   */
+  .css-i27xm0:hover,
+    /*   投稿タブ   */
+    .css-bjholz:hover,
+    .css-cz4p72:hover {
+    background-color: var(--icon-br-color);
+  }
 
-    /* ページネーションアイコン */
-    .fa {
-        font: normal normal normal 14px/1 FontAwesome !important;
-        color: var(--char-color);
-    }
+  /*   投稿タブリボン   */
+  .css-61xfyg {
+    background-color: #0000003b;
+  }
 
-    /* SNSアイコン色 */
-    .css-8fyty9 {
-        color: #98ad42;
-    }
+  /*   投稿ボタン   */
+  .css-1uq5u7b {
+    background-color: var(--hover-bg-color);
+    border-color: var(--hover-bg-color);
+    font-weight: 100 !important;
+  }
+
+  .css-1uq5u7b:hover {
+    background-color: var(--anchor-hover-color);
+    border-color: var(--anchor-hover-color);
+  }
+
+  /* ------------------------------------------------------------------- */
+  /* アイコン */
+  /* ------------------------------------------------------------------- */
+  /* LGTM */
+  /* 押す前 */
+  .css-18lkoru,
+  .css-1vlpknv {
+    border-color: var(--icon-br-color);
+  }
+
+  .css-18lkoru {
+    background-color: var(--char-color);
+  }
+
+  .css-le4d8r,
+  .css-17mv0yr,
+  .css-1g4cku8 {
+    fill: #98ad42;
+  }
+
+  /* 押した後 */
+  .css-10dznk2,
+  .css-3bz6kw,
+  .css-1cguqpk {
+    border-color: var(--icon-br-color);
+    background-color: var(--icon-bg-color);
+  }
+
+  /* Qiitaアイコン */
+  .st-RenewalHeader_logo {
+    background-color: var(--icon-bg-color);
+    padding: 1rem;
+  }
+
+  /* ページネーションアイコン */
+  .fa {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    color: var(--char-color);
+  }
+
+  /* SNSアイコン色 */
+  .css-8fyty9 {
+    color: #98ad42;
+  }
+
+  /* ------------------------------------------------------------------- */
+  /*   フッター  */
+  /* ------------------------------------------------------------------- */
+  .st-Footer {
+    background-color: #6f6f6f85;
+  }
+
+  .st-Footer_column > a {
+    color: #ffffffe6;
+  }
 }
 
-@-moz-document regexp("https?://(www\\.)*qiita.com/.*(?:items|private|drafts|settings).*") {
-    /* Qiita内記事 or  限定記事 */
-    /* ------------------------------------------------------------------- */
-    /* 文字色 */
-    /* ------------------------------------------------------------------- */
-    .co-Item_like,
+@-moz-document regexp("https?://(www\\.)*qiita.com/.*(?:items|private|drafts|settings).*")
+{
+  /* Qiita内記事 or  限定記事 */
+  /* ------------------------------------------------------------------- */
+  /* 文字色 */
+  /* ------------------------------------------------------------------- */
+  .co-Item_like,
     .css-1uvbhws #logly-lift-4279494 #logly-lift-widget-header,
     #logly-lift-4279494 .logly-lift-ad-title,
     .p-items_wrapper h1,
@@ -330,6 +597,8 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-10ougpm,
     .css-cgzq40,
     .it-MdContent,
+    /*   view数   */
+    .css-17ay39c,
     /* 左サイドバー */
     .css-1w23gl9,
     .css-115f4t,
@@ -338,92 +607,118 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     /* サイドバーSNSアイコン色 */
     .fa,
     .css-16hhh7b {
-        color: var(--char-color) !important;
-    }
+    color: var(--char-color) !important;
+  }
 
-    /*   全リンクの色   */
-    .it-MdContent a,
-    .p-items_wrapper a {
-        color: var(--anchor-color) !important;
-    }
+  /*   全リンクの色   */
+  .it-MdContent a,
+  .p-items_wrapper a {
+    color: var(--anchor-color) !important;
+  }
 
+  .p-items_main a:hover {
+    color: var(--anchor-hover-color) !important;
+  }
 
-    .p-items_main a:hover {
-        color: var(--anchor-hover-color) !important;
-    }
+  /*  右目次のリンクの色  */
+  .it-Toc_nav a {
+    color: #fff !important;
+  }
 
+  /*  余分な項目の削除    */
+  #PersonalArticlePage-react-component-8a7ac0f0-54de-484f-9321-ecc7eb7164bd
+    > div.p-items_wrapper
+    > div
+    > div.p-items_main
+    > div:nth-child(4) {
+    display: none;
+  }
 
-    /*  右目次のリンクの色  */
-    .it-Toc_nav a {
-        color: #fff !important;
-    }
+  /* ------------------------------------------------------------------- */
+  /*マークダウン */
+  /* ------------------------------------------------------------------- */
+  .it-MdContent {
+    font-size: 1.6rem;
+  }
 
+  br {
+    background: #fff0 !important;
+    padding: 0 0 !important;
+  }
 
-    /*  余分な項目の削除    */
-    .p-items_main > .css-helsa7:nth-child(3) {
-        display: none;
-    }
+  .it-MdContent code {
+    background-color: #aaa9a96e;
+    color: #fff;
+    padding: 0.1em 0.4em;
+  }
 
+  /* スライド */
+  .slideMode-Dashboard {
+    background: linear-gradient(#778f657d, #5ba72033);
+  }
 
-    /* ------------------------------------------------------------------- */
-    /*マークダウン */
-    /* ------------------------------------------------------------------- */
-    .it-MdContent {
-        font-size: 1.6rem;
-    }
+  /* 引用 */
+  .co-Item_text,
+  .it-MdContent blockquote {
+    border-color: #8e9700;
+    color: #f7f7f7;
+    background-color: #586f6199;
+  }
 
-    br {
-        background: #fff0 !important;
-        padding: 0 0 !important;
-    }
-
-    .it-MdContent code {
-        background-color: #aaa9a96e;
-        color: #fff;
-        padding: 0.1em 0.4em;
-    }
-
-    /* スライド */
-    .slideMode-Dashboard {
-        background: linear-gradient(#778f657d, #5ba72033);
-    }
-
-    /* 引用 */
-    .co-Item_text,
-    .it-MdContent blockquote {
-        border-color: #8e9700;
-        color: #f7f7f7;
-        background-color: #586f6199;
-    }
-
-    qiita-embed-ogp #shadow-root > div,
+  qiita-embed-ogp #shadow-root > div,
     /* テーブルカラー */
     .it-MdContent th {
-        background-color: #c1b7b7;
-    }
+    background-color: #c1b7b7;
+  }
 
-    .it-MdContent tr:nth-child(odd) {
-        background-color: #676464;
-    }
+  .it-MdContent tr:nth-child(odd) {
+    background-color: #676464;
+  }
 
-    .co-Item_text .highlight,
+  .co-Item_text .highlight,
     /*   コード内背景   */
     .it-MdContent .highlight {
-        background-color: #363839a1;
-        color: #e3e3e3;
-    }
+    background-color: #363839a1;
+    color: #e3e3e3;
+  }
 
-    .co-Item_text .code-frame,
-    .it-MdContent .code-frame {
-        background-color: #36383900;
-    }
+  .co-Item_text .code-frame,
+  .it-MdContent .code-frame {
+    background-color: #36383900;
+  }
+
+  /* ------------------------------------------------------------------- */
+  /*   記事のストック時のオーバーレイ   */
+  /* ------------------------------------------------------------------- */
+  .css-obxdku {
+    background-color: var(--bg-color);
+  }
+
+  /*   後で読むの文字   */
+  .css-dwc3sl,
+  .css-1gykiw6 {
+    color: var(--char-color);
+  }
+
+  /*   カテゴリーの作成リンク   */
+  .css-1jytrtk {
+    color: var(--anchor-color);
+  }
+
+  /*   保存するボタン */
+  .css-14lpuzf {
+    color: var(--icon-bg-color);
+    border-color: var(--icon-br-color);
+  }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!patches|questions|ja).)+).*(?<!\\.md)$") {
-    /*  Qiita内 編集リクエスト or   */
-    /* ------------------------------------------------------------------- */
-    /* 文字色 */
-    /* ------------------------------------------------------------------- */
+@-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!patches|questions|ja).)+).*(?<!\\.md)$")
+{
+  /*  Qiita内 編集リクエスト or  マイページ  */
+  /* ------------------------------------------------------------------- */
+  /* 文字色 */
+  /* ------------------------------------------------------------------- */
+  .css-5h0j9x,
     .css-j7ysqm,
     .tsr-OrganizationList_tabItem.is-active,
     .tsr-Organization_contribCount,
@@ -434,6 +729,7 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-eebxa,
     .tsa-Content_heading,
     .tsa-MdContent,
+    input,
     body,
     .css-ahbqk3,
     .css-1qbvpe9,
@@ -463,201 +759,297 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .css-1hmn1pl,
     .css-1j37wyh,
     .css-2on3xo,
+    .css-178yh29,
+    .css-kpafit,
+    .css-5etkcj,
     .css-1j37wyh {
-        color: var(--char-color) !important;
-    }
+    color: var(--char-color) !important;
+  }
 
-    /* 薄い白 */
-    .css-jztj9t,
-    .css-1c8uvl2 {
-        color: #d7d7d7;
-    }
+  /* 薄い白 */
+  .css-jztj9t,
+  .css-1c8uvl2 {
+    color: #d7d7d7;
+  }
 
-    .p-tagShow_mainMiddle,
-    .p-tagShow .tsa-Content {
-        background-color: inherit;
-    }
+  .p-tagShow_mainMiddle,
+  .p-tagShow .tsa-Content {
+    background-color: inherit;
+  }
 
+  /*   それぞれの境界線   */
+  .css-1qlva0w,
+  .css-5h0j9x {
+    border-style: solid;
+    border-width: 0.2px;
+  }
 
-    /*  編集ページのタグの色    */
-    .css-84k02h .textoverlay span {
-        background-color: #a2cec499 !important;
-    }
+  /*  編集ページのタグの色    */
+  .css-84k02h .textoverlay span {
+    background-color: #a2cec499 !important;
+  }
 
-    .css-kav51v .textoverlay span {
+  .css-kav51v .textoverlay span {
+    background-color: rgb(104 111 0) !important;
+  }
 
-        background-color: rgb(104 111 0) !important;
-    }
+  .css-5h0j9x,
+  .css-5etkcj,
+  .css-lrv4n2,
+  .css-93uq2k,
+  #ArticleEditorPage-react-component-70a1765b-debb-496c-bd14-2f3359dcss-1f36es4dc254
+    > div
+    > div.css-8atqhb.e1l6jxqq0
+    > div
+    > div.css-7wgncr,
+  .css-j7ysqm,
+  .css-1qlva0w,
+  .css-kav51v,
+  .css-1j00d1a,
+  .css-2on3xo,
+  .css-7wgncr,
+  .p-tagShow .tsr-OrganizationList,
+  .p-tagShow .tsr-UserList,
+  .css-1oaoxet,
+  .css-1oi7jw6,
+  .p-tagShow_mainTop,
+  .css-10v1rem,
+  .css-1cw2pgk,
+  .css-1we24g0,
+  .css-1oqt9jb,
+  .css-uz6o8x,
+  .css-1gqmtui,
+  .css-14r34si {
+    background-color: var(--bg-color);
+  }
 
-    .css-93uq2k,
-    #ArticleEditorPage-react-component-70a1765b-debb-496c-bd14-2f3359ddc254 > div > div.css-8atqhb.e1l6jxqq0 > div > div.css-7wgncr,
-    .css-j7ysqm,
-    #ArticleEditorPage-react-component-70a1765b-debb-496c-bd14-2f3359ddc254 > div > div.css-8atqhb.e1l6jxqq0 > div > div.css-1j00d1a > div.css-93uq2k,
-    .css-1f36es4,
-    .css-1qlva0w,
-    .css-kav51v,
-    .css-1j00d1a,
-    .css-2on3xo,
-    .css-puhmrl,
-    .css-7wgncr,
-    .p-tagShow .tsr-OrganizationList,
-    .p-tagShow .tsr-UserList,
-    .css-1oaoxet,
-    .css-1oi7jw6,
-    .p-tagShow_mainTop,
-    .css-10v1rem,
-    .css-1cw2pgk,
-    .css-1we24g0,
-    .css-1oqt9jb,
-    .css-uz6o8x,
-    .css-14r34si {
-        background-color: #50505099;
-    }
+  .css-x2287s,
+  .css-1f36es4,
+  .css-puhmrl,
+  .css-avadu4,
+  .css-1j00d1a {
+    background-color: inherit;
+  }
 
-    .css-1kpes75 {
-        background: none;
-    }
+  .css-1kpes75 {
+    background: none;
+  }
 
-    .css-81mxb5 {
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.71);
-        padding: 16px;
-    }
+  .css-81mxb5 {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.71);
+    padding: 16px;
+  }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/drafts.*") {
-    /*   Qiita記事編集ページ   */
-    /* ------------------------------------------------------------------- */
-    /* 文字色 */
-    /* ------------------------------------------------------------------- */
-    .css-btzqj0,
-    .css-1512sq3,
-    .css-3g2l7q span,
-    .css-1rbyfv8,
-    .css-10fmwne,
-    .css-mmklm6,
-    .css-3mbgw8,
-    .css-w26z1l,
-    input,
-    .css-1l1d2dq,
-    .css-4x6uk2,
-    .css-r2e1s7,
-    .css-1iu5ybx,
-    .it-MdContent {
-        color: var(--char-color)!important;
-    }
+@-moz-document regexp("^https?://(www\\.)*qiita.com/drafts.*")
+{
+  /*   Qiita記事編集ページ   */
+  /* ------------------------------------------------------------------- */
+  /* 文字色 */
+  /* ------------------------------------------------------------------- */
+  .css-1kct6fg,
+  .css-avadu4,
+  .st-Header_searchInput,
+  .css-btzqj0,
+  .css-1512sq3,
+  .css-3g2l7q span,
+  .css-1rbyfv8,
+  .css-10fmwne,
+  .css-mmklm6,
+  .css-3mbgw8,
+  .css-w26z1l,
+  .css-1b7d99,
+  .css-1l1d2dq,
+  .css-4x6uk2,
+  .css-r2e1s7,
+  .css-1iu5ybx,
+  .it-MdContent {
+    color: var(--char-color) !important;
+  }
 
-    .css-10raq17:hover,
-    .css-mxdort:hover,
-    .css-4x6uk2:hover,
-    .css-1l1d2dq:hover {
-        background-color: var(--hover-bg-color)
-    }
+  .css-bsp10c,
+  input,
+  .css-umnzf5,
+  .css-1flxy3t,
+  .css-1r0wl4y {
+    background-color: inherit;
+    border: inherit;
+  }
 
-    .css-bsp10c,
-    input,
-    .css-umnzf5,
-    .css-1flxy3t,
-    .css-1r0wl4y {
-        background-color: inherit;
-        border: inherit;
-    }
+  .it-MdContent blockquote {
+    color: #c3c3c3;
+  }
 
-    .it-MdContent blockquote {
-        color: #c3c3c3;
-    }
+  .css-1eky01,
+  .css-1w5atnk,
+  .css-10raq17,
+  .css-mxdort,
+  .css-s2u1gg,
+  .css-1qa0ke5,
+  .css-13otb0q,
+  .css-iafcpv,
+  .st-RenewalHeader_searchInput,
+  .css-1l1d2dq,
+  .css-4x6uk2,
+  .css-r2e1s7,
+  .css-1iu5ybx,
+  .css-c498su,
+  .css-84k02h {
+    background-color: var(--bg-color);
+  }
 
-    .css-dsewbi,
-    .css-10raq17,
-    .css-mxdort,
-    .css-s2u1gg,
-    .css-1qa0ke5,
-    .css-13otb0q,
-    .css-iafcpv,
-    .st-RenewalHeader_searchInput,
-    .css-1l1d2dq,
-    .css-4x6uk2,
-    .css-r2e1s7,
-    .css-1iu5ybx,
-    .css-c498su,
-    .css-84k02h {
-        background-color: var(--bg-color)
-    }
+  /*   変更履歴メッセージ欄   */
+  .css-dsewbi {
+    background-color: #5050506e;
+  }
 
-    .css-19f8k5z {
-        background-color: #5050504f;
-    }
+  .css-dsewbi:focus {
+    border-color: rgb(159, 159, 159);
+  }
+
+  /*  本文・「良い記事をかくには」リンク */
+  .css-2on3xo,
+  .css-1kct6fg {
+    background-color: var(--hover-bg-color);
+  }
+
+  .css-19f8k5z {
+    background-color: #5050504f;
+  }
+
+  .css-1kct6fg:hover,
+  .css-1eky01:hover,
+  .css-1w5atnk:hover,
+  .css-2on3xo:hover,
+  .css-10raq17:hover,
+  .css-mxdort:hover,
+  .css-4x6uk2:hover,
+  .css-1l1d2dq:hover {
+    background-color: var(--icon-bg-color);
+  }
+
+  /*   投稿済みボタン   */
+  .css-okymd3 a {
+    color: var(--anchor-color);
+  }
+
+  .css-okymd3 {
+    border-color: var(--hover-bg-color);
+  }
+
+  /*   下書きボタン   */
+  .css-5pysr6,
+  .css-8voofm {
+    background-color: var(--hover-bg-color);
+    border-color: var(--icon-br-color);
+    border-style: none;
+  }
+
+  .css-5pysr6:hover,
+  .css-8voofm:hover {
+    background-color: var(--icon-bg-color);
+    border-color: var(--icon-br-color);
+    border-style: none;
+  }
+
+  /*  下書きボタンタブ */
+  .css-1ig3ggr {
+    background-color: var(--icon-bg-color);
+  }
+
+  .css-1ig3ggr a:link,
+  .css-1ig3ggr a:hover,
+  .css-1ig3ggr a:active,
+  .css-1ig3ggr a:visited {
+    color: var(--char-color);
+    text-decoration: none;
+  }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/(?:search|settings).*") {
-    /*   Qiita設定ページ or サーチページ   */
-    /* ------------------------------------------------------------------- */
-    /* 文字色 */
-    /* ------------------------------------------------------------------- */
-    .st-Form_groupText,
-    .st-Form_text,
-    body,
-    p,
-    div,
-    .p-settings_userName,
-    .p-settings,
-    .p-settings_menuItem {
-        color: var(--char-color) !important;
-    }
+@-moz-document regexp("^https?://(www\\.)*qiita.com/(?:search|settings).*")
+{
+  /*   Qiita設定ページ or サーチページ   */
+  /* ------------------------------------------------------------------- */
+  /* 文字色 */
+  /* ------------------------------------------------------------------- */
+  .st-Form_groupText,
+  .st-Form_text,
+  body,
+  p,
+  div,
+  .p-settings_userName,
+  .p-settings,
+  .p-settings_menuItem {
+    color: var(--char-color) !important;
+  }
 
-    /*  薄い文字色    */
-    .searchResult em,
-    .us-ListItem_detailTitle {
-        color: #b7b7b7;
-    }
+  /*  薄い文字色    */
+  .searchResult em,
+  .us-ListItem_detailTitle {
+    color: #b7b7b7;
+  }
 
-    /*   全リンクの色   */
-    .searchResult a em {
-        /*         color: #00b8ff; */
-        color: var(--anchor-color);
-    }
+  /*   全リンクの色   */
+  .searchResult a em {
+    /*         color: #00b8ff; */
+    color: var(--anchor-color);
+  }
 
-    a {
-        /*         color: #00ffe6 !important; */
-        color: var(--anchor-color) !important;
-    }
+  a {
+    /*         color: #00ffe6 !important; */
+    color: var(--anchor-color) !important;
+  }
 
-    .searchResultContainer_sortButton {
-        background-color: #fff0;
-    }
+  .searchResultContainer_sortButton {
+    background-color: #fff0;
+  }
 
-    /* ------------------------------------------------------------------- */
-    /* サイト背景 */
-    /* ------------------------------------------------------------------- */
-    body {
-        background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
+  .form-control {
+    color: var(--char-color);
+    background-color: inherit;
+  }
 
-    .us-OAuth_button,
-    .st-Form_submit-mono {
-        background-color: inherit;
-    }
+  /*   検索オプションの説明タグ   */
+  .searchResultContainer_queryExample {
+    background-color: #ffffff21;
+  }
 
+  .searchResultContainer_queryExample:hover {
+    background-color: var(--hover-bg-color);
+  }
 
-    /*  関連順のモーダル    */
-    .dropdown-menu {
-        background-color: #89a909;
-    }
+  /* ------------------------------------------------------------------- */
+  /* サイト背景 */
+  /* ------------------------------------------------------------------- */
+  body {
+    background: url("/*[[custom_wallpaper]]*/") #1c1c1c bottom fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
 
-    .dropdown-menu a {
-        background-color: #89a909;
-        color: #fff !important;
-    }
+  .us-OAuth_button,
+  .st-Form_submit-mono {
+    background-color: inherit;
+  }
 
-    .dropdown-menu > li > a:hover,
-    .dropdown-menu > li > a:focus {
-        background-color: #a0dd10;
-    }
+  /*  関連順のモーダル    */
+  .dropdown-menu {
+    background-color: #89a909;
+  }
 
-    /* search */
-    .pagination > li > a,
+  .dropdown-menu a {
+    background-color: #89a909;
+    color: #fff !important;
+  }
+
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
+    background-color: #a0dd10;
+  }
+
+  /* search */
+  .pagination > li > a,
     .pagination > li > span,
     .nav-tabs > li.active > a,
     .nav-tabs > li.active > a:hover,
@@ -675,88 +1067,93 @@ C7 "屏風"  <<<EOT https://eskipaper.com/images/japanese-wallpaper-6.jpg EOT;
     .st-Alert,
     .p-settings_main,
     .p-settings_menu {
-        background-color: var(--bg-color);
-    }
+    background-color: var(--bg-color);
+  }
 
-    .pagination > .active > a,
-    .pagination > .active > a:hover,
-    .pagination > .active > a:focus,
-    .pagination > .active > span,
-    .pagination > .active > span:hover,
-    .pagination > .active > span:focus,
-    .pagination > .disabled > span,
-    .pagination > .disabled > span:hover,
-    .pagination > .disabled > span:focus,
-    .pagination > .disabled > a,
-    .pagination > .disabled > a:hover,
-    .pagination > .disabled > a:focus {
-        background-color: var(--hover-bg-color);
-        border-color: #ddd0;
-    }
+  .pagination > .active > a,
+  .pagination > .active > a:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span,
+  .pagination > .active > span:hover,
+  .pagination > .active > span:focus,
+  .pagination > .disabled > span,
+  .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus,
+  .pagination > .disabled > a,
+  .pagination > .disabled > a:hover,
+  .pagination > .disabled > a:focus {
+    background-color: var(--hover-bg-color);
+    border-color: #ddd0;
+  }
 
-    .pagination > li > a:hover,
-    .pagination > li > a:focus,
-    .pagination > li > span:hover,
-    .pagination > li > span:focus {
-        background-color: var(--hover-bg-color);
-        border-color: #ddd0;
-    }
+  .pagination > li > a:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:hover,
+  .pagination > li > span:focus {
+    background-color: var(--hover-bg-color);
+    border-color: #ddd0;
+  }
 
-    .nav-tabs > li > a:hover,
-    .st-Form_submit-mono:hover,
-    .us-OAuth_button:hover {
-        background-color: var(--hover-bg-color);
-    }
+  .nav-tabs > li > a:hover,
+  .st-Form_submit-mono:hover,
+  .us-OAuth_button:hover {
+    background-color: var(--hover-bg-color);
+  }
+
+  /*   検索アイコン   */
+  .searchResultContainer_searchButton {
+    background-color: var(--icon-bg-color);
+    color: var(--char-color);
+  }
 }
 
-@-moz-document regexp("^https?://(www\\.)*qiita.com/.*(?:patches|questions|revisions|likers).*") {
-    /* 編集リクエスト、LTGM押した全ユーザー一覧ページ     */
-    /*  文字色    */
-    .panel-default > .panel-heading,
-    .tableList,
-    .tableList-bordered,
-    body {
-        color: var(--char-color);
-    }
+@-moz-document regexp("^https?://(www\\.)*qiita.com/.*(?:patches|questions|revisions|likers).*")
+{
+  /* 編集リクエスト、LTGM押した全ユーザー一覧ページ     */
+  /*  文字色    */
+  .panel-default > .panel-heading,
+  .tableList,
+  .tableList-bordered,
+  body {
+    color: var(--char-color);
+  }
 
-    .tableList,
-    .tableList-bordered {
-        color: #b2b1b1;
-    }
+  .tableList,
+  .tableList-bordered {
+    color: #b2b1b1;
+  }
 
-    html,
-    body,
-    #globalFooter,
-    #main {
-        background: url("/*[[custom_wallpaper]]*/") #1C1C1C bottom fixed !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
+  html,
+  body,
+  #globalFooter,
+  #main {
+    background: url("/*[[custom_wallpaper]]*/") #1c1c1c bottom fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
 
+  .panel-default > .panel-heading,
+  .panel {
+    background-color: #fff0;
+  }
 
-    .panel-default > .panel-heading,
-    .panel {
-        background-color: #fff0;
-    }
+  .pagination > li > a,
+  .pagination > li > span,
+  .breadcrumb,
+  .row {
+    background-color: var(--bg-color);
+  }
 
-    .pagination > li > a,
-    .pagination > li > span,
-    .breadcrumb,
-    .row {
-        background-color: var(--bg-color);
-    }
+  .pagination > li > a:hover,
+  .pagination > li > span:hover {
+    background-color: #627f45;
+  }
 
-    .pagination > li > a:hover,
-    .pagination > li > span:hover {
-        background-color: #627f45;
-    }
+  a {
+    color: var(--anchor-color) !important;
+  }
 
-
-    a {
-        color: var(--anchor-color) !important;
-    }
-
-    a:hover {
-        color: var(--anchor-hover-color) !important;
-    }
+  a:hover {
+    color: var(--anchor-hover-color) !important;
+  }
 }
