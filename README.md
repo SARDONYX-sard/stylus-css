@@ -1,25 +1,61 @@
-# Stylus CSS
+# Qiita 和風スタイル
 
 ## Table of Contents
 
 <!-- TOC depthFrom:2 -->
 
-- [Stylus CSS](#stylus-css)
+- [Qiita 和風スタイル](#qiita-和風スタイル)
   - [Table of Contents](#table-of-contents)
-  - [Currently implemented](#currently-implemented)
-  - [License](#license)
+  - [注意](#注意)
+  - [当CSSテーマの指針](#当cssテーマの指針)
+  - [完成部分](#完成部分)
+  - [未完部分](#未完部分)
+  - [その他](#その他)
+  - [ライセンス](#ライセンス)
 
 <!-- /TOC -->
 
-## Currently implemented
+## 注意
 
-* [Custom CSS for Qiita(for JP)](https://github.com/SARDONYX-sard/stylus-css/blob/main/src/qiita.css)
+- Qiitaではwebpackを使ったCSS Modules化によりCSSクラス名のhash化がなされています。これはQiita公式がサイト修正などの更新を行うと値が変化します。
+  そのため、当CSSのカスタマイズ方法のように厳密なハッシュ指定を使ったデザイン改変は公式の気まぐれな変更に非常に弱いです。(サイト運営の立場から考えるとCSSクラス名のハッシュ化は非常に有用ですが。)
+  あなたがこのCSSスタイルをお使いの頃にはすでにいくつかのデザインが崩壊しているかもしれません。その点をご容赦頂ければ幸いです。
 
+例： css_123 → Qiitaがサイトのデザイン更新を実施 → css_1234 (クラス名が変わってしまったため、指定した独自デザインが崩壊)
 
-* [niconico](https://github.com/SARDONYX-sard/stylus-css/blob/main/src/niconico.css)
+## 当CSSテーマの指針
 
-## License
+- 和を連想させるデザイン
+- 任意の背景が見えるように記事コンテンツ背景のほとんどを透過させる
+- 和を基調としてはいるものの、ユーザーにそのデザインを押し付けてはならない。(カスタマイズオプションを設ける)
 
-The library is available as open source under the terms of the [WTFPL License](http://www.wtfpl.net/faq/).
+## 完成部分
 
-Copyright 2021 SARDONYX. All rights reserved.
+- Qiita 個々の記事
+
+- Qiita マイページ
+
+- Qiita serachページ
+
+- Qiita draftsページ
+
+- Qiita settingsページ
+
+- Qiita ストック記事
+
+- Qiita 編集リクエストページ
+
+## 未完部分
+
+- 上記以外のその他(や質問ページ、「良い記事を書くためには」リンク)
+
+## その他
+
+- このテーマの問題についての報告は[こちら](https://github.com/SARDONYX-sard/stylus-css/issues/new)
+
+- ソースコードは[こちら](https://github.com/SARDONYX-sard/stylus-css/blob/main/src/qiita.css)
+
+## ライセンス
+
+- DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+  (改変、複製、何でもご自由にどうぞなライセンス)
