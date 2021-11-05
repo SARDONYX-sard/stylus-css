@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        2.0.0
+@version        2.0.1
 @description    Qiita用の和風イメージスタイル - 2021/10/20 updated
 @author         SARDONYX
 
@@ -392,6 +392,8 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     .p-home .ra-TagList,
     /* 記事内背景 */
     .slideMode-Viewer,
+    .css-13dx3yv,
+    .css-1t6umzq,
     .css-s3gw6j,
     .css-19lfbe3,
     .css-helsa7 {
@@ -457,6 +459,7 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
   /* ------------------------------------------------------------------- */
   /*   記事についてのコメント欄   */
   /* ------------------------------------------------------------------- */
+  .css-1iymp9t,
   .css-hssvyv,
   .css-15gjckr,
   .css-bc6lwv,
@@ -557,6 +560,11 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
 
   .st-Footer_column > a {
     color: #ffffffe6;
+  }
+
+  /*   広告   */
+  .it-Ads_afterBodyContainer {
+    display: none;
   }
 }
 
@@ -714,11 +722,16 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
 
 @-moz-document regexp("^https?://(www\\.)*qiita.com/((?:(?!patches|questions|ja).)+).*(?<!\\.md)$")
 {
-  /*  Qiita内 編集リクエスト or  マイページ  */
+  /*  Qiita内 編集リクエスト or  マイページ or タグページ  */
   /* ------------------------------------------------------------------- */
   /* 文字色 */
   /* ------------------------------------------------------------------- */
-  .css-5h0j9x,
+  .css-zza1n4,
+    .css-lk7pct,
+    .css-1hmizb3,
+    .css-ygmo9w,
+    .css-lnh1ql,
+    .css-5h0j9x,
     .css-j7ysqm,
     .tsr-OrganizationList_tabItem.is-active,
     .tsr-Organization_contribCount,
@@ -793,6 +806,8 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     background-color: rgb(104 111 0) !important;
   }
 
+  .css-zza1n4,
+  .css-pyp3is,
   .css-5h0j9x,
   .css-5etkcj,
   .css-lrv4n2,
