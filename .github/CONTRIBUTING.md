@@ -1,34 +1,32 @@
-# Contributing Guidelines
+# 貢献についての指針
 
-> This is adapted from [next-typed-routes's contributing guidelines](https://github.com/jagaapple/next-typed-routes/blob/master/.github/CONTRIBUTING.md).
+> これは次のリンクの引用です。
+> [next-typed-routes's contributing
+> guidelines](https://github.com/jagaapple/next-typed-routes/blob/master/.github/CONTRIBUTING.md)
 
-## Language
+## Gitブランチフロー
 
-Git branch names and commit messages, and GitHub pull request should be written in English in order to be readable for
-developers around the world.
-
-## Git branch flow
-
-We adhere GitHub Flow to develop this project. Anything in the `main` branch is deployable. To work on something new, create
-a descriptively named branch off of master, also add a prefix `feature/` to its name.
-A branch name should be started with verb and the most terse and lucid possible.
+このプロジェクトの開発には、GitHub Flow を採用しています。`main`ブランチにあるものはすべてデプロイ可能です。
+何か新しいことに取り組むにはブランチを作成し、その名前にはプレフィックスとして`feature/` を追加します。
+ブランチ名は動詞で始まり、できるだけ簡潔でわかりやすいものにします。
 
 ```bash
-# Example
+# 例
 feature/implement-xxx
 feature/support-xxx-for-xxx
 feature/fix-xxx-bugs
 ```
 
-For more details, see [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html).
+For more details, see
+[GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html).
 
-## Git commit messages convention
+## Gitコミットメッセージ規約
 
-Follow the following format for Git commit messages.
+Gitのコミットメッセージは、以下のフォーマットにしたがってください。
 
 ```bash
 # Format
-[<COMMIT_TYPE>] <SUMMARY>
+<COMMIT_TYPE>: <SUMMARY>
 
 - <DESCRIPTION>
 - <DESCRIPTION>
@@ -37,17 +35,17 @@ Follow the following format for Git commit messages.
 
 ### `<COMMIT_TYPE>`
 
-One commit should have only one purpose, so you should add the following commit type to beginning of line 1 of the commit message.
+1つのコミットの目的は1つだけで、コミットメッセージの1行目の先頭に以下のようなコミットタイプを追加します。 メッセージを追加します。
 
-| TYPE     | USE CASE                                                  | COMMENTS                                                                      |
-| :------- | :-------------------------------------------------------- | :---------------------------------------------------------------------------- |
-| `Add`    | Implement functions/Add files/Support new platform        |                                                                               |
-| `Change` | Change current spec                                       | Use this type when breaking changes are happened, otherwise DO NOT use.       |
-| `Fix`    | Fix bugs                                                  | Use this type when fix bugs, otherwise DO NOT use.                            |
-| `Modify` | Modify wording                                            | Use this type when breaking changes are not happened and fix other than bugs. |
-| `Clean`  | Refactor some codes/Rename classes, methods, or variables |                                                                               |
-| `Remove` | Remove unneeded files or libraries                        |                                                                               |
-| `Update` | Update dependencies or this project version               |                                                                               |
+| TYPE     | USE CASE                                  | COMMENTS                               |
+| :------- | :---------------------------------------- | -------------------------------------- |
+| `Add`    | 機能の実装/ファイルの追加/新しいプラットフォームのサポート            |                                        |
+| `Change` | 現在の仕様を変更する                                | 破壊的変更があった場合にこのタイプを使用し、それ以外は使用しないでください。 |
+| `Fix`    | バグフィックス                                   | バグを修正するときにこのタイプを使用してください。              |
+| `Modify` | 文言の修正                                     | 破壊的変更がなく、バグ以外の修正を行う場合にこのタイプを使用してください。  |
+| `Clean`  | いくつかのコードをリファクタリングする/クラス、メソッド、または変数をリネームする |                                        |
+| `Remove` | 必要のないファイルやライブラリを削除します。                    |                                        |
+| `Update` | 依存関係やこのプロジェクトのバージョンを更新します。                |                                        |
 
 ```bash
 # Example
@@ -64,8 +62,8 @@ Add Implement sign up system
 
 ### `<SUMMARY>`
 
-`<SUMMARY>` is a sumamry of changes, do not exceed 50 characters including a commit type. Do not include period `.` because a summary should be expressed one sentence.
-Also start with lower case.
+`<SUMMARY>`（概要）は変更点をまとめたもので、コミットタイプを含めて50文字以内とします。ピリオド `.` は含まないでください。
+また、小文字で始めます。
 
 ```bash
 # Example
@@ -79,8 +77,8 @@ Also start with lower case.
 
 ### `<DESCRIPTION>` (Optional)
 
-`<DESCRIPTION>` is a description what was changed in the commit. Start with upper case and write one description line by line,
-also do not include period `.` .
+`<DESCRIPTION>` は、そのコミットで変更された内容の説明です。大文字から始めて、1行ずつ記述します。 また、ピリオド `.`
+は含めないでください。
 
 ```bash
 # Example
