@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
-@namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        2.0.1
-@description    Qiita用の和風イメージスタイル - 2021/11/06 updated
+@namespace  https://github.com/SARDONYX-sard/stylus-css
+@version        2.1.1
+@description  Qiita用の和風イメージスタイル - 2021/11/22 updated
 @author         SARDONYX
-
+@license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
 
 @advanced dropdown Atom-One-DarkStyle "Atom-One-Dark(like) Style" {
-Yup "Yes*" <<<EOT
+Yup "Yes*" <<<EOT 
     :root {
         --blue: #4ebbff;
         --aqua: #55d8e4;
@@ -182,6 +182,7 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
         background-color: #53595c;
     }
 
+
     /* ------------------------------------------------------------------- */
     /* 文字 */
     /* ------------------------------------------------------------------- */
@@ -242,6 +243,15 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     .css-bibwyp,
     .css-cikcz {
         color: var(--char-color);
+    }
+
+    /*   フォーカスされているお知らせの色   */
+    .css-1ckzadk {
+        background-color: var(--hover-bg-color);
+    }
+
+    .css-1ckzadk:hover {
+        background-color: var(--hover-bg-color);
     }
 
 
