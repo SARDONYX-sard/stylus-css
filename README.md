@@ -15,6 +15,8 @@
 
 <!-- /TOC -->
 
+<img src="https://github.com/SARDONYX-sard/stylus-css/blob/main/src/images/qiita-preview-alpha.webp" alt="qiita-image">
+
 ## 注意
 
 - Qiitaではwebpackを使ったCSS Modules化によりCSSクラス名のhash化がなされています。これはQiita公式がサイト修正などの更新を行うと値が変化します。
