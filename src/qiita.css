@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Qiita 和風スタイル
 @namespace  https://github.com/SARDONYX-sard/stylus-css
-@version        2.1.1
-@description  Qiita用の和風イメージスタイル - 2021/11/22 updated
+@version        2.1.2
+@description  Qiita用の和風イメージスタイル - 2021/12/03 updated
 @author         SARDONYX
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
 
 @advanced dropdown Atom-One-DarkStyle "Atom-One-Dark(like) Style" {
-Yup "Yes*" <<<EOT 
+Yup "Yes*" <<<EOT
     :root {
         --blue: #4ebbff;
         --aqua: #55d8e4;
@@ -194,6 +194,7 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     body,
     a,
     input,
+
     .st-Header_searchInput,
     .it-MdContent code,
     .co-Item_text,
@@ -241,6 +242,8 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     .an-Item_body > div > p,
     #HomeSidebar-react-component-e589ad8c-1b63-47c2-8237-51439d030fa7 > div.an-Item.p-2 > div.an-Item_title > p,
     .css-bibwyp,
+    .css-u4p4ut/* 記事をフォローするボタン*/
+    ,
     .css-cikcz {
         color: var(--char-color);
     }
@@ -250,6 +253,8 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
         background-color: var(--hover-bg-color);
     }
 
+    .css-u4p4ut:hover/* 記事をフォローするボタン*/
+    ,
     .css-1ckzadk:hover {
         background-color: var(--hover-bg-color);
     }
@@ -406,6 +411,10 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
         background-color: #adb90cdb;
     }
 
+    /* タグの左上 */
+    .css-szzh0t,
+    .css-u4p4ut/* 記事をフォローするボタン*/
+    ,
     .p-home .qzf-ItemList,
     .p-home .ra-UserList,
     .p-home_main,
@@ -621,6 +630,7 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     .css-helsa7 > p,
     .css-helsa7 > div,
     .css-helsa7 > span,
+    .css-wwf5qc,
     .css-10ougpm,
     .css-18ojhlm,
     .css-9bpbdu,
@@ -685,6 +695,11 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
         background-color: #aaa9a96e;
         color: #fff;
         padding: 0.1em 0.4em;
+    }
+
+    .it-MdContent .note.info {
+        background: var(--header-color);
+        /*         background: #e5f8e21f; */
     }
 
     /* スライド */
@@ -920,6 +935,10 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
         color: #c3c3c3;
     }
 
+    /*   下書き一覧   */
+    .css-1o4b40i,
+    .css-7aqcuw,
+
     .css-1eky01,
     .css-1w5atnk,
     .css-10raq17,
@@ -956,6 +975,10 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
     .css-19f8k5z {
         background-color: #5050504f;
     }
+
+    /*   下書き一覧選択部分   */
+    .css-1o4b40i:hover,
+    .css-7aqcuw:hover,
 
     .css-1kct6fg:hover,
     .css-1eky01:hover,
