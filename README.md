@@ -1,5 +1,7 @@
 # Qiita 和風スタイル
 
+<img src="https://github.com/SARDONYX-sard/stylus-css/blob/main/src/images/qiita-preview-alpha.webp" alt="qiita-image">
+
 ## Table of Contents
 
 <!-- TOC depthFrom:2 -->
@@ -14,8 +16,6 @@
   - [ライセンス](#ライセンス)
 
 <!-- /TOC -->
-
-<img src="https://github.com/SARDONYX-sard/stylus-css/blob/main/src/images/qiita-preview-alpha.webp" alt="qiita-image">
 
 ## 注意
 
