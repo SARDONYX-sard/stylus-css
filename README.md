@@ -61,3 +61,7 @@
 
 - DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
   (改変、複製、何でもご自由にどうぞなライセンス)
+
+## How to write document
+
+- https://github.com/openstyles/stylus/wiki/Writing-UserCSS#var
