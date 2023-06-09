@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita transparency
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        0.1.0
+@version        0.1.1
 @author         SARDONYX
 @description    Qiitaの記事ページの背景を透過させ、任意の画像を差し込む。
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
@@ -9,46 +9,65 @@
 @preprocessor   stylus
 
 @var checkbox darkModeScrollbar "ダークモード スクロールバー" 1
-@var checkbox oneDarkEnable "OneDark(Syntax Highlight)" 1
-@var color charColor "文字色(RGBA)" rgba(255, 255, 255, 0.8)
-@var color bgColor "背景色" #2222229c
-@var color hoverBgColor "目次の色: (hover&focus)" #5a6e4aab
-@var text fontsCustom "フォント" "Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif"
+@var checkbox oneDarkEnable "OneDark: (Syntax Highlight)" 1
+@var select fontsCustom "フォント" {
+  "明朝":  "Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif",
+  "デフォルト":  '"YakuHanJPs","-apple-system","BlinkMacSystemFont","Segoe UI","Hiragino Sans", "Hiragino Kaku Gothic ProN","Meiryo",sans-serif',
+}
 
-@var select bgImg "背景" {
-  "Safari": "url('https://cdn.wallpapersafari.com/63/66/bEVak3.jpg')", 
-  "fantasy": "url('https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg')", 
-  "塔": "url('https://images2.alphacoders.com/113/thumb-1920-1131058.jpg')", 
+@var color charMediumColor "文字色: (Midium)" #eaeaeacc
+@var color charHighColor "文字色: (High)" #d9d1d1
+@var color linkColor "文字色: (link)" #9cca8dcc
+@var color visitedColor "文字色: (visited)" #5c7555cc
+@var color hoverBgColor "目次の色: (hover&focus)" #5a6e4aab
+@var color bgColor "背景色: (記事)" #2222229c
+
+@var select bgSize "背景サイズ" {
+  "auto*": "auto",
+  "contain": "contain",
+  "cover": "cover",
+  "initial": "initial",
+  "inherit": "inherit",
+  "revert": "revert",
+  "unset": "unset",
+}
+@var select bgImg "背景画像" {
+  "Safari": "url('https://cdn.wallpapersafari.com/63/66/bEVak3.jpg')",
+  "fantasy": "url('https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg')",
+  "塔": "url('https://images2.alphacoders.com/113/thumb-1920-1131058.jpg')",
   "手水舎": "url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg')",
   "桜": "url('https://images5.alphacoders.com/110/thumb-1920-1105001.jpg')",
-  "猫と蝶": "url('https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg')", 
-  "紅葉": "url('https://cdn.wallpapersafari.com/72/79/4uV7vy.jpg')",
+  "猫と蝶": "url('https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg')",
+  "紅葉": "url('https://rare-gallery.com/uploads/posts/4599520-dark-red-nature-forest-trees-red-leaves-mist-fall-landscape-leaves-plants-fallen-leaves.jpg')",
   "都会": "url('https://wallpaperaccess.com/full/1265.jpg')",
 }
-@var checkbox customBgImgEnabled "カスタム背景を使用" 0
+@var checkbox customBgImgEnabled "カスタム背景URLの有効化" 0
 @var text customBgImgUrl "カスタム背景('でURLを囲む)" "'https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg'"
 ==/UserStyle== */
 @-moz-document domain("qiita.com") {
     :root {
+        --bg-size: bgSize;
         --fonts: fontsCustom;
-
-        /* サイト内の既存のCSS変数を上書き */
-        --anchor-hover-color: anchorHoverColor;
-        --icon-bg-color: iconBgColor;
-        --color-background: bgColor;
-        --color-surface: hoverBgColor;
-        --color-surface-variant: hoverBgColor;
-        --color-text-disabled: rgb(255 255 255 * 38%);
-        --color-text-high-emphasis: charColor;
-        --color-text-medium-emphasis: charColor;
-        --color-divider: rgb(0 0 0 / 12%);
-        --color-scrim: rgb(0 0 0 / 32%);
+        --visited-color: visitedColor;
         if customBgImgEnabled {
             --wallpaper-url: convert("url(" + customBgImgUrl + ")");
         }
+
         else {
             --wallpaper-url: bgImg;
         }
+
+        /* サイト内の既存のCSS変数を上書き */
+        --anchor-hover-color: anchorHoverColor;
+        --color-background: bgColor;
+        --color-divider: rgb(0 0 0 / 12%);
+        --color-green-90: linkColor;
+        --color-scrim: rgb(0 0 0 / 32%);
+        --color-surface-variant: hoverBgColor;
+        --color-surface: hoverBgColor;
+        --color-text-disabled: charDisabledColor;
+        --color-text-high-emphasis: charHighColor;
+        --color-text-medium-emphasis: charMediumColor;
     }
 
     html {
@@ -57,7 +76,7 @@
         background-image: var(--wallpaper-url);
         background-position: bottom;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: var(--bg-size);
     }
 
     body {
@@ -72,8 +91,8 @@
         background-color: transparent;
     }
 
-    a {
-        color: auto;
+    .it-MdContent a:visited {
+        color: var(--visited-color);
     }
 
     /* 透過した背景の一部を上書きしていく */
@@ -85,6 +104,7 @@
     .p-items_main > * {
         background-color: var(--color-background);
     }
+
     main {
         background-color: var(--color-background) !important;
     }
@@ -95,9 +115,11 @@
             background-color: #262a2b;
             color: #cdc5b8;
         }
+
         ::-webkit-scrollbar-corner {
             background-color: #1d1f20;
         }
+
         ::-webkit-scrollbar-thumb {
             background-color: #53595c;
         }
@@ -105,11 +127,12 @@
 
     if oneDarkEnable {
         .it-MdContent {
-            --blue: #4ebbff;
             --aqua: #55d8e4;
+            --blue: #4ebbff;
             --orange: #e6a260;
             --violet: #be77ea;
             --white: #e3e3e3;
+            --yellow: #f9e53f;
         }
 
         .it-MdContent .highlight .se,
@@ -189,5 +212,9 @@
         .it-MdContent .highlight .ow {
             color: #f77;
         }
+
+        /* .it-MdContent .highlight .p{
+            color: var(--yellow);
+        } */
     }
 }
