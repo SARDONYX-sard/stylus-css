@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.1
+@version        0.0.2
 @description    A new userstyle
 @author         SARDONYX
 @license        CC0
@@ -9,7 +9,7 @@
 @advanced color color-accent-fg "Acent Color" #53b1f4
 @advanced color color-border "Border Color" #fff5
 @advanced color bg-subtle-color "Subtle Color" #1a1a1ac2
-@advanced color bg-color "Backgr und Color" #222222b5
+@advanced color bg-color "Background Color" #222222b5
 
 @advanced dropdown custom_wallpaper "Background" {
   C1 "andrew-alexander" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
@@ -70,7 +70,7 @@
         padding-right: 1rem;
         padding-left: 1rem;
     }
-    
+
     #user-repositories-list > ul > li > div {
         margin-left: 1rem;
     }
