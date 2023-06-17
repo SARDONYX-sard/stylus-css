@@ -1,9 +1,10 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.2
+@version        0.0.3
 @description    A new userstyle
 @author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
 @license        CC0
 
 @advanced color color-accent-fg "Acent Color" #53b1f4
@@ -71,6 +72,10 @@
         padding-left: 1rem;
     }
 
+    #user-repositories-list > ul > li {
+        padding-right: 1rem;
+    }
+
     #user-repositories-list > ul > li > div {
         margin-left: 1rem;
     }
@@ -82,6 +87,7 @@
     table,
     footer,
     .BorderGrid,
+    .contribution-activity,
     #repos-sticky-header > div > div,
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div,
     #user-repositories-list > ul > li {
