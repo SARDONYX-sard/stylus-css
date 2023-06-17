@@ -1,0 +1,98 @@
+/* ==UserStyle==
+@name           GitHub transparent
+@namespace      github.com/openstyles/stylus
+@version        0.0.1
+@description    A new userstyle
+@author         SARDONYX
+@license        CC0
+
+@advanced color color-accent-fg "Acent Color" #53b1f4
+@advanced color color-border "Border Color" #fff5
+@advanced color bg-subtle-color "Subtle Color" #1a1a1ac2
+@advanced color bg-color "Backgr und Color" #222222b5
+
+@advanced dropdown custom_wallpaper "Background" {
+  C1 "andrew-alexander" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
+  C2 "bogdan-pasca" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/bogdan-pasca-1467256-unsplash.jpg  EOT;
+  C3 "ren-ran" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/ren-ran-232079-unsplash.jpg EOT;
+  C4 "hoodh-ahmed" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/hoodh-ahmed-1349469-unsplash.jpg EOT;
+  C5 "maria-duda" <<<EOT https://github.com/xiwenc/nature-wallpapers/blob/master/src/maria-duda-1583436-unsplash.jpg?raw=true EOT;
+  custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_wallpaper-custom "URL: (Custom)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
+
+@advanced dropdown custom_bg_size "Bg size" {
+  C1 "auto(Default)*"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+==/UserStyle== */
+@-moz-document domain("github.com") {
+    :root {
+        --bg-size: /*[[custom_bg_size]]*/;
+
+        /* overwrite variables */
+        --color-border-muted: /*[[color-border]]*/
+        !important;
+        --color-accent-fg: /*[[color-accent-fg]]*/
+        !important;
+        --color-canvas-default: /*[[bg-color]]*/
+        !important;
+
+        --color-page-header-bg: /*[[bg-color]]*/
+        !important;
+        --color-header-bg: /*[[bg-subtle-color]]*/
+        !important;
+        --color-canvas-subtle: /*[[bg-subtle-color]]*/
+        !important;
+        --color-canvas-inset: /*[[bg-subtle-color]]*/
+        !important;
+    }
+
+    body {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: var(--bg-size)
+    }
+
+    .color-bg-default {
+        background-color: transparent !important;
+    }
+
+    .BorderGrid-cell {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
+    #user-repositories-list > ul > li > div {
+        margin-left: 1rem;
+    }
+
+    .gist-snippet,
+    .js-profile-editable-replace,
+    nav,
+    th,
+    table,
+    footer,
+    .BorderGrid,
+    #repos-sticky-header > div > div,
+    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div,
+    #user-repositories-list > ul > li {
+        background-color: var(--color-page-header-bg) !important;
+    }
+
+    nav,
+    .gist-snippet,
+    .js-profile-editable-replace,
+    .BorderGrid,
+    #user-repositories-list > ul > li {
+        border-radius: 0.8rem;
+    }
+}
