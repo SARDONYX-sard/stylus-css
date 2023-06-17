@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.3
+@version        0.0.4
 @description    A new userstyle
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -67,19 +67,13 @@
         background-color: transparent !important;
     }
 
+    #user-profile-frame,
     .BorderGrid-cell {
         padding-right: 1rem;
         padding-left: 1rem;
     }
 
-    #user-repositories-list > ul > li {
-        padding-right: 1rem;
-    }
-
-    #user-repositories-list > ul > li > div {
-        margin-left: 1rem;
-    }
-
+    #user-profile-frame,
     .gist-snippet,
     .js-profile-editable-replace,
     nav,
@@ -89,8 +83,7 @@
     .BorderGrid,
     .contribution-activity,
     #repos-sticky-header > div > div,
-    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div,
-    #user-repositories-list > ul > li {
+    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div {
         background-color: var(--color-page-header-bg) !important;
     }
 
@@ -98,7 +91,7 @@
     .gist-snippet,
     .js-profile-editable-replace,
     .BorderGrid,
-    #user-repositories-list > ul > li {
+    #user-profile-frame {
         border-radius: 0.8rem;
     }
 }
