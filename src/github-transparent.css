@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.4
+@version        0.0.5
 @description    A new userstyle
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -33,6 +33,7 @@
 }
 ==/UserStyle== */
 @-moz-document domain("github.com") {
+    /* see: https://github.com/openstyles/stylus/wiki/UserCSS/516f86a0c5d6fb74cc6796120af1edc5a6202a05 */
     :root {
         --bg-size: /*[[custom_bg_size]]*/;
 
@@ -60,7 +61,7 @@
         background-position-y: bottom;
         background-position-x: center;
         background-repeat: no-repeat;
-        background-size: var(--bg-size)
+        background-size: var(--bg-size);
     }
 
     .color-bg-default {
@@ -73,6 +74,8 @@
         padding-left: 1rem;
     }
 
+    #options_bucket,
+    #wiki-content,
     #user-profile-frame,
     .gist-snippet,
     .js-profile-editable-replace,
@@ -81,7 +84,6 @@
     table,
     footer,
     .BorderGrid,
-    .contribution-activity,
     #repos-sticky-header > div > div,
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div {
         background-color: var(--color-page-header-bg) !important;
