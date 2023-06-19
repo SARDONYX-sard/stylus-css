@@ -1,0 +1,68 @@
+/* ==UserStyle==
+@name           VSCode Remote transparent
+@namespace      github.com/openstyles/stylus
+@version        0.0.1
+@description    VSCode Remote transparent
+@author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/vscode-remote-transparent.css
+@license        CC0
+
+@advanced color bg-subpane-color "Pane Color" #1a1a1ae0
+@advanced color bg-color "Background Color" #222222db
+
+@advanced dropdown custom_wallpaper "Background" {
+  C1 "手水舎"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+  C2 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+  C3 "都会"  <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+  C4 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
+  C5 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+  C6 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+  C7 "猫と蝶"  <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+  C8 "桜"  <<<EOT https://images5.alphacoders.com/110/thumb-1920-1105001.jpg EOT;
+  C9 "紅葉"  <<<EOT https://rare-gallery.com/uploads/posts/4599520-dark-red-nature-forest-trees-red-leaves-mist-fall-landscape-leaves-plants-fallen-leaves.jpg EOT;
+  custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_wallpaper-custom "URL: (Custom)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
+
+@advanced dropdown custom_bg_size "Bg size" {
+  C1 "auto(Default)*"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+==/UserStyle== */
+@-moz-document domain("github.dev"),
+domain("vscode.dev") {
+    .monaco-workbench {
+        --bg-size: /*[[custom_bg_size]]*/;
+        --subpane-color: /*[[bg-subpane-color]]*/;
+
+        /* overwrite variables */
+        --vscode-editorGutter-background: /*[[bg-color]]*/
+        !important;
+        --vscode-editor-background: /*[[bg-color]]*/
+        !important;
+    }
+
+    .monaco-pane-view,
+    .monaco-editor {
+        background-color: var(--vscode-editor-background);
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: var(--bg-size);
+    }
+
+    .minimap canvas {
+        opacity: 0.5 !important;
+    }
+
+    .monaco-list-rows {
+        background-color: var(--subpane-color) !important;
+    }
+}
