@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.7
+@version        0.0.8
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -89,6 +89,7 @@
     }
 
     #options_bucket,
+    #repos-file-tree,
     #repos-sticky-header > div > div,
     #repository-container-header,
     #user-profile-frame,
@@ -112,5 +113,19 @@
     .js-profile-editable-replace,
     nav {
         border-radius: 2em;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(actions|pulse|settings).*") {
+    .Layout-main {
+        background-color: var(--color-page-header-bg) !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(wiki).*"),
+regexp("https?://github.com/users/.*projects/.*") {
+    #memex-root,
+    .blankslate.blankslate-spacious {
+        background-color: var(--color-page-header-bg) !important;
     }
 }
