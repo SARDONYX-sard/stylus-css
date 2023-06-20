@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.5
-@description    A new userstyle
+@version        0.0.6
+@description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
 @license        CC0
@@ -32,26 +32,36 @@
   C7 "unset" <<<EOT unset EOT;
 }
 ==/UserStyle== */
+/* see: https://github.com/openstyles/stylus/wiki/UserCSS/516f86a0c5d6fb74cc6796120af1edc5a6202a05 */
 @-moz-document domain("github.com") {
-    /* see: https://github.com/openstyles/stylus/wiki/UserCSS/516f86a0c5d6fb74cc6796120af1edc5a6202a05 */
     :root {
         --bg-size: /*[[custom_bg_size]]*/;
 
         /* overwrite variables */
-        --color-border-muted: /*[[color-border]]*/
-        !important;
         --color-accent-fg: /*[[color-accent-fg]]*/
         !important;
+        --color-border-muted: /*[[color-border]]*/
+        !important;
+
         --color-canvas-default: /*[[bg-color]]*/
         !important;
 
-        --color-page-header-bg: /*[[bg-color]]*/
-        !important;
-        --color-header-bg: /*[[bg-subtle-color]]*/
+        --color-canvas-inset: /*[[bg-subtle-color]]*/
         !important;
         --color-canvas-subtle: /*[[bg-subtle-color]]*/
         !important;
-        --color-canvas-inset: /*[[bg-subtle-color]]*/
+        --color-header-bg: /*[[bg-subtle-color]]*/
+        !important;
+
+        --color-neutral-muted: /*[[bg-color]]*/
+        !important;
+        --color-page-header-bg: /*[[bg-color]]*/
+        !important;
+    }
+
+    /* For logout */
+    header {
+        --color-page-header-bg: /*[[bg-color]]*/
         !important;
     }
 
@@ -74,26 +84,33 @@
         padding-left: 1rem;
     }
 
+    .js-profile-editable-replace {
+        padding: 1rem;
+    }
+
     #options_bucket,
-    #wiki-content,
-    #user-profile-frame,
-    .gist-snippet,
-    .js-profile-editable-replace,
-    nav,
-    th,
-    table,
-    footer,
-    .BorderGrid,
     #repos-sticky-header > div > div,
-    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div {
+    #repository-container-header,
+    #user-profile-frame,
+    #wiki-content,
+    .BorderGrid,
+    .gist-snippet,
+    .js-gist-file-update-container,
+    .js-profile-editable-replace,
+    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(3)/* commit history msg */
+    ,
+    footer,
+    nav,
+    th {
         background-color: var(--color-page-header-bg) !important;
     }
 
-    nav,
-    .gist-snippet,
-    .js-profile-editable-replace,
+    #user-profile-frame,
     .BorderGrid,
-    #user-profile-frame {
-        border-radius: 0.8rem;
+    .gist-snippet,
+    .js-gist-file-update-container,
+    .js-profile-editable-replace,
+    nav {
+        border-radius: 2em;
     }
 }
