@@ -1,18 +1,13 @@
 /* ==UserStyle==
-@name           ニコニコ静画透過
+@name           Google News transparent
 @namespace      github.com/openstyles/stylus
 @version        0.0.1
-@description    Niconico seiga Dark Mode
+@description    Google News transparent.
 @author         SARDONYX
-@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/niconico-seiga.css
 @license        CC0
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/google-news.css
 
-@advanced color custom-char-color "文字の色" #fff
-@advanced color custom-link-color "リンクの色" #00b0c4
-@advanced color custom-link-visited-color "訪問済みリンクの色" #7ad4f4
-@advanced color custom-bg-color "背景色" #3a34349e
-@advanced color custom-toc-comments-color "漫画のコメント一覧背景色" #1c1c1cb3
-
+@advanced color custom-bg-color "背景の色" #22222291
 @advanced dropdown custom_wallpaper "背景" {
 C1 "手水舎(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
 C2 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
@@ -28,7 +23,7 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
 @advanced text custom_wallpaper-custom "背景(カスタム)" "https://cdn.wallpapersafari.com/48/32/YLptDi.jpg"
 
 @advanced dropdown custom_bg_size "背景" {
-  C1 "auto(Default)*"  <<<EOT auto EOT;
+  C1 "auto"  <<<EOT auto EOT;
   C2 "contain"  <<<EOT contain EOT;
   C3 "cover" <<<EOT cover  EOT;
   C4 "initial" <<<EOT initial EOT;
@@ -37,206 +32,27 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
   C7 "unset" <<<EOT unset EOT;
 }
 ==/UserStyle== */
-@-moz-document domain("seiga.nicovideo.jp") {
-    /*ニコニコ静画ホームページ */
-    :root {
-        --char-color: /*[[custom-char-color]]*/;
-        --link-color: /*[[custom-link-color]]*/;
-        --link-visited-color: /*[[custom-link-visited-color]]*/;
-        --bg-color: /*[[custom-bg-color]]*/;
-        --toc-comments-color: /*[[custom-toc-comments-color]]*/;
-    }
-
-    /* ------------------------------------------------------------------- */
-    /* スクロールバー */
-    /* ------------------------------------------------------------------- */
-    ::-webkit-scrollbar {
-        background-color: #262a2b;
-        color: #cdc5b8;
-    }
-
-    ::-webkit-scrollbar {
-        background-color: #262a2b;
-        color: #cdc5b8;
-    }
-
-    ::-webkit-scrollbar-corner {
-        background-color: #1d1f20;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #53595c;
-    }
-
-    /*  ---------------------------------------------------------------------------    */
-    /*   文字色   */
-    /*  ---------------------------------------------------------------------------    */
-    #mg_main_column #mg_secondary #mg_ranking #mg_ranking_inner .rank_manga .rank_list .rank_item .rank_info .rank_user,
-    body,
-    #top_news_box .top_news_block__title a,
-    #top_news_box .top_news_block__item a,
-    #top_news_box .top_news_block__item,
-    #top_nicoad_box .nicoad_block__title h2,
-    #top_news_box .top_news_block__title h2,
-    #top_popular_illust_box .popular_illust_block__item__info,
-    #top_popular_illust_box .popular_illust_block__title h2,
-    #top_popular_manga_box .popular_manga_block__title h2,
-    #top_popular_manga_box .popular_manga_block__item__info--title a,
-    #top_personalize_box--manga .top_personalize_block__header,
-    #top_personalize_box--manga .top_personalize_block__body__item--info-content_title a,
-    #top_personalize_box--manga .top_personalize_block__body__item--info-episode_title a,
-    .im_head_bar .inner .discription,
-    .my-top__section__item,
-    #mg_title_area {
-        color: var(--char-color);
-    }
-
-
-
-    #sg_global_navi_sub li a,
-    #wrapper a {
-        color: var(--link-color);
-    }
-
-    #sg_global_navi_sub li a:visited,
-    #wrapper a:visited {
-        color: var(--link-visited-color);
-    }
-
-    .latest_episode > a {
-        color: #ece624e0 !important;
-    }
-
-    /*  ---------------------------------------------------------------------------    */
-    /*   背景   */
-    /*  ---------------------------------------------------------------------------    */
-    #mg_ranking_table td .mg_ranking_box .mg_ranking_inner {
-        background: #a0787800;
-    }
-
-    #mg_ranking_table {
-        background: #504f4fb5;
-    }
-
-    #mg_main_column #mg_secondary #mg_ranking #mg_ranking_inner .rank_manga .rank_list .rank_item:hover {
-        background-color: var(--bg-color);
-    }
-
-    #top_news_box .top_news_block__itemlist,
-    #top_nicoad_box .nicoad_block__title,
-    #top_news_box .top_news_block__title,
-    #top_popular_illust_box .popular_illust_block__title,
-    #top_popular_manga_box .popular_manga_block__title {
-        background: linear-gradient( 180deg, #fff3 0%, #f5f5f51a 100%);
-        box-shadow: inset 0 -1px 0 #aeaeae;
-    }
-
-    #mg_main_column #mg_secondary #mg_ranking #mg_ranking_inner,
-    #mg_main_column .content_area .content_area_inner,
-    .mg_work_detail,
-    #top_popular_illust_box .popular_illust_block__item,
-    #top_popular_manga_box .popular_manga_block__item,
-    #top_personalize_box--manga .top_personalize_block__body {
-        background-color: var(--bg-color);
-    }
-
-    #wrapper,
-    .watch_bottom,
-    #footer,
-    #detail {
-        background-color: #fff0;
-    }
-
-    #my_main_r {
-        background-color: var(--bg-color);
-    }
-
-    .social_block .share > .blog,
-    #header,
+@-moz-document domain("google.com") {
     body {
-        background-attachment: fixed !important;
-        background-image: url("/*[[custom_wallpaper]]*/") !important;
-        background-repeat: no-repeat !important;
-        background-size: /*[[custom_bg_size]]*/
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/;
+    }
+
+
+    c-wiz[jsmodel] *,
+    .lF2Cpe.dm7YTc .zQTmif,
+    .dm7YTc .zQTmif {
+        background-color: transparent !important;
+    }
+
+    main c-wiz > c-wiz,
+    main c-wiz[jsrenderer],
+    section[data-n-ip="true"] {
+        background-color: /*[[custom-bg-color]]*/
         !important;
-    }
-
-    #top_personalize_box--manga .top_personalize_block,
-    #ko_head_bar_min {
-        background-color: #00000087 !important;
-    }
-
-    .content_list > .after_player > .episode_navigation > .episodes > a,
-    .related_info .manga_info dl dd.user_box .user_message,
-    .box,
-    .after_player,
-    .watch_head_bar .inner .manga_info {
-        background-color: var(--bg-color) !important;
-        background-image: -webkit-linear-gradient(#1d1d1d00, #1d1d1d00) !important;
-    }
-
-    .social_block .share,
-    .tag {
-        background: #312f2f;
-    }
-
-    .controls .inner,
-    .controls .inner .spread_hide .comment_list {
-        background: var(--toc-comments-color) bottom fixed !important;
-        color: #000000 !important;
-    }
-
-    .controls .inner .spread_hide .comment_list .comment_list_item {
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #7e8398;
-    }
-
-    #sg_global_navi li .active,
-    .btn.normal,
-    a.btn.normal,
-    button.btn.normal {
-        color: #343333 !important;
-    }
-}
-
-@-moz-document regexp("https://seiga.nicovideo.jp/(?:watch|comic)/.*") {
-    /*漫画内 */
-    #wrapper div,
-    #wrapper span,
-    #wrapper dl {
-        color: #d9d9d9 !important;
-    }
-
-    .author_list .author .comment .comment_content,
-    #episode_list.line_view .episode_item .description .comment_summary {
-        background: #4c57729e;
-    }
-
-    .info_block .inner,
-    .info_block > .inner,
-    .name,
-    .info_block {
-        background-color: var(--bg-color) !important;
-    }
-
-    .episode_navigator,
-    .inner_content {
-        padding: 0.6rem;
-        background-color: var(--bg-color);
-    }
-
-    .info_block > .inner,
-    .name,
-    .info_block {
-        background: #4a4a4a;
-    }
-
-    #ko_bookmark_player,
-    .button_bookmark,
-    .btn,
-    a.btn,
-    button.btn {
-        background-image: -webkit-linear-gradient(#25323e, #25323e) !important;
-        text-shadow: none !important;
     }
 }
