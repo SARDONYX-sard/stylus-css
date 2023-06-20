@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.8
+@version        0.0.9
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -101,7 +101,7 @@
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     footer,
     nav,
-    table[aria-labelledby="folders-and-files"],
+    table,
     th {
         background-color: var(--color-page-header-bg) !important;
     }
