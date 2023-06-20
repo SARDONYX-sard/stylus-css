@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.6
+@version        0.0.7
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -97,10 +97,10 @@
     .gist-snippet,
     .js-gist-file-update-container,
     .js-profile-editable-replace,
-    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(3)/* commit history msg */
-    ,
+    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     footer,
     nav,
+    table[aria-labelledby="folders-and-files"],
     th {
         background-color: var(--color-page-header-bg) !important;
     }
