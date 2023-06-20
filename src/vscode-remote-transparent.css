@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           VSCode Remote transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.1
+@version        0.0.2
 @description    VSCode Remote transparent
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/vscode-remote-transparent.css
@@ -10,7 +10,7 @@
 @advanced color bg-subpane-color "Pane Color" #1a1a1ae0
 @advanced color bg-color "Background Color" #222222db
 
-@advanced dropdown custom_wallpaper "Background" {
+@advanced dropdown custom_wallpaper "Background image" {
   C1 "手水舎"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
   C2 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
   C3 "都会"  <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
@@ -24,8 +24,26 @@
 }
 @advanced text custom_wallpaper-custom "URL: (Custom)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
 
-@advanced dropdown custom_bg_size "Bg size" {
-  C1 "auto(Default)*"  <<<EOT auto EOT;
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C1 "auto"  <<<EOT auto EOT;
   C2 "contain"  <<<EOT contain EOT;
   C3 "cover" <<<EOT cover  EOT;
   C4 "initial" <<<EOT initial EOT;
@@ -39,21 +57,23 @@ domain("vscode.dev") {
     .monaco-workbench {
         --bg-size: /*[[custom_bg_size]]*/;
         --subpane-color: /*[[bg-subpane-color]]*/;
+        --pos-y: /*[[pos_y]]*/;
+        --pos-x: /*[[pos_x]]*/;
 
         /* overwrite variables */
-        --vscode-editorGutter-background: /*[[bg-color]]*/
-        !important;
-        --vscode-editor-background: /*[[bg-color]]*/
-        !important;
+        --vscode-breadcrumb-background: /*[[bg-color]]*/;
+        --vscode-editor-background: /*[[bg-color]]*/;
+        --vscode-editorGutter-background: /*[[bg-color]]*/;
+        --vscode-editorStickyScroll-background: /*[[bg-color]]*/;
     }
 
     .monaco-pane-view,
     .monaco-editor {
-        background-color: var(--vscode-editor-background);
         background-attachment: fixed;
+        background-color: var(--vscode-editor-background);
         background-image: url("/*[[custom_wallpaper]]*/");
-        background-position-y: bottom;
-        background-position-x: center;
+        background-position-x: var(--pos-x);
+        background-position-y: var(--pos-y);
         background-repeat: no-repeat;
         background-size: var(--bg-size);
     }
