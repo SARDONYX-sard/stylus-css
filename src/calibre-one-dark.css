@@ -1,0 +1,127 @@
+/*
+  - calibreはrougeのような構文ハイライトを使っているが微妙に違う模様。
+
+  - vscodeでprogramlistingと検索したけれど見つからなかった。https://github.dev/kovidgoyal/calibre
+*/
+
+body.calibre-viewer-dark-colors * {
+    background-color: #00000017 !important;
+}
+
+[data-type="programlisting"] {
+  --red: #ce6b6b;
+  --blue: #4ebbff;
+  --aqua: #55d8e4;
+  --orange: #e6a260;
+  --violet: #be77ea;
+  --white: #e3e3e3;
+  --yellow: #fcec63;
+}
+
+/* プロパティの一部 */
+[data-type="programlisting"] .na {
+  color: var(--white) !important;
+}
+
+[data-type="programlisting"] .nc /* 構造体  */,
+[data-type="programlisting"] .kr
+[data-type="programlisting"] .kt /* 型 */ ,
+[data-type="programlisting"] .nb /* Ok()など */ {
+  color: var(--yellow) !important;
+}
+
+[data-type="programlisting"] .cp, /* マクロ */
+[data-type="programlisting"] .se, /*  正規表現リテラル    */
+[data-type="programlisting"] .mi, /*  整数リテラル    */
+[data-type="programlisting"] .kc /*  ブーリアン    */ {
+  color: var(--orange) !important;
+}
+
+
+/*  正規表現    */
+[data-type="programlisting"] .sr {
+  color: var(--aqua) !important;
+}
+
+/*   関数   */
+[data-type="programlisting"] .n,
+[data-type="programlisting"] .fm,
+[data-type="programlisting"] .gi,
+[data-type="programlisting"] .nd,
+[data-type="programlisting"] .ne,
+[data-type="programlisting"] .nf,
+[data-type="programlisting"] .nx {
+  color: var(--blue) !important;
+}
+
+/* identifier */
+[data-type="programlisting"] .p,
+[data-type="programlisting"] .ni,
+[data-type="programlisting"] .nl,
+[data-type="programlisting"] .nn,
+[data-type="programlisting"] .py,
+[data-type="programlisting"] .nv,
+[data-type="programlisting"] .w,
+[data-type="programlisting"] .bp,
+[data-type="programlisting"] .vc,
+[data-type="programlisting"] .vg,
+[data-type="programlisting"] .vi,
+[data-type="programlisting"] .vm {
+  color: #e3e3e3 !important;
+}
+
+/* 文字列 */
+[data-type="programlisting"] .ld,
+[data-type="programlisting"] .s,
+[data-type="programlisting"] .sa,
+[data-type="programlisting"] .sb,
+[data-type="programlisting"] .sc,
+[data-type="programlisting"] .dl,
+[data-type="programlisting"] .sd,
+[data-type="programlisting"] .s2,
+[data-type="programlisting"] .sh,
+[data-type="programlisting"] .si,
+[data-type="programlisting"] .sx,
+[data-type="programlisting"] .s1,
+[data-type="programlisting"] .ss {
+  color: #a6ea61 !important;
+}
+
+/*   予約語   */
+[data-type="programlisting"] .k,
+[data-type="programlisting"] .kr,
+[data-type="programlisting"] .kd,
+[data-type="programlisting"] .kp,
+[data-type="programlisting"] .kt,
+[data-type="programlisting"] .no ,
+[data-type="programlisting"] .l,
+[data-type="programlisting"] .m,
+[data-type="programlisting"] .mb,
+[data-type="programlisting"] .mf,
+[data-type="programlisting"] .mh,
+[data-type="programlisting"] .mo,
+[data-type="programlisting"] .il {
+  color: var(--violet) !important;
+}
+
+/*  演算子  */
+[data-type="programlisting"] .o,
+[data-type="programlisting"] .gd,
+[data-type="programlisting"] .kn,
+[data-type="programlisting"] .nt,
+[data-type="programlisting"] .ow {
+  color: #f77 !important;
+}
+
+[data-type="programlisting"] .c1 {
+    color: #959595 !important;
+}
+
+/* parentheses */
+/* [data-type="programlisting"] .p {
+    color:  #5e5bff !important;
+} */
+
+#read-book-iframe-1 {
+    background-image: url(clbr://internal.invalid/reader-background?1686084422972) !important;
+}
