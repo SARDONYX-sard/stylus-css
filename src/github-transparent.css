@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.11
+@version        0.0.12
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -12,8 +12,11 @@
 @advanced color bg-subtle-color "Subtle Color" #1a1a1ac2
 @advanced color bg-color "Background Color" #222222b5
 
-@advanced dropdown custom_wallpaper "Background" {
+@advanced dropdown custom_wallpaper "Background Image" {
   C0 "andrew-alexander" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
+
+  custom_wallpaper-custom-dropdown "**CustomURL**" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+
   C1 "Electronic_Sample_96-calm-night" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/Electronic_Sample_96-calm-night.png EOT;
   C2 "OGARart-eagle-mountain-sunset-minimalist" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/OGARart-eagle-mountain-sunset-minimalist.jpg EOT;
   C3 "P82En-cherry-blossom-mountain-range" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/P82En-cherry-blossom-mountain-range.jpg EOT;
@@ -351,12 +354,28 @@
   C335 "zakoriart-flow" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/zakoriart-flow.jpg EOT;
   C336 "zakoriart-if-silence-could-be-heard" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/zakoriart-if-silence-could-be-heard.jpg EOT;
   C337 "zeoluwang-journey" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/zeoluwang-journey.jpg EOT;
-
-  custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
 }
-@advanced text custom_wallpaper-custom "URL: (Custom)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
+@advanced text custom_wallpaper-custom "Bg: (CustomURL)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
 
-@advanced dropdown custom_bg_size "Bg size" {
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
   C1 "auto(Default)*"  <<<EOT auto EOT;
   C2 "contain"  <<<EOT contain EOT;
   C3 "cover" <<<EOT cover  EOT;
@@ -383,9 +402,6 @@ Images:
         --color-border-muted: /*[[color-border]]*/
         !important;
 
-        --color-canvas-default: /*[[bg-color]]*/
-        !important;
-
         --color-canvas-inset: /*[[bg-subtle-color]]*/
         !important;
         --color-canvas-subtle: /*[[bg-subtle-color]]*/
@@ -393,6 +409,11 @@ Images:
         --color-header-bg: /*[[bg-subtle-color]]*/
         !important;
 
+        --color-canvas-default: /*[[bg-color]]*/
+        !important;
+        --color-codemirror-bg: /*[[bg-color]]*/
+        !important;
+        --color-codemirror-lines-bg: transparent !important;
         --color-neutral-muted: /*[[bg-color]]*/
         !important;
         --color-page-header-bg: /*[[bg-color]]*/
@@ -403,17 +424,20 @@ Images:
     header {
         --color-page-header-bg: /*[[bg-color]]*/
         !important;
+        background-color: var(--color-page-header-bg) !important;
     }
 
     body {
         background-attachment: fixed;
         background-image: url("/*[[custom_wallpaper]]*/");
-        background-position-y: bottom;
-        background-position-x: center;
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
         background-repeat: no-repeat;
         background-size: var(--bg-size);
     }
 
+    main > div:nth-child(2) > div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div > div:first-child,
+    .CodeMirror-gutters,
     .color-bg-default {
         background-color: transparent !important;
     }
@@ -434,10 +458,13 @@ Images:
     #repository-container-header,
     #user-profile-frame,
     #wiki-content,
+    .gkfBtX,
     .BorderGrid,
     .gist-snippet,
     .js-gist-file-update-container,
     .js-profile-editable-replace,
+    /* branch & tag */
+    .Layout-main > div:nth-child(3).d-flex.d-lg-none.mb-3,
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     div[data-selector="repos-split-pane-content"] div[id="readme"],
     footer,
@@ -452,8 +479,15 @@ Images:
     .gist-snippet,
     .js-gist-file-update-container,
     .js-profile-editable-replace,
-    nav {
+    .UnderlineNav,
+    nav.UnderlineNav-body {
         border-radius: 2em;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(stargazers).*") {
+    #repos > ol {
+        background-color: var(--color-page-header-bg);
     }
 }
 
@@ -464,8 +498,27 @@ Images:
     }
 }
 
-@-moz-document regexp("https?://github.com/.*(actions|pulse|settings).*") {
+@-moz-document regexp("https?://github.com/.*(pulse|settings).*") {
+    /* To avoid dobule bg color */
+    #options_bucket {
+        background-color: transparent !important;
+    }
+
     .Layout-main {
+        background-color: var(--color-page-header-bg) !important;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(releases|tags).*") {
+    div.application-main {
+        background-color: var(--color-page-header-bg) !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(actions).*") {
+    div[data-target="split-page-layout.content"] {
         background-color: var(--color-page-header-bg) !important;
     }
 }
@@ -487,5 +540,24 @@ regexp("https?://github.com/users/.*projects/.*") {
 @-moz-document regexp("https?://github.com/orgs.*") {
     .Layout-main-centered-lg {
         background-color: var(--color-page-header-bg) !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/search\?q=repo.*") {
+    div[data-target="react-app.reactRoot"] > div > div {
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*issues.*") {
+    #partial-discussion-sidebar {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
+
+    /* To avoid dobule bg color */
+    table {
+        background-color: transparent !important;
     }
 }
