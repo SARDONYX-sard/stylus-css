@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.12
+@version        0.0.13
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -402,6 +402,7 @@ Images:
         --color-border-muted: /*[[color-border]]*/
         !important;
 
+
         --color-canvas-inset: /*[[bg-subtle-color]]*/
         !important;
         --color-canvas-subtle: /*[[bg-subtle-color]]*/
@@ -409,6 +410,8 @@ Images:
         --color-header-bg: /*[[bg-subtle-color]]*/
         !important;
 
+        --bgColor-default: /*[[bg-color]]*/
+        !important;
         --color-canvas-default: /*[[bg-color]]*/
         !important;
         --color-codemirror-bg: /*[[bg-color]]*/
@@ -420,10 +423,14 @@ Images:
         !important;
     }
 
+    header,
+    div[data-selector="repos-split-pane-content"] {
+        --color-page-header-bg: transparent !important;
+        --color-canvas-default: transparent !important;
+    }
+
     /* For logout */
     header {
-        --color-page-header-bg: /*[[bg-color]]*/
-        !important;
         background-color: var(--color-page-header-bg) !important;
     }
 
@@ -468,7 +475,6 @@ Images:
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     div[data-selector="repos-split-pane-content"] div[id="readme"],
     footer,
-    nav,
     table,
     th {
         background-color: var(--color-page-header-bg) !important;
