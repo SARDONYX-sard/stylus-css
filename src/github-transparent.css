@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.13
+@version        0.0.14
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.css
@@ -402,7 +402,6 @@ Images:
         --color-border-muted: /*[[color-border]]*/
         !important;
 
-
         --color-canvas-inset: /*[[bg-subtle-color]]*/
         !important;
         --color-canvas-subtle: /*[[bg-subtle-color]]*/
@@ -429,7 +428,13 @@ Images:
         --color-canvas-default: transparent !important;
     }
 
+    #repos-file-tree,
     /* For logout */
+    header.AppHeader {
+        --color-page-header-bg: /*[[bg-color]]*/
+        !important;
+    }
+
     header {
         background-color: var(--color-page-header-bg) !important;
     }
