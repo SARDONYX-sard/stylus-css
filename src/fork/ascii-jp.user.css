@@ -1,0 +1,226 @@
+/* ==UserStyle==
+@name           ◆ASCII.jp
+@namespace      USO Archive
+@author         sogiotos
+@description    `ver.2018-06<div><ul>  <li>ASCII.jp</li>  <li>週アスPLUS</li></ul></div>`
+@version        20201005.5.1
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+
+@advanced color char-color "文字色" #22222291
+@advanced color custom-bg-color "背景の色" #22222291
+
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C1 "auto"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+C0 "Bridge" <<<EOT https://wallpaperaccess.com/full/422459.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C2 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C5 "Nature" <<<EOT https://wallpaperaccess.com/full/101948.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+custom_bg "Custom" <<<EOT /*[[custom_bg_url]]*\/ EOT;
+custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
+@advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
+==/UserStyle== */
+@-moz-document url-prefix("https://ascii.jp/elem/") {
+    #header,
+    #sideR,
+    #sideL,
+    .pickwrap,
+    #artAds,
+    #footer,
+    p.returnCat,
+    h5.social,
+    h5.social + div,
+    h5.related,
+    h5.related + ul,
+    .pages:first-child {
+        display: none !important;
+    }
+
+    #jpWrap #container {
+        width: 760px !important;
+    }
+
+    #container {
+        float: none !important;
+        margin: 2em auto !important;
+        width: auto !important;
+        box-shadow: 0 0 4px #ddd;
+        border-radius: 4px;
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/;
+        background: /*[[custom-bg-color]]*/
+        !important;
+    }
+
+    body#vr #jpWrap #mainC {
+        width: auto !important;
+        padding: 0 40px 10px;
+    }
+
+    #mainC {
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    #jpWrap {
+        width: inherit !important;
+        border: none !important;
+        background: none;
+    }
+
+    body {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/
+    }
+
+    #mainC p,
+    #mainC dd {
+        font-size: 110% !important;
+        color: #c0c0c0 !important;
+        line-height: 1.6 !important;
+    }
+
+    #jpWrap #mainC #articleText .lead,
+    #jpWrap #mainC #articleText .column {
+        margin: inherit;
+        padding: 0;
+    }
+
+    #articleHead {
+        margin: 2em 0 !important;
+        border: none !important;
+        background-image: none !important;
+    }
+
+    #jpWrap #mainC #articleText {
+        padding: 0 50px;
+    }
+
+    #jpWrap #mainC #articleText h2 {
+        margin: 60px -20px 25px;
+    }
+
+    #jpWrap #mainC #articleText h3 {
+        margin: 40px 0 20px !important;
+    }
+
+    #jpWrap #mainC div.sbmV3 {
+        background: none !important;
+    }
+
+    #jpWrap #mainC #articleText p.wpCodeTitle {
+        width: auto;
+        color: /*[[char-color]]*/
+        !important;
+    }
+
+    #jpWrap #mainC pre.src {
+        width: auto;
+    }
+
+    #articleText pre.code {
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 1.2em;
+        border: 1px solid #ccc;
+        margin: 0 -51px 2em;
+        padding: 1em 2em;
+        /*box-shadow: 0 0px 1px #aaa inset;*/
+    }
+
+    div.artdata {
+        font-size: 80% !important;
+    }
+
+    h5.serial {
+        margin-top: 3.5em !important;
+    }
+}
+
+@-moz-document url-prefix("http://weekly.ascii.jp/") {
+    #header,
+    #leftside,
+    #rightside,
+    #footer {
+        display: none !important;
+    }
+
+    body {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: bottom;
+        background-position-x: center;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/
+    }
+
+    #wrap {
+        margin: 2em auto;
+        background: none;
+    }
+
+    #contents {
+        float: none;
+        background: /*[[custom-bg-color]]*/
+        margin: 0 auto;
+        padding: 60px;
+        width: 600px;
+    }
+
+    #main {
+        float: none;
+        width: auto;
+        background: none;
+    }
+
+    #main .article {
+        margin: 20px auto 0;
+        padding: 0 0 10px;
+        width: auto;
+    }
+}

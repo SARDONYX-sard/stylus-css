@@ -1,0 +1,401 @@
+/* ==UserStyle==
+@name           5ch透過
+@namespace      github.com/openstyles/stylus
+@version        1.0.2
+@description    5chの背景を透過
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/transparency-5ch.user.css
+@author         SARDONYX
+
+@advanced color custom-char-color "文字の色" #fff
+@advanced color custom-anchor-color "リンクの色" #e5f947
+@advanced color custom-anchor-hover-color "リンクをホバーしたときの色" #b9c45f
+@advanced color custom-bg-color "背景色" #50505099
+@advanced color custom-hover-bg-color "背景色をホバーしたときの色" #5a6e4aab
+@advanced color custom-bg-header-color "ヘッダー背景色" #0000009c
+@advanced color custom-icon-br-color "アイコンの色" #94956c
+@advanced color custom-icon-bg-color "アイコンをホバーしたときの色" #98ad42
+@advanced color custom-toc-active-color "現在見ている目次の色" #5d6f42b8
+
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C1 "auto"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+C0 "Bridge" <<<EOT https://wallpaperaccess.com/full/422459.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C2 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C5 "Nature" <<<EOT https://wallpaperaccess.com/full/101948.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+custom_bg "Custom" <<<EOT /*[[custom_bg_url]]*\/ EOT;
+custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
+@advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
+==/UserStyle== */
+@-moz-document domain("2ch.net"),
+domain("5ch.net"),
+domain("kilauea.bbspink.com") {
+    /* Qiita内全URI */
+    :root {
+        --anchor-color: /*[[custom-anchor-color]]*/;
+        --anchor-hover-color: /*[[custom-anchor-hover-color]]*/;
+        --bg-color: /*[[custom-bg-color]]*/;
+        --bg-header-color: /*[[custom-bg-header-color]]*/;
+        --bg-size: /*[[custom_bg_size]]*/;
+        --char-color: /*[[custom-char-color]]*/;
+        --hover-bg-color: /*[[custom-hover-bg-color]]*/;
+        --icon-bg-color: /*[[custom-icon-bg-color]]*/;
+        --icon-br-color: /*[[custom-icon-br-color]]*/;
+        --toc-active-color: /*[[custom-toc-active-color]]*/;
+    }
+
+    /* ------------------------------------------------------------------- */
+    /* スクロールバー */
+    /* ------------------------------------------------------------------- */
+    ::-webkit-scrollbar {
+        background-color: #262a2b;
+        color: #cdc5b8;
+    }
+
+    ::-webkit-scrollbar {
+        background-color: #262a2b;
+        color: #cdc5b8;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: #1d1f20;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #53595c;
+    }
+
+    .row {
+        background-color: var(--bg-color);
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    /* ------------------------------------------------------------------- */
+    /* 文字 */
+    /* ------------------------------------------------------------------- */
+    /* フォント& フォントサイズ------------- */
+    body.find .list .list_line .list_line_link,
+    h1,
+    h2,
+    h3,
+    time,
+    body,
+    .message {
+        font-family: Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif !important;
+        color: var(--char-color);
+    }
+
+    body {
+        background-attachment: fixed;
+        background-color: #1C1C1C;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/;
+        background-size: var(--bg-size);
+    }
+
+    .post_hover {
+        background-color: #2d2d2de3!important;
+    }
+
+    .thread,
+    .escaped,
+    .menuitem,
+    .menuitem:hover,
+    .container {
+        background-color: #0000;
+    }
+
+    .THREAD_MENU div,
+    .THREAD_MENU p {
+        background-color: #0000 !important;
+        border-top: 0.5em solid rgba(119, 119, 119, .34)!important;
+        border-bottom: 0.5em solid rgba(187, 238, 187, 0)!important;
+    }
+
+    .thread,
+    .THREAD_MENU,
+    DIV.board_header,
+    .HEADER_AREA,
+    .THREAD_CONTENTS {
+        color: var(--char-color) !important;
+        background-color: var(--bg-color) !important;
+    }
+
+    .post {
+
+        background-color: var(--bg-color);
+        border: none;
+    }
+
+    .search-header {
+        background-color: var(--bg-header-color);
+        border-bottom: none !important;
+    }
+
+    button#search-button {
+        background-color: green;
+        border: 1px solid green;
+    }
+
+    div.container {
+        background-image: none !important;
+    }
+
+    h1.title {
+        color: #fff;
+        background-color: var(--bg-color);
+        margin-bottom: 0px;
+        font-size: 1.8em;
+    }
+
+    li.menutopnav {
+        min-width: 5em;
+    }
+
+    li.menutopmenu {
+        min-width: 5em;
+    }
+
+    .menuitem:hover {
+        background-color: #ddd;
+    }
+
+    /* hiding top menu */
+    h1.title + .pagestats,
+    h1.title + .pagestats + * {
+        display: none;
+    }
+
+    h1.title + div.pagestats {
+        display: none;
+    }
+
+    h1.title + .pagestats + div.topnav > ul,
+    h1.title + .pagestats + * + div.topmenu > ul {
+        margin: 0px;
+        font-size: 1em;
+    }
+
+    div.socialmedia {
+        padding-top: 3px;
+        padding-bottom: 5px;
+    }
+
+    h1.title + * + * + * + div.socialmedia {
+        text-align: right;
+        padding-top: 3px;
+        border-bottom: none;
+    }
+
+    h1.title + * + * + * + div.socialmedia .iconsize {
+        width: 20px;
+        height: 20px;
+    }
+
+    .thread {
+        margin-top: 2em;
+    }
+
+    .post {
+        display: block;
+    }
+
+    A:link,
+    a {
+        color: var(--anchor-color);
+    }
+
+    a:hover {
+        color: var(--anchor-hover-color);
+    }
+
+    a:visited {
+        color: purple;
+    }
+
+    .post {
+        box-shadow: none;
+        margin: 1.5em 0em;
+    }
+
+
+    .meta {
+        color: #e5e5e5;
+        font-size: 1em;
+    }
+
+    span.name b {
+        color: #13f785;
+    }
+
+    span.name b a {
+        color: var(--anchor-color);
+    }
+
+    a.newpb {
+        color: green;
+        border: none;
+        background-color: transparent;
+        border-top: 1px solid green;
+        border-bottom: 1px solid transparent;
+    }
+
+    a.newpb:hover {
+        background-color: transparent;
+        border-top: 2px solid green;
+        border-bottom: none;
+    }
+
+    div.pagestats > ul.menujust {
+        text-align: right;
+    }
+
+    div.pagestats > ul.menujust li:nth-child(1) {
+        display: none;
+    }
+
+    div.pagestats > ul.menujust li:nth-child(2) {
+        text-align: right;
+        color: red;
+    }
+
+    li.menubottomnav {
+        min-width: 5em;
+    }
+
+    li.menubottommenu {
+        min-width: 5em;
+    }
+
+    ul.menujust {
+        margin: 0px;
+    }
+
+    div.bottommenu {
+        border-bottom: none;
+    }
+
+    div.formheader {
+        color: green;
+        font-weight: normal;
+        border-bottom: none;
+        margin-top: 0.5em;
+        padding-bottom: 0px;
+    }
+
+    textarea.formelem {
+        color: #666;
+    }
+
+    input.submitbtn.btn {
+        background-color: green;
+    }
+
+    div.footer {
+        color: #333;
+    }
+
+    /* ボトムメニューの一部を上に固定*/
+    .bottomnav {
+        z-index: 2 !important;
+        text-align: right;
+        float: left;
+        position: fixed;
+        display: block;
+        top: 50px;
+        left: 0px;
+        width: 100%;
+        background-color: var(--bg-header-color);
+    }
+
+    .bottomnav ul li.menubottomnav {
+        width: 5em;
+        padding-right: 1em;
+    }
+
+    .bottomnav ul li.menubottomnav a {
+        padding-bottom: 4px;
+        text-align: center;
+        color: var(--char-color);
+    }
+
+    .bottomnav ul li.menubottomnav a:hover {
+        background-color: transparent !important;
+        padding-bottom: 2px !important;
+        border-bottom: 2px solid #006400;
+    }
+
+    nav.navbar-fixed-top {
+        float: left;
+        clear: both;
+        height: 50px;
+    }
+
+    div.topmenu {
+        border-bottom: none;
+    }
+
+    div.topmenu > ul {
+        text-align: right;
+        display: block;
+        height: 2em;
+        width: 100%;
+    }
+
+    div.topmenu > ul > * {
+        display: none;
+    }
+
+    div.topmenu ul li:nth-child(2) {
+        display: block;
+        float: right;
+    }
+
+    div.topmenu ul li:nth-child(2) a {
+        padding: 0.3em 1em 0.3em 0.3em;
+        float: right;
+        width: 10em;
+    }
+}
