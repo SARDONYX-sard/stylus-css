@@ -1,28 +1,33 @@
 /* ==UserStyle==
 @name           Google News transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.1
+@version        0.0.2
 @description    Google News transparent.
 @author         SARDONYX
 @license        CC0
-@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/google-news.user.css
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/google-news.css
 
 @advanced color custom-bg-color "背景の色" #22222291
-@advanced dropdown custom_wallpaper "背景" {
-C1 "手水舎(Default)*"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
-C2 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
-C3 "都会"  <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
-C4 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
-C5 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
-C6 "fantasy" <<<EOT https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_960_720.jpg EOT;
-C7 "猫と蝶"  <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
-C8 "桜"  <<<EOT https://images5.alphacoders.com/110/thumb-1920-1105001.jpg EOT;
-C9 "紅葉"  <<<EOT https://rare-gallery.com/uploads/posts/4599520-dark-red-nature-forest-trees-red-leaves-mist-fall-landscape-leaves-plants-fallen-leaves.jpg EOT;
-custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
-}
-@advanced text custom_wallpaper-custom "背景(カスタム)" "https://cdn.wallpapersafari.com/48/32/YLptDi.jpg"
 
-@advanced dropdown custom_bg_size "背景" {
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
   C1 "auto"  <<<EOT auto EOT;
   C2 "contain"  <<<EOT contain EOT;
   C3 "cover" <<<EOT cover  EOT;
@@ -31,13 +36,34 @@ custom_wallpaper-custom-dropdown "カスタム" <<<EOT /*[[custom_wallpaper-cust
   C6 "revert" <<<EOT revert EOT;
   C7 "unset" <<<EOT unset EOT;
 }
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+C0 "Bridge" <<<EOT https://wallpaperaccess.com/full/422459.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C2 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C5 "Nature" <<<EOT https://wallpaperaccess.com/full/101948.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+custom_bg "Custom" <<<EOT /*[[custom_bg_url]]*\/ EOT;
+custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
+@advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
 ==/UserStyle== */
-@-moz-document domain("google.com") {
+@-moz-document domain("news.google.com") {
     body {
         background-attachment: fixed;
         background-image: url("/*[[custom_wallpaper]]*/");
-        background-position-y: bottom;
-        background-position-x: center;
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
         background-repeat: no-repeat;
         background-size: /*[[custom_bg_size]]*/;
     }

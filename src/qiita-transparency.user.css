@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Qiita transparency
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        0.1.1
+@version        0.1.3
 @author         SARDONYX
 @description    Qiitaの記事ページの背景を透過させ、任意の画像を差し込む。
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
-@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita-transparency.user.css
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita-transparency.css
 @preprocessor   stylus
 
-@var checkbox darkModeScrollbar "ダークモード スクロールバー" 1
+@var checkbox darkModeScrollbar "スクロールバーのダークモード化" 1
 @var checkbox oneDarkEnable "OneDark: (Syntax Highlight)" 1
 @var select fontsCustom "フォント" {
   "明朝":  "Yu Mincho, Hiragino Mincho Pro, Sawarabi Mincho, serif",
@@ -22,7 +22,26 @@
 @var color hoverBgColor "目次の色: (hover&focus)" #5a6e4aab
 @var color bgColor "背景色: (記事)" #2222229c
 
-@var select bgSize "背景サイズ" {
+@var select posY "背景: (Y座標)" {
+  "bottom"  : "bottom",
+  "center"  : "center",
+  "top"     : "top",
+  "initial" : "initial",
+  "inherit" : "inherit",
+  "revert"  : "revert",
+  "unset"   : "unset",
+}
+@var select posX "背景: (X座標)" {
+  "center"  : "center",
+  "right"   : "right",
+  "left"    : "left",
+  "initial" : "initial",
+  "inherit" : "inherit",
+  "revert"  : "revert",
+  "unset"   : "unset",
+}
+
+@var select bgSize "背景: (サイズ)" {
   "auto*": "auto",
   "contain": "contain",
   "cover": "cover",
@@ -31,22 +50,31 @@
   "revert": "revert",
   "unset": "unset",
 }
-@var select bgImg "背景画像" {
-  "Safari": "url('https://cdn.wallpapersafari.com/63/66/bEVak3.jpg')",
-  "fantasy": "url('https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg')",
-  "塔": "url('https://images2.alphacoders.com/113/thumb-1920-1131058.jpg')",
-  "手水舎": "url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg')",
-  "桜": "url('https://images5.alphacoders.com/110/thumb-1920-1105001.jpg')",
-  "猫と蝶": "url('https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg')",
-  "紅葉": "url('https://rare-gallery.com/uploads/posts/4599520-dark-red-nature-forest-trees-red-leaves-mist-fall-landscape-leaves-plants-fallen-leaves.jpg')",
-  "都会": "url('https://wallpaperaccess.com/full/1265.jpg')",
+@var select bgImg "背景: (画像)" {
+"Bridge": "url('https://wallpaperaccess.com/full/422459.jpg')",
+"Coffee Pie": "url('https://wallpaperaccess.com/full/5404954.jpg')",
+"Forest": "url('https://wallpaperaccess.com/full/31221.jpg')",
+"Honshu Fuji": "url('https://wallpaperaccess.com/full/422471.jpg')",
+"Pancake": "url('https://wallpaperaccess.com/full/5405396.jpg')",
+"Railway": "url('https://wallpaperaccess.com/full/31224.jpg')",
+"Red Trees": "url('https://wallpaperaccess.com/full/1164592.jpg')",
+"Safari": "url('https://cdn.wallpapersafari.com/63/66/bEVak3.jpg')",
+"fantasy": "url('https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg')",
+"紅葉": "url('https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229')",
+"猫と蝶": "url('https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg')",
+"手水舎": "url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg')",
+"塔": "url('https://images2.alphacoders.com/113/thumb-1920-1131058.jpg')",
+"都会": "url('https://wallpaperaccess.com/full/1265.jpg')",
 }
+
 @var checkbox customBgImgEnabled "カスタム背景URLの有効化" 0
 @var text customBgImgUrl "カスタム背景('でURLを囲む)" "'https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg'"
 ==/UserStyle== */
 @-moz-document domain("qiita.com") {
     :root {
         --bg-size: bgSize;
+        --bg-pos-y: posY;
+        --bg-pos-x: posX;
         --fonts: fontsCustom;
         --visited-color: visitedColor;
         if customBgImgEnabled {
@@ -61,7 +89,11 @@
         --anchor-hover-color: anchorHoverColor;
         --color-background: bgColor;
         --color-divider: rgb(0 0 0 / 12%);
+        /* for success */
+        --color-green-10: #40ff2a14;
         --color-green-90: linkColor;
+        /* for warn */
+        --color-yellow-10: #fff0502b;
         --color-scrim: rgb(0 0 0 / 32%);
         --color-surface-variant: hoverBgColor;
         --color-surface: hoverBgColor;
@@ -74,7 +106,8 @@
         background-attachment: fixed;
         background-color: #1C1C1C;
         background-image: var(--wallpaper-url);
-        background-position: bottom;
+        background-position-x: var(--bg-pos-x);
+        background-position-y: var(--bg-pos-y);
         background-repeat: no-repeat;
         background-size: var(--bg-size);
     }
@@ -96,6 +129,7 @@
     }
 
     /* 透過した背景の一部を上書きしていく */
+    #items,
     .focus,
     .st-NewHeader,
     .st-NewHeader_mainNavigation,

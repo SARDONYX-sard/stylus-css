@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           VSCode Remote transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.2
+@version        0.0.3
 @description    VSCode Remote transparent
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/vscode-remote-transparent.user.css
@@ -10,19 +10,26 @@
 @advanced color bg-subpane-color "Pane Color" #1a1a1ae0
 @advanced color bg-color "Background Color" #222222db
 
-@advanced dropdown custom_wallpaper "Background image" {
-  C1 "手水舎"  <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
-  C2 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
-  C3 "都会"  <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
-  C4 "Wood" <<<EOT https://i.imgur.com/PtJ6fl7.jpg EOT;
-  C5 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
-  C6 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
-  C7 "猫と蝶"  <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
-  C8 "桜"  <<<EOT https://images5.alphacoders.com/110/thumb-1920-1105001.jpg EOT;
-  C9 "紅葉"  <<<EOT https://rare-gallery.com/uploads/posts/4599520-dark-red-nature-forest-trees-red-leaves-mist-fall-landscape-leaves-plants-fallen-leaves.jpg EOT;
-  custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+@advanced dropdown custom_wallpaper "Bg: Image" {
+C0 "Bridge" <<<EOT https://wallpaperaccess.com/full/422459.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C2 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C5 "Nature" <<<EOT https://wallpaperaccess.com/full/101948.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+custom_bg "Custom" <<<EOT /*[[custom_bg_url]]*\/ EOT;
+custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
 }
-@advanced text custom_wallpaper-custom "URL: (Custom)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
+@advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
+@advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
 
 @advanced dropdown pos_y "Bg: (Postion Y)" {
   C1 "bottom"  <<<EOT bottom EOT;
