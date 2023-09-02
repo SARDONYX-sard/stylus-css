@@ -13,4 +13,6 @@ CSS files for the Chrome extension [Stylus](https://chrome.google.com/webstore/d
 - [vscode-remote-transparent](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/vscode-remote-transparent.user.css)
 
 <!-- forked css start -->
+- [ascii-jp](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/fork/ascii-jp.user.css)
+- [youtube](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/fork/youtube.user.css)
 <!-- forked css end -->
