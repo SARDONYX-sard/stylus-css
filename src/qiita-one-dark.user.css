@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    qiita One-Dark like style
 @author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita-one-dark.user.css
 ==/UserStyle== */
 @-moz-document domain("qiita.com") {
   :root {

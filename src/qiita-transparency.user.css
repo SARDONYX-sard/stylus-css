@@ -5,7 +5,7 @@
 @author         SARDONYX
 @description    Qiitaの記事ページの背景を透過させ、任意の画像を差し込む。
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
-@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita-transparency.css
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita-transparency.user.css
 @preprocessor   stylus
 
 @var checkbox darkModeScrollbar "ダークモード スクロールバー" 1

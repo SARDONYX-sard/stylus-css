@@ -3,6 +3,7 @@
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    Niconico seiga Dark Mode
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/niconico.user.css
 @author         SARDONYX
 ==/UserStyle== */
 @-moz-document domain("seiga.nicovideo.jp") {

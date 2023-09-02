@@ -5,7 +5,7 @@
 @description  Qiita用の和風イメージスタイル - 2021/12/03 updated
 @author         SARDONYX
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
-
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/qiita.user.css
 @advanced dropdown Atom-One-DarkStyle "Atom-One-Dark(like) Style" {
 Yup "Yes*" <<<EOT
     :root {
