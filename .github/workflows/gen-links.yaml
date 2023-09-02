@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Generate scripts link in readme.md
-        run: node ./scripts/gen-css-links.js > ./readme.md
+        run: node ./scripts/gen-css-urls.js > ./readme.md
 
       # https://stackoverflow.com/questions/71362008/github-action-nothing-to-commit-working-tree-clean
       - name: Check if there are any changes
