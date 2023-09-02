@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.14
+@version        0.0.15
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.user.css
@@ -424,8 +424,8 @@ Images:
 
     header,
     div[data-selector="repos-split-pane-content"] {
-        --color-page-header-bg: transparent !important;
         --color-canvas-default: transparent !important;
+        background-color: var(--color-page-header-bg) !important;
     }
 
     #repos-file-tree,
@@ -433,10 +433,6 @@ Images:
     header.AppHeader {
         --color-page-header-bg: /*[[bg-color]]*/
         !important;
-    }
-
-    header {
-        background-color: var(--color-page-header-bg) !important;
     }
 
     body {
@@ -448,12 +444,7 @@ Images:
         background-size: var(--bg-size);
     }
 
-    main > div:nth-child(2) > div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div > div:first-child,
-    .CodeMirror-gutters,
-    .color-bg-default {
-        background-color: transparent !important;
-    }
-
+    #user-private-profile-frame,
     #user-profile-frame,
     .BorderGrid-cell {
         padding-right: 1rem;
@@ -468,6 +459,7 @@ Images:
     #repos-file-tree,
     #repos-sticky-header > div > div,
     #repository-container-header,
+    #user-private-profile-frame,
     #user-profile-frame,
     #wiki-content,
     .gkfBtX,
@@ -554,9 +546,9 @@ regexp("https?://github.com/users/.*projects/.*") {
     }
 }
 
-@-moz-document regexp("https?://github.com/search\?q=repo.*") {
-    div[data-target="react-app.reactRoot"] > div > div {
-        background-color: var(--color-page-header-bg);
+@-moz-document regexp("https?://github.com/search\?q.*") {
+    div[data-target="react-app.reactRoot"] > * {
+        background-color: var(--color-page-header-bg) !important;
     }
 }
 
@@ -570,5 +562,12 @@ regexp("https?://github.com/users/.*projects/.*") {
     /* To avoid dobule bg color */
     table {
         background-color: transparent !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/marketplace/actions/.*") {
+    .application-main {
+        color: white;
+        background-color: var(--color-page-header-bg);
     }
 }
