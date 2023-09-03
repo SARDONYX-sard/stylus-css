@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.15
+@version        0.0.16
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.user.css
@@ -462,6 +462,7 @@ Images:
     #user-private-profile-frame,
     #user-profile-frame,
     #wiki-content,
+    .commit,
     .gkfBtX,
     .BorderGrid,
     .gist-snippet,
@@ -507,6 +508,7 @@ Images:
         background-color: transparent !important;
     }
 
+    .Layout-sidebar > div,
     .Layout-main {
         background-color: var(--color-page-header-bg) !important;
         padding: 1rem;
