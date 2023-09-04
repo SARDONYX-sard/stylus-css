@@ -85,11 +85,11 @@
 
     const myLinkStart = "<!-- original css start -->";
     const myLinkEnd = "<!-- original css end -->";
-    const myLinksComment = new RegExp(`${myLinkStart}\n?.*${myLinkEnd}`, "m");
+    const myLinksComment = new RegExp(`${myLinkStart}(\r|\n|.)*${myLinkEnd}`, "m");
 
     const forkLinkStart = "<!-- forked css start -->";
     const forkLinkEnd = "<!-- forked css end -->";
-    const forkLinksComment = new RegExp(`${forkLinkStart}\n?.*${forkLinkEnd}`, "m");
+    const forkLinksComment = new RegExp(`${forkLinkStart}(\r|\n|.)*${forkLinkEnd}`, "m");
 
     return readmeMd
       .replace(myLinksComment, `${myLinkStart}\n${myLinksMd}${myLinkEnd}\n`)
