@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.16
+@version        0.0.17
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.user.css
@@ -15,7 +15,8 @@
 @advanced dropdown custom_wallpaper "Background Image" {
   C0 "andrew-alexander" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
 
-  custom_wallpaper-custom-dropdown "**CustomURL**" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+custom_wallpaper-custom-dropdown "--CustomURL--" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-custom2]]*\/ EOT;
 
   C1 "Electronic_Sample_96-calm-night" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/Electronic_Sample_96-calm-night.png EOT;
   C2 "OGARart-eagle-mountain-sunset-minimalist" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/OGARart-eagle-mountain-sunset-minimalist.jpg EOT;
@@ -355,7 +356,8 @@
   C336 "zakoriart-if-silence-could-be-heard" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/zakoriart-if-silence-could-be-heard.jpg EOT;
   C337 "zeoluwang-journey" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/zeoluwang-journey.jpg EOT;
 }
-@advanced text custom_wallpaper-custom "Bg: (CustomURL)" "https://raw.githubusercontent.com/SARDONYX-sard/tsx-sard-blog/main/public/images/threeCuteChicks.webp"
+@advanced text custom_wallpaper-custom "Bg: (CustomURL)" "https://camo.githubusercontent.com/638e46b19d8f4d6e65099e78b1168c14c1e75046705f21b99d7acf8c505a8a5f/68747470733a2f2f692e6962622e636f2f426e706b736a562f706578656c732d6a6f736875612d776f726f6e6965636b692d323630373935362e6a7067"
+@advanced text custom_wallpaper-custom2 "Bg: (CustomURL2)" "https://raw.githubusercontent.com/savicilija85/nature-wallpapers/master/sdBOMqg%20-%20Imgur.jpg"
 
 @advanced dropdown pos_y "Bg: (Postion Y)" {
   C1 "bottom"  <<<EOT bottom EOT;
@@ -391,6 +393,8 @@ UserStyle:
 
 Images:
 - https://github.com/DenverCoder1/minimalistic-wallpaper-collection/tree/main/images
+- https://github.com/noradlb1/wallpaper-Nature-background-IMAGES
+- https://github.com/savicilija85/nature-wallpapers
 */
 @-moz-document domain("github.com") {
     :root {
@@ -420,6 +424,7 @@ Images:
         !important;
         --color-page-header-bg: /*[[bg-color]]*/
         !important;
+        --fgColor-disabled: #a0a0a0bf;
     }
 
     header,
@@ -463,6 +468,7 @@ Images:
     #user-profile-frame,
     #wiki-content,
     .commit,
+    .file-navigation,
     .gkfBtX,
     .BorderGrid,
     .gist-snippet,
@@ -480,18 +486,13 @@ Images:
 
     #user-profile-frame,
     .BorderGrid,
+    .file-navigation,
     .gist-snippet,
     .js-gist-file-update-container,
     .js-profile-editable-replace,
     .UnderlineNav,
     nav.UnderlineNav-body {
         border-radius: 2em;
-    }
-}
-
-@-moz-document regexp("https?://github.com/.*(stargazers).*") {
-    #repos > ol {
-        background-color: var(--color-page-header-bg);
     }
 }
 
@@ -502,7 +503,13 @@ Images:
     }
 }
 
-@-moz-document regexp("https?://github.com/.*(pulse|settings).*") {
+@-moz-document regexp("https?://github.com/.*(stargazers).*") {
+    #repos > ol {
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(pulse|graphs|community|network|settings).*") {
     /* To avoid dobule bg color */
     #options_bucket {
         background-color: transparent !important;
@@ -511,8 +518,8 @@ Images:
     .Layout-sidebar > div,
     .Layout-main {
         background-color: var(--color-page-header-bg) !important;
-        padding: 1rem;
         border-radius: 1rem;
+        padding: 1rem;
     }
 }
 
@@ -523,8 +530,17 @@ Images:
 }
 
 @-moz-document regexp("https?://github.com/.*(actions).*") {
+    .CheckRun-header,
+    .CheckRun {
+        background-color: transparent !important;
+    }
+
+    .PageLayout-header--hasDivider.PageLayout-header,
+    .PageLayout-columns > div > div > nav[aria-label="Workflow run"],
     div[data-target="split-page-layout.content"] {
         background-color: var(--color-page-header-bg) !important;
+        border-radius: 1rem;
+        padding: 1rem;
     }
 }
 
@@ -549,7 +565,37 @@ regexp("https?://github.com/users/.*projects/.*") {
 }
 
 @-moz-document regexp("https?://github.com/search\?q.*") {
+    span[role="presentation"],
+    #qb-input-query {
+        color: white !important;
+    }
+
+    a[rel="next"],
+    div[data-testid="results-list"] a {
+        color: var(--color-accent-fg) !important;
+    }
+
+
+
+
+    div[data-testid="results-list"] > div,
+    div[data-testid="search-sub-header"] {
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
     div[data-target="react-app.reactRoot"] > * {
+        background-color: transparent !important;
+    }
+
+    a[aria-current="page"] {
+        background-color: var(--color-accent-fg) !important;
+    }
+
+    #search-filters-title,
+    div[data-testid="facets-pane"],
+    div[data-testid="results-list"] > div,
+    div[data-testid="search-sub-header"] {
         background-color: var(--color-page-header-bg) !important;
     }
 }
@@ -570,6 +616,15 @@ regexp("https?://github.com/users/.*projects/.*") {
 @-moz-document regexp("https?://github.com/marketplace/actions/.*") {
     .application-main {
         color: white;
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*security.*") {
+    .Subhead,
+    .Layout-sidebar {
+        padding: 1rem;
+        border-radius: 1rem;
         background-color: var(--color-page-header-bg);
     }
 }
