@@ -13,6 +13,7 @@ CSS files for the Chrome extension [Stylus](https://chrome.google.com/webstore/d
 - [qiita-transparency](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/qiita-transparency.user.css)
 - [qiita](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/qiita.user.css)
 - [vscode-remote-transparent](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/vscode-remote-transparent.user.css)
+<!-- original css end -->
 
 ## Forked CSS
 
