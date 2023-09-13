@@ -19,8 +19,6 @@ CSS files for the Chrome extension [Stylus](https://chrome.google.com/webstore/d
 - [zenn-transparent](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/zenn-transparent.user.css)
 <!-- original css end -->
 
-
-
 ## Forked CSS
 
 <!-- forked css start -->

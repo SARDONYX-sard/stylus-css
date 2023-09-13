@@ -92,8 +92,8 @@
     const forkLinksComment = new RegExp(`${forkLinkStart}(\r|\n|.)*${forkLinkEnd}`, "m");
 
     return readmeMd
-      .replace(myLinksComment, `${myLinkStart}\n${myLinksMd}${myLinkEnd}\n`)
-      .replace(forkLinksComment, `${forkLinkStart}\n${forkLinksMd}${forkLinkEnd}\n`)
+      .replace(myLinksComment, `${myLinkStart}\n${myLinksMd}${myLinkEnd}`)
+      .replace(forkLinksComment, `${forkLinkStart}\n${forkLinksMd}${forkLinkEnd}`)
       .trim();
   }
 
