@@ -1,0 +1,177 @@
+/* ==UserStyle==
+@name           Zenn transparent
+@namespace      github.com/SARDONYX-sard
+@version        0.0.1
+@description    Zenn transparent
+@author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/zenn-transparent.user.css
+@license        CC0
+
+@advanced color bg-color "Background Color" #222222db
+@advanced color char-color "foreground Color" #d7d4d4
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+custom_wallpaper-custom-dropdown "--CustomURL--" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-custom2]]*\/ EOT;
+C0 "bird" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C2 "fantasy" <<<EOT https://lilapila.com/wp-content/uploads/2021/02/HD-Desktop-Wallpaper-9.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C5 "Nature" <<<EOT https://wallpaperaccess.com/full/101948.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+}
+@advanced text custom_wallpaper-custom "Bg: (CustomURL)" "https://camo.githubusercontent.com/638e46b19d8f4d6e65099e78b1168c14c1e75046705f21b99d7acf8c505a8a5f/68747470733a2f2f692e6962622e636f2f426e706b736a562f706578656c732d6a6f736875612d776f726f6e6965636b692d323630373935362e6a7067"
+@advanced text custom_wallpaper-custom2 "Bg: (CustomURL2)" "https://raw.githubusercontent.com/savicilija85/nature-wallpapers/master/sdBOMqg%20-%20Imgur.jpg"
+
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C1 "auto"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+==/UserStyle== */
+@-moz-document domain("zenn.dev") {
+
+    :root {
+        --bg-size:
+            /*[[custom_bg_size]]*/
+        ;
+        --pos-y:
+            /*[[pos_y]]*/
+        ;
+        --pos-x:
+            /*[[pos_x]]*/
+        ;
+
+        /* overwrite variables */
+        --c-bg-secondary:
+            /*[[bg-color]]*/
+        ;
+        --c-bg-base:
+            /*[[bg-color]]*/
+        ;
+        --c-bg-neutral-lighter:
+            /*[[bg-color]]*/
+        ;
+        --c-bg-neutral-lightest:
+            /*[[bg-color]]*/
+        ;
+        --c-bg-neutral: transparent;
+        --c-bg-primary-lighter: #00b7ff1a;
+        --c-text-body:
+            /*[[char-color]]*/
+        ;
+        --c-text-low-priority: #ccc8c8cc;
+    }
+
+    .Button_secondary__K_W4X,
+    .ButtonFollow_button__BMHcC.style-following {
+        background-color: #0083bb;
+    }
+
+    /* Text is black to prevent it from becoming hard to read. */
+    img {
+        background-color: #fffcfcd6;
+    }
+
+    .View_inner__4OBFV,
+    .ThreadItemContent_parentItem__NDSRE
+
+    /* Comments */
+    ,
+    .znc summary,
+    .znc details[open] summary,
+    .znc td,
+    .znc th {
+        background-color: transparent;
+    }
+
+    header>div,
+    footer,
+    #__next nav,
+    .ThreadEditor_textarea__9SeGG,
+    .ArticleComments_threadEditorContainer__h1Chc,
+    .znc .details-content {
+        background-color: var(--c-bg-base);
+    }
+
+    .znc .footnotes,
+    .ThreadEditor_textarea__9SeGG {
+        color: var(--c-text-body);
+    }
+
+    .usePopover_popover__e_4ue {
+        background-color: #1d2020e8;
+    }
+
+    body {
+        background-attachment: fixed;
+        background-color: #000;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-x: var(--pos-x);
+        background-position-y: var(--pos-y);
+        background-repeat: no-repeat;
+        background-size: var(--bg-size);
+    }
+}
+
+@-moz-document regexp(".*tab=scraps$") {
+    .UserScraps_rows__RNUSy {
+        background-color: transparent;
+    }
+}
+
+@-moz-document regexp(".*tab=comments$") {
+    .UserComments_itemsContainer__rL77Z {
+        background-color: transparent;
+    }
+}
+
+@-moz-document regexp(".*(?:scraps|explore).*"),
+regexp(".*zenn\.dev/") {
+    section {
+        background-color: var(--c-bg-base) !important;
+    }
+}
+
+@-moz-document regexp(".*(?:books).*") {
+    .znc pre {
+        background-color: #1a395369;
+    }
+
+    #chapters,
+    aside,
+    section>header,
+    article>div>section {
+        background-color: var(--c-bg-base);
+    }
+}
