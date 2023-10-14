@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita transparency
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        0.1.3
+@version        0.1.4
 @author         SARDONYX
 @description    Qiitaの記事ページの背景を透過させ、任意の画像を差し込む。
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
@@ -77,6 +77,7 @@
         --bg-pos-x: posX;
         --fonts: fontsCustom;
         --visited-color: visitedColor;
+
         if customBgImgEnabled {
             --wallpaper-url: convert("url(" + customBgImgUrl + ")");
         }
@@ -118,6 +119,7 @@
     }
 
     /* あらかじめすべて背景を透過しておく */
+    .co-Item_text .highlight,
     .it-MdContent .code-frame,
     .allWrapper *,
     body {
@@ -130,12 +132,13 @@
 
     /* 透過した背景の一部を上書きしていく */
     #items,
+    .co-Item_text .code-frame,
     .focus,
-    .st-NewHeader,
-    .st-NewHeader_mainNavigation,
     .it-MdContent .highlight,
     .p-items_toc,
-    .p-items_main > * {
+    .st-NewHeader,
+    .st-NewHeader_mainNavigation,
+    .p-items_main>* {
         background-color: var(--color-background);
     }
 
@@ -160,7 +163,7 @@
     }
 
     if oneDarkEnable {
-        .it-MdContent {
+        .code-frame {
             --aqua: #55d8e4;
             --blue: #4ebbff;
             --orange: #e6a260;
@@ -169,85 +172,85 @@
             --yellow: #f9e53f;
         }
 
-        .it-MdContent .highlight .se,
-        .it-MdContent .highlight .mi,
-        .it-MdContent .highlight .kc {
+        .code-frame .highlight .se,
+        .code-frame .highlight .mi,
+        .code-frame .highlight .kc {
             color: var(--orange) !important;
         }
 
-        .it-MdContent .highlight .sr {
+        .code-frame .highlight .sr {
             color: var(--aqua);
         }
 
-        .it-MdContent .highlight .il,
-        .it-MdContent .highlight .l,
-        .it-MdContent .highlight .m,
-        .it-MdContent .highlight .mb,
-        .it-MdContent .highlight .mf,
-        .it-MdContent .highlight .mh,
-        .it-MdContent .highlight .mo,
-        .it-MdContent .highlight .kr,
-        .it-MdContent .highlight .k,
-        .it-MdContent .highlight .kd,
-        .it-MdContent .highlight .kp,
-        .it-MdContent .highlight .kt,
-        .it-MdContent .highlight .no {
+        .code-frame .highlight .il,
+        .code-frame .highlight .l,
+        .code-frame .highlight .m,
+        .code-frame .highlight .mb,
+        .code-frame .highlight .mf,
+        .code-frame .highlight .mh,
+        .code-frame .highlight .mo,
+        .code-frame .highlight .kr,
+        .code-frame .highlight .k,
+        .code-frame .highlight .kd,
+        .code-frame .highlight .kp,
+        .code-frame .highlight .kt,
+        .code-frame .highlight .no {
             color: var(--violet);
         }
 
-        .it-MdContent .highlight .fm,
-        .it-MdContent .highlight .gi,
-        .it-MdContent .highlight .nc,
-        .it-MdContent .highlight .nd,
-        .it-MdContent .highlight .ne,
-        .it-MdContent .highlight .nf,
-        .it-MdContent .highlight .nx {
+        .code-frame .highlight .fm,
+        .code-frame .highlight .gi,
+        .code-frame .highlight .nc,
+        .code-frame .highlight .nd,
+        .code-frame .highlight .ne,
+        .code-frame .highlight .nf,
+        .code-frame .highlight .nx {
             color: var(--blue);
         }
 
-        .it-MdContent .highlight .na,
-        .it-MdContent .highlight .n,
-        .it-MdContent .highlight .p,
-        .it-MdContent .highlight .nb,
-        .it-MdContent .highlight .ni,
-        .it-MdContent .highlight .nl,
-        .it-MdContent .highlight .nn,
-        .it-MdContent .highlight .py,
-        .it-MdContent .highlight .nv,
-        .it-MdContent .highlight .w,
-        .it-MdContent .highlight .bp,
-        .it-MdContent .highlight .vc,
-        .it-MdContent .highlight .vg,
-        .it-MdContent .highlight .vi,
-        .it-MdContent .highlight .vm {
+        .code-frame .highlight .na,
+        .code-frame .highlight .n,
+        .code-frame .highlight .p,
+        .code-frame .highlight .nb,
+        .code-frame .highlight .ni,
+        .code-frame .highlight .nl,
+        .code-frame .highlight .nn,
+        .code-frame .highlight .py,
+        .code-frame .highlight .nv,
+        .code-frame .highlight .w,
+        .code-frame .highlight .bp,
+        .code-frame .highlight .vc,
+        .code-frame .highlight .vg,
+        .code-frame .highlight .vi,
+        .code-frame .highlight .vm {
             color: var(--white);
         }
 
-        .it-MdContent .highlight .ld,
-        .it-MdContent .highlight .s,
-        .it-MdContent .highlight .sa,
-        .it-MdContent .highlight .sb,
-        .it-MdContent .highlight .sc,
-        .it-MdContent .highlight .dl,
-        .it-MdContent .highlight .sd,
-        .it-MdContent .highlight .s2,
-        .it-MdContent .highlight .sh,
-        .it-MdContent .highlight .si,
-        .it-MdContent .highlight .sx,
-        .it-MdContent .highlight .s1,
-        .it-MdContent .highlight .ss {
+        .code-frame .highlight .ld,
+        .code-frame .highlight .s,
+        .code-frame .highlight .sa,
+        .code-frame .highlight .sb,
+        .code-frame .highlight .sc,
+        .code-frame .highlight .dl,
+        .code-frame .highlight .sd,
+        .code-frame .highlight .s2,
+        .code-frame .highlight .sh,
+        .code-frame .highlight .si,
+        .code-frame .highlight .sx,
+        .code-frame .highlight .s1,
+        .code-frame .highlight .ss {
             color: #a6ea61;
         }
 
-        .it-MdContent .highlight .o,
-        .it-MdContent .highlight .gd,
-        .it-MdContent .highlight .kn,
-        .it-MdContent .highlight .nt,
-        .it-MdContent .highlight .ow {
+        .code-frame .highlight .o,
+        .code-frame .highlight .gd,
+        .code-frame .highlight .kn,
+        .code-frame .highlight .nt,
+        .code-frame .highlight .ow {
             color: #f77;
         }
 
-        /* .it-MdContent .highlight .p{
+        /* .code-frame .highlight .p{
             color: var(--yellow);
         } */
     }
