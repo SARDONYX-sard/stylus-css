@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.18
+@version        0.0.19
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.user.css
@@ -397,270 +397,261 @@ Images:
 - https://github.com/savicilija85/nature-wallpapers
 */
 @-moz-document domain("github.com") {
-  :root {
-    --bg-size:
-      /*[[custom_bg_size]]*/
-    ;
+    :root {
+        --bg-size: /*[[custom_bg_size]]*/;
 
-    /* overwrite variables */
-    --color-accent-fg:
-      /*[[color-accent-fg]]*/
-      !important;
-    --color-border-muted:
-      /*[[color-border]]*/
-      !important;
+        /* overwrite variables */
+        --color-accent-fg: /*[[color-accent-fg]]*/
+        !important;
+        --color-border-muted: /*[[color-border]]*/
+        !important;
 
-    --color-canvas-inset:
-      /*[[bg-subtle-color]]*/
-      !important;
-    --color-canvas-subtle:
-      /*[[bg-subtle-color]]*/
-      !important;
-    --color-header-bg:
-      /*[[bg-subtle-color]]*/
-      !important;
+        --color-canvas-inset: /*[[bg-subtle-color]]*/
+        !important;
+        --color-canvas-subtle: /*[[bg-subtle-color]]*/
+        !important;
+        --color-header-bg: /*[[bg-subtle-color]]*/
+        !important;
 
-    --bgColor-default:
-      /*[[bg-color]]*/
-      !important;
-    --color-canvas-default:
-      /*[[bg-color]]*/
-      !important;
-    --color-codemirror-bg:
-      /*[[bg-color]]*/
-      !important;
-    --color-codemirror-lines-bg: transparent !important;
-    --color-neutral-muted:
-      /*[[bg-color]]*/
-      !important;
-    --color-page-header-bg:
-      /*[[bg-color]]*/
-      !important;
-    --fgColor-disabled: #a0a0a0bf;
-  }
+        --bgColor-default: /*[[bg-color]]*/
+        !important;
+        --color-canvas-default: /*[[bg-color]]*/
+        !important;
+        --color-codemirror-bg: /*[[bg-color]]*/
+        !important;
+        --color-codemirror-lines-bg: transparent !important;
+        --color-neutral-muted: /*[[bg-color]]*/
+        !important;
+        --color-page-header-bg: /*[[bg-color]]*/
+        !important;
+        --fgColor-disabled: #a0a0a0bf;
+    }
 
-  header,
-  div[data-selector="repos-split-pane-content"] {
-    --color-canvas-default: transparent !important;
-    background-color: var(--color-page-header-bg) !important;
-  }
+    header,
+    div[data-selector="repos-split-pane-content"] {
+        --color-canvas-default: transparent !important;
+        background-color: var(--color-page-header-bg) !important;
+    }
 
-  #repos-file-tree,
-  /* For logout */
-  header.AppHeader {
-    --color-page-header-bg:
-      /*[[bg-color]]*/
-      !important;
-  }
+    #repos-file-tree,
+    /* For logout */
+    header.AppHeader {
+        --color-page-header-bg: /*[[bg-color]]*/
+        !important;
+    }
 
-  body {
-    background-attachment: fixed;
-    background-image: url("/*[[custom_wallpaper]]*/");
-    background-position-y:
-      /*[[pos_y]]*/
-    ;
-    background-position-x:
-      /*[[pos_x]]*/
-    ;
-    background-repeat: no-repeat;
-    background-size: var(--bg-size);
-  }
+    body {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
+        background-repeat: no-repeat;
+        background-size: var(--bg-size);
+    }
 
-  .BorderGrid-cell {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
+    .BorderGrid-cell {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 
-  .file-navigation {
-    padding: 0.5rem;
-  }
+    .file-navigation {
+        padding: 0.5rem;
+    }
 
-  #user-private-profile-frame,
-  #user-profile-frame,
-  .Layout-sidebar,
-  .js-profile-editable-replace {
-    padding: 1rem;
-  }
+    #user-private-profile-frame,
+    #user-profile-frame,
+    .Layout-sidebar,
+    .js-profile-editable-replace {
+        padding: 1rem;
+    }
 
-  .markdown-body img,
-  .feed-background {
-    background-color: transparent !important;
-  }
+    .markdown-body img,
+    .feed-background {
+        background-color: transparent !important;
+    }
 
-  #options_bucket,
-  #repos-file-tree,
-  #repos-sticky-header>div>div,
-  #repository-container-header,
-  #user-private-profile-frame,
-  #user-profile-frame,
-  #wiki-content,
-  .commit,
-  .file-navigation,
-  .gkfBtX,
-  .BorderGrid,
-  .gist-snippet,
-  .js-gist-file-update-container,
-  .js-profile-editable-replace,
-  /* branch & tag */
-  .Layout-main>div:nth-child(3).d-flex.d-lg-none.mb-3,
-  .Layout-sidebar,
-  div[data-selector="repos-split-pane-content"]>div:nth-child(3)>div:nth-child(1),
-  div[data-selector="repos-split-pane-content"] div[id="readme"],
-  footer,
-  table,
-  th {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    #options_bucket,
+    #repos-file-tree,
+    #repos-sticky-header > div > div,
+    #repository-container-header,
+    #user-private-profile-frame,
+    #user-profile-frame,
+    #wiki-content,
+    .commit,
+    .file-navigation,
+    .gkfBtX,
+    .BorderGrid,
+    .gist-snippet,
+    .js-gist-file-update-container,
+    .js-profile-editable-replace,
+    /* pull req comment */
+    /* branch & tag */
+    .Layout-main > div:nth-child(3).d-flex.d-lg-none.mb-3,
+    .Layout-sidebar,
+    div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
+    div[data-selector="repos-split-pane-content"] div[id="readme"],
+    footer,
+    table,
+    th {
+        background-color: var(--color-page-header-bg) !important;
+    }
 
-  #user-profile-frame,
-  .BorderGrid,
-  .file-navigation,
-  .gist-snippet,
-  .js-gist-file-update-container,
-  .js-profile-editable-replace,
-  .Layout-sidebar,
-  .UnderlineNav,
-  nav.UnderlineNav-body {
-    border-radius: 2em;
-  }
+    #user-profile-frame,
+    .BorderGrid,
+    .file-navigation,
+    .gist-snippet,
+    .js-gist-file-update-container,
+    .js-profile-editable-replace,
+    .Layout-sidebar,
+    .UnderlineNav,
+    nav.UnderlineNav-body {
+        border-radius: 2em;
+    }
+
+    /*[[onedark-code-theme]]*/
 }
 
 @-moz-document regexp("https?://gist.github.com/.*") {
-
-  /* To avoid dobule bg color */
-  table {
-    background-color: transparent !important;
-  }
+    /* To avoid dobule bg color */
+    table {
+        background-color: transparent !important;
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*(stargazers).*") {
-  #repos>ol {
-    background-color: var(--color-page-header-bg);
-  }
+    #repos > ol {
+        background-color: var(--color-page-header-bg);
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*(pulse|graphs|community|network|settings).*") {
+    /* To avoid dobule bg color */
+    #options_bucket {
+        background-color: transparent !important;
+    }
 
-  /* To avoid dobule bg color */
-  #options_bucket {
-    background-color: transparent !important;
-  }
-
-  .Layout-sidebar>div,
-  .Layout-main {
-    background-color: var(--color-page-header-bg) !important;
-    border-radius: 1rem;
-    padding: 1rem;
-  }
+    .Layout-sidebar > div,
+    .Layout-main {
+        background-color: var(--color-page-header-bg) !important;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*(releases|tags).*") {
-  div.application-main {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    div.application-main {
+        background-color: var(--color-page-header-bg) !important;
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*(actions).*") {
+    .CheckRun-header,
+    .CheckRun {
+        background-color: transparent !important;
+    }
 
-  .CheckRun-header,
-  .CheckRun {
-    background-color: transparent !important;
-  }
-
-  div[data-pjax="#repo-content-pjax-container"][data-turbo-frame="repo-content-turbo-frame"],
-  .PageLayout-header--hasDivider.PageLayout-header,
-  .PageLayout-columns>div>div>nav[aria-label="Workflow run"],
-  div[data-target="split-page-layout.content"] {
-    background-color: var(--color-page-header-bg) !important;
-    border-radius: 1rem;
-    padding: 1rem;
-  }
+    div[data-pjax="#repo-content-pjax-container"][data-turbo-frame="repo-content-turbo-frame"],
+    .PageLayout-header--hasDivider.PageLayout-header,
+    .PageLayout-columns > div > div > nav[aria-label="Workflow run"],
+    div[data-target="split-page-layout.content"] {
+        background-color: var(--color-page-header-bg) !important;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*(wiki).*"),
 regexp("https?://github.com/users/.*projects/.*") {
-
-  #memex-root,
-  .blankslate.blankslate-spacious {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    #memex-root,
+    .blankslate.blankslate-spacious {
+        background-color: var(--color-page-header-bg) !important;
+    }
 }
 
 @-moz-document regexp("https?://github.com/notifications.*") {
-  .application-main {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    .application-main {
+        background-color: var(--color-page-header-bg) !important;
+    }
 }
 
 @-moz-document regexp("https?://github.com/orgs.*") {
-  .Layout-main-centered-lg {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    .Layout-main-centered-lg {
+        background-color: var(--color-page-header-bg) !important;
+    }
 }
 
 @-moz-document regexp("https?://github.com/search\?q.*") {
+    span[role="presentation"],
+    #qb-input-query {
+        color: white !important;
+    }
 
-  span[role="presentation"],
-  #qb-input-query {
-    color: white !important;
-  }
+    a[rel="next"],
+    div[data-testid="results-list"] a {
+        color: var(--color-accent-fg) !important;
+    }
 
-  a[rel="next"],
-  div[data-testid="results-list"] a {
-    color: var(--color-accent-fg) !important;
-  }
+    div[data-testid="results-list"] > div,
+    div[data-testid="search-sub-header"] {
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 
+    div[data-target="react-app.reactRoot"] > * {
+        background-color: transparent !important;
+    }
 
+    a[aria-current="page"] {
+        background-color: var(--color-accent-fg) !important;
+    }
 
-
-  div[data-testid="results-list"]>div,
-  div[data-testid="search-sub-header"] {
-    border-radius: 1rem;
-    padding: 1rem;
-  }
-
-  div[data-target="react-app.reactRoot"]>* {
-    background-color: transparent !important;
-  }
-
-  a[aria-current="page"] {
-    background-color: var(--color-accent-fg) !important;
-  }
-
-  #search-filters-title,
-  div[data-testid="facets-pane"],
-  div[data-testid="results-list"]>div,
-  div[data-testid="search-sub-header"] {
-    background-color: var(--color-page-header-bg) !important;
-  }
+    #search-filters-title,
+    div[data-testid="facets-pane"],
+    div[data-testid="results-list"] > div,
+    div[data-testid="search-sub-header"] {
+        background-color: var(--color-page-header-bg) !important;
+    }
 }
 
-@-moz-document regexp("https?://github.com/.*issues.*") {
-  #partial-discussion-sidebar {
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--color-page-header-bg);
-  }
+@-moz-document regexp("https?://github.com/.*(issues|pull).*") {
+    .list-view-items,
+    .data.highlight.js-blob-wrapper,
+    .js-resolvable-timeline-thread-container,
+    #partial-discussion-sidebar {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
 
-  /* To avoid dobule bg color */
-  table {
-    background-color: transparent !important;
-  }
+    /* To avoid dobule bg color */
+    table {
+        background-color: transparent !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(commits).*") {
+    .list-view-items {
+        border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
+
+    .list-view-items > li:hover {
+        background-color: var(--color-codemirror-bg);
+    }
 }
 
 @-moz-document regexp("https?://github.com/marketplace/actions/.*") {
-  .application-main {
-    color: white;
-    background-color: var(--color-page-header-bg);
-  }
+    .application-main {
+        color: white;
+        background-color: var(--color-page-header-bg);
+    }
 }
 
 @-moz-document regexp("https?://github.com/.*security.*") {
-
-  .Subhead,
-  .Layout-sidebar {
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--color-page-header-bg);
-  }
+    .Subhead,
+    .Layout-sidebar {
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
 }
