@@ -1,0 +1,114 @@
+/* ==UserStyle==
+@name           Spotify Transparency
+@namespace      github.com/openstyles/stylus/
+@version        0.0.1
+@description    Spotify Transparency.
+@author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/spotify-transparency.user.css
+@license        unlicense
+
+@advanced color lyrics_color_active "Lyrics(active)" #fff
+@advanced color lyrics_color_inactive "Lyrics(inactive)" #8484843b
+@advanced color lyrics_color_passed "Lyrics(passed)" #242424
+@advanced color bgColor "Back ground color" #27262647
+
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C2 "center"  <<<EOT center EOT;
+  C1 "bottom"  <<<EOT bottom EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C3 "cover" <<<EOT cover  EOT;
+  C1 "auto"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+C0 "Bridge" <<<EOT https://wallpaperaccess.com/full/422459.jpg EOT;
+C1 "Coffee Pie" <<<EOT https://wallpaperaccess.com/full/5404954.jpg EOT;
+C3 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+C4 "Honshu Fuji" <<<EOT https://wallpaperaccess.com/full/422471.jpg EOT;
+C6 "Pancake" <<<EOT https://wallpaperaccess.com/full/5405396.jpg EOT;
+C7 "Red Trees" <<<EOT https://wallpaperaccess.com/full/1164592.jpg EOT;
+C8 "Safari" <<<EOT https://cdn.wallpapersafari.com/63/66/bEVak3.jpg EOT;
+C9 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+C10 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C11 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+C12 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+C14 "Nature1"  <<<EOT https://pbs.twimg.com/media/Cve2jZAWEAEcewk?format=jpg&name=large EOT;
+C15 "Stars" <<<EOT https://pbs.twimg.com/media/Fxto7UTXgAEtKVC?format=jpg&name=large EOT;
+C16 "Street rain" <<<EOT https://pbs.twimg.com/media/FyXLLH_WwAATO08?format=jpg&name=large EOT;
+C17 "silhouette" <<<EOT https://pbs.twimg.com/media/FOIIRowaMAAqdsy?format=jpg&name=4096x4096 EOT;
+C18 "Sunflowers" <<<EOT https://pbs.twimg.com/media/FOFIpNwacAA7YOg?format=jpg&name=4096x4096  EOT;
+C19 "Beach and Night" <<<EOT https://pbs.twimg.com/media/FOFImLeacAAVz-F?format=jpg&name=4096x4096 EOT;
+C20 "Monn night tree" <<<EOT https://pbs.twimg.com/media/FY8RRwqWAAYgnKa?format=jpg&name=large EOT;
+C21 "Rose" <<<EOT https://pbs.twimg.com/media/FYR0B6RX0AMjvXw?format=jpg&name=large EOT;
+custom_bg "Custom" <<<EOT /*[[custom_bg_url]]*\/ EOT;
+custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
+@advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
+==/UserStyle== */
+@-moz-document url-prefix("https://open.spotify.com") {
+    :root {
+        --lyrics-color-bg: /*[[bgColor]]*/;
+    }
+
+    main[aria-label^="Spotify"] > div,
+    footer {
+        background-color: transparent !important;
+    }
+
+    .encore-dark-theme,
+    .encore-dark-theme .encore-base-set {
+        --background-base: var(--lyrics-color-bg) !important;
+    }
+
+    main[aria-label="Spotify"] > div,
+    div[data-testid="fullscreen-lyric"] {
+        --lyrics-color-active: /*[[lyrics_color_active]]*/;
+        --lyrics-color-inactive: /*[[lyrics_color_inactive]]*/;
+        --lyrics-color-passed: /*[[lyrics_color_passed]]*/;
+        --lyrics-color-messaging: rgb(0, 0, 0);
+        --lyrics-color-background: transparent !important;
+    }
+
+    div:has(header[data-testid="topbar"]) {
+        background-color: var(--lyrics-color-bg);
+    }
+
+    div[data-testid="fullscreen-lyric"] > div {
+        font-family: "MS Mincho";
+    }
+
+    .Root {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-x: /*[[pos_x]]*/;
+        background-position-y: /*[[pos_y]]*/;
+        background-repeat: no-repeat;
+        background-size: /*[[custom_bg_size]]*/;
+    }
+
+    .Root > * {
+        background-color: transparent;
+    }
+}

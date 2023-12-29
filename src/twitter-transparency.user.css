@@ -1,0 +1,393 @@
+/* ==UserStyle==
+@name           Twitter Transparent
+@namespace      github.com/openstyles/stylus/
+@version        0.0.5
+@description    Twitter Transparency.
+@author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/twitter-transparency.user.css
+@license        unlicense
+
+@advanced dropdown unshow_notification "非表示: (通知)" {
+    1 "ON" <<<EOT a[href="/notifications"] { display: none; } EOT;
+    0 "OFF" <<<EOT EOT;
+}
+@advanced dropdown unshow_follow "非表示: (フォロー数)" {
+    1 "ON" <<<EOT a[href$="/following"] { display: none; } EOT;
+    0 "OFF" <<<EOT EOT;
+}
+
+@advanced color customColor "Theme color" #4a646166
+@advanced color urlColor "URL color" #000000b3
+@advanced color bgColor "Back ground color" #000000b3
+
+@advanced dropdown custom_wallpaper "背景" {
+  C1 "Nature1"  <<<EOT https://pbs.twimg.com/media/Cve2jZAWEAEcewk?format=jpg&name=large EOT;
+  C2 "Stars" <<<EOT https://pbs.twimg.com/media/Fxto7UTXgAEtKVC?format=jpg&name=large EOT;
+  C3 "Street rain" <<<EOT https://pbs.twimg.com/media/FyXLLH_WwAATO08?format=jpg&name=large EOT;
+  C4 "silhouette" <<<EOT https://pbs.twimg.com/media/FOIIRowaMAAqdsy?format=jpg&name=4096x4096 EOT;
+  C5 "Sunflowers" <<<EOT https://pbs.twimg.com/media/FOFIpNwacAA7YOg?format=jpg&name=4096x4096  EOT;
+  C6 "Beach and Night" <<<EOT https://pbs.twimg.com/media/FOFImLeacAAVz-F?format=jpg&name=4096x4096 EOT;
+  C7 "Monn night tree" <<<EOT https://pbs.twimg.com/media/FY8RRwqWAAYgnKa?format=jpg&name=large EOT;
+  C8 "Rose" <<<EOT https://pbs.twimg.com/media/FYR0B6RX0AMjvXw?format=jpg&name=large EOT;
+  custom_wallpaper-custom-dropdown "Custom" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+}
+@advanced text custom_wallpaper-custom "URL: (Custom)" "https://cdn.wallpapersafari.com/48/32/YLptDi.jpg"
+@advanced dropdown custom_bg_size "背景" {
+  C1 "auto" <<<EOT auto EOT;
+  C2 "contain" <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+==/UserStyle== */
+/* Image ref: https://twitter.com/search?q=wallpaper%20PC%20nature&src=recent_search_click&f=image */
+@-moz-document domain("twitter.com") {
+    /*[[unshow_notification]]*/
+    :root {
+        --theme-color: /*[[customColor]]*/;
+        --url-color: /*[[urlColor]]*/;
+        /* overwrite */
+        --dark100: /*[[bgColor]]*/
+        !important;
+    }
+
+    #react-root {
+        height: auto !important;
+        background-attachment: fixed;
+        background-color: #181e20;
+        background-image: url("/*[[custom_wallpaper]]*/") !important;
+        background-position: center center;
+        background-repeat: no-repeat !important;
+        background-size: /*[[custom_bg_size]]*/
+        !important;
+    }
+
+
+
+    /* 今どうしてる？ */
+    .r-g2wdr4,
+    .r-kemksi {
+        background-color: var(--dark100)
+    }
+
+    .r-1ye8kvj {
+        margin-right: 1.5rem;
+        max-width: 722px;
+    }
+
+    aside[aria-label="認証を受ける"],
+    a[aria-label="認証済み"],
+    aside[aria-label="おすすめユーザー"],
+    header[role="banner"] > div > div > div > div > div:nth-child(1)/* 犬 */
+    ,
+    div[data-testid="promotionInfoWrapper"]/* Twitter Proへの催促 */
+    ,
+    a[href="/SARDONYX_sard/followers"]/* フォロワー数非表示 */
+    ,
+    div[data-testid="userFollowIndicator"]/* フォローされています */
+    ,
+    /* .css-1dbjc4n > * > a[href$="/analytics"], */
+    .r-1bro5k0/*   オススメユーザー非表示   */
+    {
+        display: none;
+    }
+
+    /** 左サイドバーメニューを下にまとめる */
+    header[role="banner"] > div > div > div {
+        justify-content: end;
+    }
+
+    header[role="banner"] > div > div > div > div {
+        background-color: var(--dark100);
+        border-radius: 1rem;
+    }
+
+
+    .r-kemksi a[role="link"],
+    #global-actions .new:before,
+    #global-actions > li > a:focus,
+    #global-actions > li.active .text,
+    #global-actions > li:hover > a,
+    .Button,
+    .Button,
+    .Button.Button--link,
+    .Button.is-active,
+    .Button.is-hover,
+    .Button.is-visited,
+    .Button.is-visited,
+    .Button:active,
+    .Button:hover,
+    .Button:visited,
+    .Button:visited,
+    .DMReadReceipt-check.is-seen,
+    .DashUserDropdown.dropdown-menu .nightmode-toggle .Icon,
+    .DirectMessage--sent .DirectMessage-text,
+    .EdgeButton--secondary,
+    .EdgeButton--secondary:active,
+    .EdgeButton--secondary:focus,
+    .EdgeButton--secondary:hover,
+    .Icon--bird:before,
+    .Icon--colorFollower,
+    .Icon--colorLightning,
+    .Icon--follower,
+    .Icon--magicrecs,
+    .Icon--playButton,
+    .Icon--verified,
+    .MessageStreamItem-header,
+    .MomentMakerCoverDialog-cell,
+    .ProfileCard .pretty-link,
+    .ProfileCard .pretty-link:active,
+    .ProfileCard .pretty-link:focus,
+    .ProfileCard .pretty-link:hover,
+    .ProfileCard a,
+    .ProfileCard a:active,
+    .ProfileCard a:focus,
+    .ProfileCard a:hover,
+    .ProfileCardStats-statLink:focus .ProfileCardStats-statLabel,
+    .ProfileCardStats-statLink:focus .ProfileCardStats-statValue,
+    .ProfileCardStats-statLink:hover .ProfileCardStats-statLabel,
+    .ProfileCardStats-statLink:hover .ProfileCardStats-statValue,
+    .ProfileTweet-action--reply .ProfileTweet-actionButton:focus .ProfileTweet-actionCount,
+    .ProfileTweet-action--reply .ProfileTweet-actionButton:focus,
+    .ProfileTweet-action--reply:hover .ProfileTweet-actionButton,
+    .ProfileTweet-action--reply:hover .ProfileTweet-actionCount,
+    .TwitterCard .EdgeButton--secondary,
+    .TwitterCard .EdgeButton--secondary:hover,
+    .TwitterCard[data-theme="tweetdeck-light"] .Button--smallGray,
+    .TwitterCard[data-theme="tweetdeck-light"] .Button--smallGray:hover,
+    .account-summary:focus .fullname,
+    .action-text,
+    .app-nav-link,
+    .app-nav-link.is-selected,
+    .app-nav-link:hover,
+    .app-nav-tab,
+    .app-nav-tab:hover,
+    .app-search-fake,
+    .btn-link,
+    .btn-link:focus,
+    .card .card-body .attribution:focus,
+    .card .card-body:hover .attribution,
+    .card .list-details a:focus,
+    .card .list-details a:hover,
+    .client-and-actions a:focus,
+    .client-and-actions a:hover,
+    .color-twitter-blue,
+    .column-header-link,
+    .column-header-link:active,
+    .column-header-link:focus,
+    .column-header-link:hover,
+    .column-header.is-options-open .column-settings-link,
+    .column-header.is-options-open .column-settings-link:hover,
+    .column-nav-updates,
+    .compose .other-replies-link,
+    .compose .other-replies-link:hover,
+    .compose-reply-tweet .tweet-body a,
+    .dismiss-btn:hover b,
+    .dm-action:active .icon-reply,
+    .dm-action:active .reply-count,
+    .dm-action:focus .icon-reply,
+    .dm-action:focus .reply-count,
+    .dm-action:hover .icon-reply,
+    .dm-action:hover .reply-count,
+    .dropdown.open .user-dropdown.plain-btn,
+    .facet-subtitle,
+    .find-friends-sources li:hover .source,
+    .follow-btn .Icon,
+    .follow-btn .icon,
+    .icon-btn,
+    .icon-btn.active,
+    .icon-btn.disabled,
+    .icon-btn.disabled:hover,
+    .icon-btn.enabled,
+    .icon-btn:active,
+    .icon-btn:hover,
+    .icon-btn[aria-disabled=true],
+    .icon-btn[disabled],
+    .icon-follow-color,
+    .icon-twitter-blue-color,
+    .inline-reply .other-replies-link,
+    .inline-reply .other-replies-link:hover,
+    .is-actionable:hover .stat-word,
+    .is-new .column-type-icon,
+    .is-selected.dm-action .icon-reply,
+    .is-selected.dm-action .reply-count,
+    .is-selected.tweet-detail-action .icon-reply,
+    .is-selected.tweet-detail-action .reply-count,
+    .list .username a:focus,
+    .list .username a:hover,
+    .list-membership-container .create-a-list,
+    .list-membership-container .create-a-list:hover,
+    .lst-launcher a:active i,
+    .lst-launcher a:focus i,
+    .lst-launcher a:hover i,
+    .message .message-text a,
+    .message .message-text button,
+    .metadata a:focus,
+    .metadata a:hover,
+    .module .list-link:focus,
+    .module .list-link:hover,
+    .nav.right-actions > li > a:focus,
+    .nav.right-actions > li > a:hover,
+    .new-tweets-bar,
+    .open > .plain-btn,
+    .other-replies-link,
+    .other-replies-link:hover,
+    .photo-selector:hover .btn,
+    .plain-btn:focus,
+    .plain-btn:hover,
+    .pretty-link b,
+    .pretty-link:focus b,
+    .pretty-link:focus s,
+    .pretty-link:focus s,
+    .pretty-link:hover b,
+    .pretty-link:hover s,
+    .pretty-link:hover s,
+    .prf-stats a:hover strong,
+    .prf-stats a:hover,
+    .r-13gxpu9,
+    .r-13gxpu9,
+    .r-1cvl2hr,
+    .r-1n1174f,
+    .r-1n1174f,
+    .stats a strong,
+    .stats a:focus strong,
+    .stats a:focus,
+    .stats a:hover strong,
+    .stats a:hover,
+    .stream-item .original-tweet.focus .details b,
+    .stream-item .view-all-supplements:focus,
+    .stream-item .view-all-supplements:hover,
+    .stream-item a:focus .fullname,
+    .stream-item a:hover .fullname,
+    .stream-item-activity-notification .latest-tweet .tweet-row a:focus s,
+    .stream-item-activity-notification .latest-tweet .tweet-row a:hover s,
+    .stream-item.open .original-tweet .details b,
+    .stream-item:hover .original-tweet .details b,
+    .tweet .context .pretty-link:focus b,
+    .tweet .context .pretty-link:focus s,
+    .tweet .context .pretty-link:hover b,
+    .tweet .context .pretty-link:hover s,
+    .tweet .details.with-icn .Icon,
+    .tweet .details.with-icn b,
+    .tweet .time a:focus,
+    .tweet .time a:hover,
+    .tweet-action.is-selected .icon-reply,
+    .tweet-action.is-selected .reply-count,
+    .tweet-action:active .icon-reply,
+    .tweet-action:active .reply-count,
+    .tweet-action:focus .icon-reply,
+    .tweet-action:focus .reply-count,
+    .tweet-action:hover .icon-reply,
+    .tweet-action:hover .reply-count,
+    .tweet-detail-action:active .icon-reply,
+    .tweet-detail-action:active .reply-count,
+    .tweet-detail-action:focus .icon-reply,
+    .tweet-detail-action:focus .reply-count,
+    .tweet-detail-action:hover .icon-reply,
+    .tweet-detail-action:hover .reply-count,
+    a.account-group:focus .fullname,
+    a.account-group:hover .fullname,
+    a:active,
+    a:focus,
+    a:hover,
+    button.Button--link,
+    button.btn-on-dark:focus,
+    button.btn-round i,
+    button.is-active,
+    button.is-hover,
+    button.is-visited,
+    button.is-visited,
+    button:active,
+    button:hover,
+    button:visited,
+    input.Button--link[type=button],
+    input.is-active[type=button],
+    input.is-hover[type=button],
+    input.is-visited[type=button],
+    input.is-visited[type=button],
+    input:active[type=button],
+    input:hover[type=button],
+    input:visited[type=button],
+    input:visited[type=button],
+    input[type=button],
+    input[type=button],
+    input[type=button].btn-on-dark:focus,
+    button,
+    s {
+        color: var(--url-color) !important;
+    }
+
+    #calcurrent,
+    .DirectMessage--sent .DirectMessage-text,
+    .EdgeButton--primary,
+    .EdgeButton--primary:focus,
+    .InputToken,
+    .StaticLoggedOutHomePage-communicationBlock,
+    .TwitterCard [data-poll-vote-majority*="1"] .PollXChoice-optionContainer[data-poll-index="1"] .PollXChoice-choice--chart,
+    .TwitterCard [data-poll-vote-majority*="2"] .PollXChoice-optionContainer[data-poll-index="2"] .PollXChoice-choice--chart,
+    .TwitterCard [data-poll-vote-majority*="3"] .PollXChoice-optionContainer[data-poll-index="3"] .PollXChoice-choice--chart,
+    .TwitterCard [data-poll-vote-majority*="4"] .PollXChoice-optionContainer[data-poll-index="4"] .PollXChoice-choice--chart,
+    .bg-color-twitter-blue,
+    .btn-on-blue,
+    .button-group-item .content.selected,
+    .drag-drop-indicator,
+    .dropdown-menu .dropdown-link.is-focused,
+    .dropdown-menu .dropdown-link.selected,
+    .dropdown-menu .dropdown-link:focus,
+    .dropdown-menu .dropdown-link:hover,
+    .dropdown-menu .is-selected,
+    .dropdown-menu .selected a,
+    .dropdown-menu li > a:focus,
+    .dropdown-menu li > a:hover,
+    .dropdown-menu li:focus .dropdown-link,
+    .dropdown-menu li:hover .dropdown-link,
+    .global-nav .people .count .count-inner,
+    .list-item.is-selected,
+    .list-item:active,
+    .list-item:hover,
+    .lst-group .selected a:hover,
+    .lst-group .selected,
+    .notifying .device-follow-button,
+    .primary-btn,
+    .r-1cb97yi,
+    .r-1q3imqu,
+    .r-1vtznih,
+    .r-1xfps3t,
+    .r-l5o3uw,
+    .r-nfjyqm,
+    .r-ny3pxa,
+    .r-urgr8i,
+    .r-urgr8i,
+    .settings-alert,
+    .u-bgUserColor,
+    .u-bgUserColorHover:focus,
+    .u-bgUserColorHover:hover,
+    [style*="background-color: rgb(29, 155, 240);"],
+    [style="background-color: #1DA1F2"],
+    button.Button--primary {
+        background-color: var(--theme-color) !important;
+    }
+}
+
+
+@-moz-document regexp(".*SARDONYX_sard\/status\/.*") {
+    a[href$="/likes"] {
+        display: none;
+    }
+}
+
+@-moz-document regexp(".*SARDONYX_sard.*"),
+url("https://twitter.com/compose/tweet") {
+    /*[[unshow_follow]]*/
+    .DataPoint--withBottomBorder > .metric-followers,
+    div[data-metric=followers],
+    div[data-testid="like"],
+    div[data-type="top_follower"],
+    a[href="/SARDONYX_sard/verified_followers"],
+    [aria-label="タイムライン: 会話"] article > div > div > div > div:nth-child(3) > div > div > div > div > span:where([aria-hidden="true"]),
+    [aria-label="タイムライン: 会話"] article > div > div > div > div:nth-child(3) > div > div > div > div > span:has([data-testid="app-text-transition-container"]) {
+        display: none !important;
+    }
+}
