@@ -5,6 +5,7 @@ CSS files for the Chrome extension [Stylus](https://chrome.google.com/webstore/d
 ## Original CSS
 
 <!-- original css start -->
+- [chatgpt-transparent](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/chatgpt-transparent.user.css)
 - [github-transparent](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/github-transparent.user.css)
 - [google-news](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/google-news.user.css)
 - [google-search](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/google-search.user.css)
