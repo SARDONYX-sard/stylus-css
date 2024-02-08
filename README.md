@@ -12,7 +12,6 @@ CSS files for the Chrome extension [Stylus](https://chrome.google.com/webstore/d
 - [niconico-seiga](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/niconico-seiga.user.css)
 - [niconico](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/niconico.user.css)
 - [qiita-transparency](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/qiita-transparency.user.css)
-- [qiita](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/qiita.user.css)
 - [spotify-transparency](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/spotify-transparency.user.css)
 - [transparency-5ch](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/transparency-5ch.user.css)
 - [transparent-2nn](https://github.com/SARDONYX-sard/stylus-css/raw/main/src/transparent-2nn.user.css)
