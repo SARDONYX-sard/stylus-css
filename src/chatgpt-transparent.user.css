@@ -1,0 +1,110 @@
+/* ==UserStyle==
+@name           ChatGPT transparent
+@namespace      github.com/openstyles/stylus
+@version        0.0.1
+@description    Transparent ChatGPT
+@author         SARDONYX
+@updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/chatgpt-transparent.user.css
+@license        CC0
+
+@advanced dropdown custom_wallpaper "Bg: Image" {
+ C1 "Electronic_Sample_96-calm-night" <<<EOT https://raw.githubusercontent.com/DenverCoder1/minimalistic-wallpaper-collection/main/images/Electronic_Sample_96-calm-night.png EOT;
+ C2 "Forest" <<<EOT https://wallpaperaccess.com/full/31221.jpg EOT;
+ C3 "pexels-liger-pham" <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/pexels-liger-pham-1108701.jpg EOT;
+ C4 "Robin" <<<EOT https://raw.githubusercontent.com/xiwenc/nature-wallpapers/master/src/andrew-alexander-88432-unsplash.jpg EOT;
+ C5 "Ship"  <<<EOT https://raw.githubusercontent.com/savicilija85/nature-wallpapers/master/sdBOMqg%20-%20Imgur.jpg EOT;
+ C6 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?s=139edf608c428656505a143635a0687dec086229 EOT;
+ C7 "猫と蝶" <<<EOT https://storge.pic2.me/cm/1920x1080/955/5f7f980c1b2194.21812251.jpg EOT;
+ C8 "手水舎" <<<EOT https://www.pixelstalk.net/wp-content/uploads/2016/05/Japan-HD-Image.jpg EOT;
+ C9 "塔" <<<EOT https://images2.alphacoders.com/113/thumb-1920-1131058.jpg  EOT;
+C10 "都会" <<<EOT https://wallpaperaccess.com/full/1265.jpg EOT;
+custom_wallpaper-custom-dropdown "--CustomURL--"   <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
+custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-custom2]]*\/ EOT;
+}
+
+@advanced text custom_wallpaper-custom "Bg: (CustomURL)" ""
+@advanced text custom_wallpaper-custom2 "Bg: (CustomURL2)" ""
+
+@advanced dropdown pos_y "Bg: (Postion Y)" {
+  C1 "bottom"  <<<EOT bottom EOT;
+  C2 "center"  <<<EOT center EOT;
+  C3 "top" <<<EOT top  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown pos_x "Bg: (Postion X)" {
+  C1 "center"  <<<EOT center EOT;
+  C2 "right"  <<<EOT right EOT;
+  C3 "left" <<<EOT left EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced dropdown custom_bg_size "Bg: (Size)" {
+  C1 "auto(Default)*"  <<<EOT auto EOT;
+  C2 "contain"  <<<EOT contain EOT;
+  C3 "cover" <<<EOT cover  EOT;
+  C4 "initial" <<<EOT initial EOT;
+  C5 "inherit" <<<EOT inherit EOT;
+  C6 "revert" <<<EOT revert EOT;
+  C7 "unset" <<<EOT unset EOT;
+}
+@advanced color main-bg-color "Bg Color(Main)" #222222b5
+@advanced color side-bg-color "Bg Color(Side)" #222222b5
+@advanced color user-bg-color "Bg Color(User)" #1a242875
+@advanced color ai-bg-color   "Bg Color(AI)"   #22222226
+@advanced text user_width "Content Width" "90%"
+==/UserStyle== */
+@-moz-document url-prefix("https://chat.openai.com") {
+    :root {
+        --bg-size: /*[[custom_bg_size]]*/;
+        --ai-bg-color: /*[[ai-bg-color]]*/;
+        --user-bg-color: /*[[user-bg-color]]*/;
+        --bg-color: /*[[user-bg-color]]*/;
+        --max-width: /*[[user_width]]*/;
+
+        --main-surface-tertiary: /*[[main-bg-color]]*/;
+        --sidebar-surface-primary: /*[[side-bg-color]]*/;
+    }
+
+    .bg-gray-950 {
+        background-color: transparent;
+    }
+
+    .markdown pre {
+        --main-surface-tertiary: /*[[main-bg-color]]*/;
+        background-color: var(--main-surface-tertiary) !important;
+    }
+
+    [data-testid^="conversation-"] > div > *,
+    .lg\:max-w-2xl,
+    .xl\:max-w-3xl,
+    .lg\:max-w-xl {
+        max-width: var(--max-width);
+    }
+
+    body {
+        background-attachment: fixed;
+        background-image: url("/*[[custom_wallpaper]]*/");
+        background-position-y: /*[[pos_y]]*/;
+        background-position-x: /*[[pos_x]]*/;
+        background-repeat: no-repeat;
+        background-size: var(--bg-size);
+    }
+
+    [data-testid^="conversation-turn-"] > div > div:has(textarea),
+    [data-testid^="conversation-turn-"] > div > div:has(div > div > [data-message-author-role="user"]) {
+        background-color: var(--user-bg-color) !important;
+    }
+
+    [data-testid^="conversation-turn-"] > div > div:has(div > div > [data-message-author-role="assistant"]) {
+        background-color: var(--ai-bg-color) !important;
+    }
+
+    .bg-token-main-surface-primary {
+        background-color: var(--main-surface-tertiary);
+    }
+}
