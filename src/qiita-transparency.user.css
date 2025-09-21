@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Qiita transparency
 @namespace      https://github.com/SARDONYX-sard/stylus-css
-@version        0.1.4
+@version        0.1.6
 @author         SARDONYX
 @description    Qiitaの記事ページの背景を透過させ、任意の画像を差し込む。
 @license        WTFPL(https://github.com/SARDONYX-sard/stylus-css/blob/main/LICENCE)
@@ -77,7 +77,6 @@
         --bg-pos-x: posX;
         --fonts: fontsCustom;
         --visited-color: visitedColor;
-
         if customBgImgEnabled {
             --wallpaper-url: convert("url(" + customBgImgUrl + ")");
         }
@@ -94,13 +93,12 @@
         --color-green-10: #40ff2a14;
         --color-green-90: linkColor;
         /* for warn */
-        --color-yellow-10: #fff0502b;
         --color-scrim: rgb(0 0 0 / 32%);
         --color-surface-variant: hoverBgColor;
+        --color-surfaceVariant: hoverBgColor;
         --color-surface: hoverBgColor;
-        --color-text-disabled: charDisabledColor;
-        --color-text-high-emphasis: charHighColor;
-        --color-text-medium-emphasis: charMediumColor;
+        --color-highEmphasis: charHighColor;
+        --color-mediumEmphasis: charMediumColor;
     }
 
     html {
@@ -130,6 +128,18 @@
         color: var(--visited-color);
     }
 
+    .it-MdContent .note.alert {
+        background-color: #b027274d;
+    }
+
+    .it-MdContent .note.warn {
+        background-color: rgba(255, 240, 80, 0.169);
+    }
+
+    .it-MdContent .note.info {
+        background: #61b72b30;
+    }
+
     /* 透過した背景の一部を上書きしていく */
     #items,
     .co-Item_text .code-frame,
@@ -138,7 +148,7 @@
     .p-items_toc,
     .st-NewHeader,
     .st-NewHeader_mainNavigation,
-    .p-items_main>* {
+    .p-items_main > * {
         background-color: var(--color-background);
     }
 
@@ -250,8 +260,8 @@
             color: #f77;
         }
 
-        /* .code-frame .highlight .p{
+        .code-frame .highlight .p {
             color: var(--yellow);
-        } */
+        }
     }
 }
