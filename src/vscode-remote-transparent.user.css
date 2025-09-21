@@ -74,6 +74,8 @@ domain("vscode.dev") {
         --vscode-editorStickyScroll-background: /*[[bg-color]]*/;
     }
 
+    #terminal,
+    .terminal-group,
     .monaco-pane-view,
     .monaco-editor {
         background-attachment: fixed;
@@ -89,6 +91,19 @@ domain("vscode.dev") {
         opacity: 0.5 !important;
     }
 
+    /** NOTE: Canvas2D API still lacks a proper API to handle text correctly
+     - ref: https://stackoverflow.com/questions/76021068/how-to-get-specific-character-data-from-text-in-canvas-important-in-multidir
+    */
+    .xterm-screen > canvas {
+        border-color: #fff;
+        opacity: 0.8 !important;
+    }
+
+    .terminal-group > div {
+        background-color: var(--vscode-editor-background) !important;
+    }
+
+    #workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(1) > div > div.pane-body > div > div > div,
     .monaco-list-rows {
         background-color: var(--subpane-color) !important;
     }
