@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           GitHub transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.20
+@version        0.0.23
 @description    Transparent GitHub.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/github-transparent.user.css
@@ -11,6 +11,7 @@
 @advanced color color-border "Border Color" #fff5
 @advanced color bg-subtle-color "Subtle Color" #1a1a1ac2
 @advanced color bg-color "Background Color" #222222b5
+@advanced color transparent-color "Transparent Color" #928f8f45
 
 @advanced dropdown custom_wallpaper "Background Image" {
 custom_wallpaper-custom-dropdown "--CustomURL--"   <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
@@ -200,14 +201,6 @@ C195 "pexels-sam-lim-1586205.jpg"                                   <<<EOT https
 C196 "pexels-stein-egil-liland-3408744.jpg"                         <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/pexels-stein-egil-liland-3408744.jpg EOT;
 C197 "pexels-tom-swinnen-934718.jpg"                                <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/pexels-tom-swinnen-934718.jpg EOT;
 C198 "pexels-yaroslav-shuraev-1553960.jpg"                          <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/pexels-yaroslav-shuraev-1553960.jpg EOT;
-C199 "photo-1595180998588-617dfaddc4c1.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595180998588-617dfaddc4c1.jpe EOT;
-C202 "photo-1595434919147-6cc43af3b81b.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595434919147-6cc43af3b81b.jpe EOT;
-C205 "photo-1595511369680-d728dc7f0be9.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595511369680-d728dc7f0be9.jpe EOT;
-C208 "photo-1595520519880-a86c48ea536c.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595520519880-a86c48ea536c.jpe EOT;
-C211 "photo-1595568822851-80ef8e28a724.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595568822851-80ef8e28a724.jpe EOT;
-C214 "photo-1595675586881-06986e96586e.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595675586881-06986e96586e.jpe EOT;
-C217 "photo-1595675711253-e6ecd6e621a0.jpeg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-1595675711253-e6ecd6e621a0.jpe EOT;
-C220 "photo-of-rock-formation-on-sea-3762303.jpg"                   <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/photo-of-rock-formation-on-sea-3762303.jpg EOT;
 C221 "pine-trees-near-lake-2179605.jpg"                             <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/pine-trees-near-lake-2179605.jpg EOT;
 C222 "piotr-chrobot-6oUsyeYXgTg-unsplash.jpg"                       <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/piotr-chrobot-6oUsyeYXgTg-unsplash.jpg EOT;
 C223 "random-institute-8uGyhxwdYUY-unsplash.jpg"                    <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/random-institute-8uGyhxwdYUY-unsplash.jpg EOT;
@@ -248,7 +241,7 @@ C257 "time-lapse-photo-of-northern-lights-1933316.jpg"              <<<EOT https
 C258 "toa-heftiba-Ezww9k_Gefs-unsplash.jpg"                         <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/toa-heftiba-Ezww9k_Gefs-unsplash.jpg EOT;
 C259 "toan-chu-YKN_G9L9nMA-unsplash.jpg"                            <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/toan-chu-YKN_G9L9nMA-unsplash.jpg EOT;
 C260 "tobias-reich-aJDb9v3CIkY-unsplash.jpg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/tobias-reich-aJDb9v3CIkY-unsplash.jpg EOT;
-C261 "toby-wong-dLbeBmTdKa4-unsplash.jpg"                           <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/toby-wong-dLbeBmTdKa4-unsplash.jpg EOT;
+C261 "toby-wong-dLbeBmTdKa4-unsplash.jpg"                           <<<EOT https://raw.githubusercontent.com/zougotsx/my_wGallpapers/master/my_wallpapers/toby-wong-dLbeBmTdKa4-unsplash.jpg EOT;
 C262 "todd-trapani-SlsQkbGs4Qk-unsplash.jpg"                        <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/todd-trapani-SlsQkbGs4Qk-unsplash.jpg EOT;
 C263 "tomas-sobek-EKNe678ktEY-unsplash.jpg"                         <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/tomas-sobek-EKNe678ktEY-unsplash.jpg EOT;
 C264 "trees-and-mountains-under-gray-sky-2364701.jpg"               <<<EOT https://raw.githubusercontent.com/zougotsx/my_wallpapers/master/my_wallpapers/trees-and-mountains-under-gray-sky-2364701.jpg EOT;
@@ -310,17 +303,25 @@ Images:
         --bg-size: /*[[custom_bg_size]]*/;
 
         /* overwrite variables */
+        --fgColor-accent: /*[[color-accent-fg]]*/
+        !important;
         --color-accent-fg: /*[[color-accent-fg]]*/
         !important;
         --color-border-muted: /*[[color-border]]*/
         !important;
 
-        --color-canvas-inset: /*[[bg-subtle-color]]*/
+        --bgColor-inset: /*[[bg-subtle-color]]*/
         !important;
+        --color-canvas-inset: transparent !important;
         --color-canvas-subtle: /*[[bg-subtle-color]]*/
         !important;
         --color-header-bg: /*[[bg-subtle-color]]*/
         !important;
+        --bgColor-muted: /*[[bg-subtle-color]]*/
+        !important;
+
+        --bgColor-neutral-muted: transparent !important;
+        --color-neutral-muted: transparent !important;
 
         --bgColor-default: /*[[bg-color]]*/
         !important;
@@ -329,17 +330,18 @@ Images:
         --color-codemirror-bg: /*[[bg-color]]*/
         !important;
         --color-codemirror-lines-bg: transparent !important;
-        --color-neutral-muted: /*[[bg-color]]*/
-        !important;
         --color-page-header-bg: /*[[bg-color]]*/
         !important;
         --fgColor-disabled: #a0a0a0bf;
+
+        --button-default-bgColor-rest: /*[[bg-color]]*/
+        !important;
+        --button-default-bgColor-hover: #bbb9b963;
     }
 
     header,
     div[data-selector="repos-split-pane-content"] {
         --color-canvas-default: transparent !important;
-        background-color: var(--color-page-header-bg) !important;
     }
 
     #repos-file-tree,
@@ -374,29 +376,33 @@ Images:
         padding: 1rem;
     }
 
+    .js-snippet-clipboard-copy-unpositioned .markdown-body .highlight,
+    .js-snippet-clipboard-copy-unpositioned .markdown-body .snippet-clipboard-content,
     .markdown-body img,
     .feed-background {
         background-color: transparent !important;
     }
 
+
+    [app-name="commits"],
+    aside:has(nav[class^="NavList__"]),
+    .list-view-items,
     #options_bucket,
+    div.Layout-main > react-partial > div > div > div > div > div > div.js-snippet-clipboard-copy-unpositioned,
     #repos-file-tree,
     #repos-sticky-header > div > div,
     #repository-container-header,
     #user-private-profile-frame,
     #user-profile-frame,
     #wiki-content,
+    .BorderGrid,
+    .Layout-main > div:nth-child(3).d-flex.d-lg-none.mb-3,
     .commit,
     .file-navigation,
-    .gkfBtX,
-    .BorderGrid,
     .gist-snippet,
+    .gkfBtX,
     .js-gist-file-update-container,
     .js-profile-editable-replace,
-    /* pull req comment */
-    /* branch & tag */
-    .Layout-main > div:nth-child(3).d-flex.d-lg-none.mb-3,
-    .Layout-sidebar,
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     div[data-selector="repos-split-pane-content"] div[id="readme"],
     footer,
@@ -416,14 +422,16 @@ Images:
     nav.UnderlineNav-body {
         border-radius: 2em;
     }
-
-    /*[[onedark-code-theme]]*/
 }
 
 @-moz-document regexp("https?://gist.github.com/.*") {
     /* To avoid dobule bg color */
     table {
         background-color: transparent !important;
+    }
+
+    .cm-s-github-light.CodeMirror {
+        --codeMirror-bgColor: var(--color-page-header-bg) !important;
     }
 }
 
@@ -448,22 +456,29 @@ Images:
 }
 
 @-moz-document regexp("https?://github.com/.*(releases|tags).*") {
-    div.application-main {
+    /** div.application-main {
         background-color: var(--color-page-header-bg) !important;
-    }
+    } */
 }
 
 @-moz-document regexp("https?://github.com/.*(actions).*") {
     .CheckRun-header,
+    .CheckStep-header,
     .CheckRun {
         background-color: transparent !important;
+    }
+
+    [data-target="nav-list.topLevelList"].ActionListWrap {
+        background-color: var(--color-page-header-bg) !important;
+        border-radius: 1rem;
+        padding: 1rem;
     }
 
     div[data-pjax="#repo-content-pjax-container"][data-turbo-frame="repo-content-turbo-frame"],
     .PageLayout-header--hasDivider.PageLayout-header,
     .PageLayout-columns > div > div > nav[aria-label="Workflow run"],
     div[data-target="split-page-layout.content"] {
-        background-color: var(--color-page-header-bg) !important;
+        background-color: transparent !important;
         border-radius: 1rem;
         padding: 1rem;
     }
@@ -474,6 +489,11 @@ regexp("https?://github.com/users/.*projects/.*") {
     #memex-root,
     .blankslate.blankslate-spacious {
         background-color: var(--color-page-header-bg) !important;
+    }
+
+    [data-dnd-drop-id="board"] {
+        --bgColor-inset: transparent !important;
+        --overlay-bgColor: var(--color-header-bg) !important;
     }
 }
 
@@ -523,10 +543,17 @@ regexp("https?://github.com/users/.*projects/.*") {
 }
 
 @-moz-document regexp("https?://github.com/.*(issues|pull).*") {
-    .list-view-items,
-    .data.highlight.js-blob-wrapper,
+    #partial-discussion-sidebar,
+    div[class^="IssueRow"],
+    div[class^="PullRequestRow"] {
+        border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
+
+    .file,
     .js-resolvable-timeline-thread-container,
-    #partial-discussion-sidebar {
+    .list-view-items,
+    [data-details-container-group="file"] {
         padding: 1rem;
         border-radius: 1rem;
         background-color: var(--color-page-header-bg);
@@ -535,6 +562,13 @@ regexp("https?://github.com/users/.*projects/.*") {
     /* To avoid dobule bg color */
     table {
         background-color: transparent !important;
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*(discussions).*") {
+    .Layout-sidebar,
+    .Layout-main {
+        background-color: var(--color-page-header-bg);
     }
 }
 
@@ -561,6 +595,18 @@ regexp("https?://github.com/users/.*projects/.*") {
     .Layout-sidebar {
         padding: 1rem;
         border-radius: 1rem;
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://docs.github.com/.*") {
+    body > div {
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://github.com/orgs/.*") {
+    main > div > div {
         background-color: var(--color-page-header-bg);
     }
 }
