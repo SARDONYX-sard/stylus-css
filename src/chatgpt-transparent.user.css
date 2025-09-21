@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ChatGPT transparent
 @namespace      github.com/openstyles/stylus
-@version        0.0.1
+@version        0.0.2
 @description    Transparent ChatGPT
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/chatgpt-transparent.user.css
@@ -56,27 +56,64 @@ custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-c
 @advanced color side-bg-color "Bg Color(Side)" #222222b5
 @advanced color user-bg-color "Bg Color(User)" #1a242875
 @advanced color ai-bg-color   "Bg Color(AI)"   #22222226
+@advanced color hover-bg-color   "hover Bg Color(AI)" #93db3426
 @advanced text user_width "Content Width" "90%"
 ==/UserStyle== */
-@-moz-document url-prefix("https://chat.openai.com") {
+@-moz-document url-prefix("https://chat.openai.com"),
+url-prefix("https://chatgpt.com") {
     :root {
         --bg-size: /*[[custom_bg_size]]*/;
         --ai-bg-color: /*[[ai-bg-color]]*/;
         --user-bg-color: /*[[user-bg-color]]*/;
+        --hover-bg-color: /*[[hover-bg-color]]*/;
         --bg-color: /*[[user-bg-color]]*/;
         --max-width: /*[[user_width]]*/;
+        --bg-primary: transparent;
 
+        --main-surface-secondary: /*[[main-bg-color]]*/;
         --main-surface-tertiary: /*[[main-bg-color]]*/;
         --sidebar-surface-primary: /*[[side-bg-color]]*/;
+
     }
 
+    *,
     .bg-gray-950 {
-        background-color: transparent;
+        background-color: #0000;
     }
 
+    .dark\:bg-gray-950:is(.dark *) {
+        --tw-bg-opacity: 1;
+        background-color: rgb(13 13 13 / 24%);
+    }
+
+    .dark\:text-blue-400:is(.dark *) {
+        color: #4affe3;
+    }
+
+    #stage-slideover-sidebar *,
     .markdown pre {
         --main-surface-tertiary: /*[[main-bg-color]]*/;
         background-color: var(--main-surface-tertiary) !important;
+    }
+
+    .\[view-transition-name\:var\(--vt-composer\)\] > div {
+        background-color: var(--main-surface-tertiary);
+    }
+
+    li[data-testid^="history-item"]:hover {
+        background-color: var(--hover-bg-color);
+    }
+
+    /** other account off */
+    #sora {
+        display: none;
+    }
+
+
+    /** Explore off */
+    #__next > div.relative.flex.h-full.w-full.overflow-hidden.transition-colors.z-0 > div.relative.flex.h-full.max-w-full.flex-1.flex-col.overflow-hidden > main > div.flex.h-full.flex-col.focus-visible\:outline-0 > div.flex-1.overflow-hidden > div > div.flex.h-full.flex-col.items-center.justify-center.text-token-text-primary > div,
+    a[href^="/gpts"] {
+        display: none;
     }
 
     [data-testid^="conversation-"] > div > *,
@@ -86,6 +123,7 @@ custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-c
         max-width: var(--max-width);
     }
 
+    nav[aria-label="Chat history"],
     body {
         background-attachment: fixed;
         background-image: url("/*[[custom_wallpaper]]*/");
@@ -93,17 +131,20 @@ custom_wallpaper-custom-dropdown2 "--CustomURL2--" <<<EOT /*[[custom_wallpaper-c
         background-position-x: /*[[pos_x]]*/;
         background-repeat: no-repeat;
         background-size: var(--bg-size);
+        background-color: transparent;
     }
 
+    div[data-message-author-role="user"],
     [data-testid^="conversation-turn-"] > div > div:has(textarea),
     [data-testid^="conversation-turn-"] > div > div:has(div > div > [data-message-author-role="user"]) {
         background-color: var(--user-bg-color) !important;
     }
 
-    [data-testid^="conversation-turn-"] > div > div:has(div > div > [data-message-author-role="assistant"]) {
+    [data-testid^="conversation-turn-"] > div > div:has(div [data-message-author-role="assistant"]) {
         background-color: var(--ai-bg-color) !important;
     }
 
+    form[data-type="unified-composer"],
     .bg-token-main-surface-primary {
         background-color: var(--main-surface-tertiary);
     }
