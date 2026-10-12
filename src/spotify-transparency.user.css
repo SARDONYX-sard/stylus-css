@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Spotify Transparency
 @namespace      github.com/openstyles/stylus/
-@version        0.0.1
+@version        0.0.2
 @description    Spotify Transparency.
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/spotify-transparency.user.css
 @license        unlicense
 
 @advanced color lyrics_color_active "Lyrics(active)" #fff
-@advanced color lyrics_color_inactive "Lyrics(inactive)" #8484843b
+@advanced color lyrics_color_inactive "Lyrics(inactive)" #8484848a
 @advanced color lyrics_color_passed "Lyrics(passed)" #242424
 @advanced color bgColor "Back ground color" #27262647
 
@@ -67,48 +67,49 @@ custom_bg2 "Custom2" <<<EOT /*[[custom_wallpaper-custom]]*\/ EOT;
 @advanced text custom_bg_url "Custom: URL" "https://wallpaperaccess.com/full/1164101.jpg"
 @advanced text custom_wallpaper-custom "Custom: URL2" "https://wallpaperaccess.com/full/101865.jpg"
 ==/UserStyle== */
-@-moz-document url-prefix("https://open.spotify.com") {
-    :root {
-        --lyrics-color-bg: /*[[bgColor]]*/;
-    }
+@-moz-document url-prefix("https://open.spotify.com")
+{
+  :root {
+    --lyrics-color-bg: /*[[bgColor]]*/;
+  }
 
-    main[aria-label^="Spotify"] > div,
-    footer {
-        background-color: transparent !important;
-    }
+  main[aria-label^="Spotify"] > div,
+  footer {
+    background-color: transparent !important;
+  }
 
-    .encore-dark-theme,
-    .encore-dark-theme .encore-base-set {
-        --background-base: var(--lyrics-color-bg) !important;
-    }
+  .encore-dark-theme,
+  .encore-dark-theme .encore-base-set {
+    --background-base: var(--lyrics-color-bg) !important;
+  }
 
-    main[aria-label="Spotify"] > div,
-    div[data-testid="fullscreen-lyric"] {
-        --lyrics-color-active: /*[[lyrics_color_active]]*/;
-        --lyrics-color-inactive: /*[[lyrics_color_inactive]]*/;
-        --lyrics-color-passed: /*[[lyrics_color_passed]]*/;
-        --lyrics-color-messaging: rgb(0, 0, 0);
-        --lyrics-color-background: transparent !important;
-    }
+  .main-view-container div,
+  main[aria-label="Spotify"] > div {
+    --lyrics-color-active: /*[[lyrics_color_active]]*/;
+    --lyrics-color-inactive: /*[[lyrics_color_inactive]]*/;
+    --lyrics-color-passed: /*[[lyrics_color_passed]]*/;
+    --lyrics-color-messaging: rgb(0, 0, 0);
+    --lyrics-color-background: transparent !important;
+  }
 
-    div:has(header[data-testid="topbar"]) {
-        background-color: var(--lyrics-color-bg);
-    }
+  div:has(header[data-testid="topbar"]) {
+    background-color: var(--lyrics-color-bg);
+  }
 
-    div[data-testid="fullscreen-lyric"] > div {
-        font-family: "MS Mincho";
-    }
+  [data-testid="lyrics-line"] {
+    font-family: "MS Mincho", serif;
+  }
 
-    .Root {
-        background-attachment: fixed;
-        background-image: url("/*[[custom_wallpaper]]*/");
-        background-position-x: /*[[pos_x]]*/;
-        background-position-y: /*[[pos_y]]*/;
-        background-repeat: no-repeat;
-        background-size: /*[[custom_bg_size]]*/;
-    }
+  .Root {
+    background-attachment: fixed;
+    background-image: url("/*[[custom_wallpaper]]*/");
+    background-position-x: /*[[pos_x]]*/;
+    background-position-y: /*[[pos_y]]*/;
+    background-repeat: no-repeat;
+    background-size: /*[[custom_bg_size]]*/;
+  }
 
-    .Root > * {
-        background-color: transparent;
-    }
+  .Root > * {
+    background-color: transparent;
+  }
 }

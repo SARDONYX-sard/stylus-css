@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Zenn transparent
 @namespace      github.com/SARDONYX-sard
-@version        0.0.1
+@version        0.0.2
 @description    Zenn transparent
 @author         SARDONYX
 @updateURL      https://raw.githubusercontent.com/SARDONYX-sard/stylus-css/main/src/zenn-transparent.user.css
@@ -60,118 +60,111 @@ C13 "紅葉" <<<EOT https://i.redd.it/red-forest-1920-1080-v0-s9u8ki2rr70a1.jpg?
 }
 ==/UserStyle== */
 @-moz-document domain("zenn.dev") {
+  :root {
+    --bg-size: /*[[custom_bg_size]]*/;
+    --pos-y: /*[[pos_y]]*/;
+    --pos-x: /*[[pos_x]]*/;
 
-    :root {
-        --bg-size:
-            /*[[custom_bg_size]]*/
-        ;
-        --pos-y:
-            /*[[pos_y]]*/
-        ;
-        --pos-x:
-            /*[[pos_x]]*/
-        ;
+    /* overwrite variables */
+    --c-bg-secondary: /*[[bg-color]]*/;
+    --c-bg-base: /*[[bg-color]]*/;
+    --c-bg-neutral-lighter: /*[[bg-color]]*/;
+    --c-bg-neutral-lightest: /*[[bg-color]]*/;
+    --c-bg-neutral: transparent;
+    --c-bg-primary-lighter: #00b7ff1a;
+    --c-text-body: /*[[char-color]]*/;
+    --c-text-low-priority: #ccc8c8cc;
+  }
 
-        /* overwrite variables */
-        --c-bg-secondary:
-            /*[[bg-color]]*/
-        ;
-        --c-bg-base:
-            /*[[bg-color]]*/
-        ;
-        --c-bg-neutral-lighter:
-            /*[[bg-color]]*/
-        ;
-        --c-bg-neutral-lightest:
-            /*[[bg-color]]*/
-        ;
-        --c-bg-neutral: transparent;
-        --c-bg-primary-lighter: #00b7ff1a;
-        --c-text-body:
-            /*[[char-color]]*/
-        ;
-        --c-text-low-priority: #ccc8c8cc;
-    }
+  [class^="Button_secondary__"],
+  button[class^="ButtonFollow_button__"].style-following {
+    background-color: #0083bb;
+  }
 
-    .Button_secondary__K_W4X,
-    .ButtonFollow_button__BMHcC.style-following {
-        background-color: #0083bb;
-    }
+  /* Text is black to prevent it from becoming hard to read. */
+  img {
+    background-color: #fffcfcd6;
+  }
 
-    /* Text is black to prevent it from becoming hard to read. */
-    img {
-        background-color: #fffcfcd6;
-    }
-
-    .View_inner__4OBFV,
-    .ThreadItemContent_parentItem__NDSRE
-
-    /* Comments */
+  .znc aside.msg {
+    color: var(--c-text-body);
+    background-color: #ac873d36;
+  }
+  ::slotted(a[class^="EmbedBaseLinkCard_link__"]),
+    div[class*="View_inner__"],
+    [class^="ThreadItemContent_parentItem__"]/* Comments */
     ,
+    .msg > *,
+    [class^="ThreadItemHidden"],
     .znc summary,
     .znc details[open] summary,
     .znc td,
     .znc th {
-        background-color: transparent;
-    }
+    --c-bg-base: transparent !important;
+    background-color: transparent !important;
+  }
 
-    header>div,
-    footer,
-    #__next nav,
-    .ThreadEditor_textarea__9SeGG,
-    .ArticleComments_threadEditorContainer__h1Chc,
-    .znc .details-content {
-        background-color: var(--c-bg-base);
-    }
+  header > div,
+  footer,
+  #__next nav,
+  div[class*="threadEditorContainer"],
+  [class^="ContentStickyNavForMobile_container__"],
+  [class^="ThreadEditor_textarea__"],
+  .details-content {
+    background-color: /*[[bg-color]]*/ !important;
+  }
 
-    .znc .footnotes,
-    .ThreadEditor_textarea__9SeGG {
-        color: var(--c-text-body);
-    }
+  .znc code,
+  .znc pre {
+    background-color: #1a395369;
+  }
 
-    .usePopover_popover__e_4ue {
-        background-color: #1d2020e8;
-    }
+  .znc .footnotes,
+  [class^="ThreadEditor_textarea__"] {
+    color: var(--c-text-body);
+  }
 
-    body {
-        background-attachment: fixed;
-        background-color: #000;
-        background-image: url("/*[[custom_wallpaper]]*/");
-        background-position-x: var(--pos-x);
-        background-position-y: var(--pos-y);
-        background-repeat: no-repeat;
-        background-size: var(--bg-size);
-    }
+  [class^="usePopover_popover__"] {
+    background-color: #1d2020e8;
+  }
+
+  body {
+    background-attachment: fixed;
+    background-color: #000;
+    background-image: url("/*[[custom_wallpaper]]*/");
+    background-position-x: var(--pos-x);
+    background-position-y: var(--pos-y);
+    background-repeat: no-repeat;
+    background-size: var(--bg-size);
+  }
 }
 
 @-moz-document regexp(".*tab=scraps$") {
-    .UserScraps_rows__RNUSy {
-        background-color: transparent;
-    }
+  [class^="UserScraps_rows__"] {
+    background-color: transparent;
+  }
 }
 
 @-moz-document regexp(".*tab=comments$") {
-    .UserComments_itemsContainer__rL77Z {
-        background-color: transparent;
-    }
+  [class^="UserComments_itemsContainer__"] {
+    background-color: transparent;
+  }
 }
 
 @-moz-document regexp(".*(?:scraps|explore).*"),
 regexp(".*zenn\.dev/") {
-    section {
-        background-color: var(--c-bg-base) !important;
-    }
+  aside > div,
+  main,
+  section {
+    background-color: var(--c-bg-base) !important;
+  }
 }
 
 @-moz-document regexp(".*(?:books).*") {
-    .znc pre {
-        background-color: #1a395369;
-    }
-
-    #chapters,
-    aside,
-    section>header,
-    article>div>section {
-        background-color: var(--c-bg-base);
-    }
+  #chapters,
+  aside,
+  section > header,
+  article > div > section {
+    background-color: var(--c-bg-base);
+  }
 }
