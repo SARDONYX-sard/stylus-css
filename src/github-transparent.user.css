@@ -360,6 +360,10 @@ Images:
         background-size: var(--bg-size);
     }
 
+    li:has([data-content="Agents"]) {
+        display: none;
+    }
+
     .BorderGrid-cell {
         padding-right: 1rem;
         padding-left: 1rem;
@@ -376,7 +380,6 @@ Images:
         padding: 1rem;
     }
 
-    .js-snippet-clipboard-copy-unpositioned .markdown-body .highlight,
     .js-snippet-clipboard-copy-unpositioned .markdown-body .snippet-clipboard-content,
     .markdown-body img,
     .feed-background {
@@ -384,6 +387,7 @@ Images:
     }
 
 
+    div[class^="prc-PageLayout-PaneWrapper-"],
     [app-name="commits"],
     aside:has(nav[class^="NavList__"]),
     .list-view-items,
@@ -401,10 +405,17 @@ Images:
     .file-navigation,
     .gist-snippet,
     .gkfBtX,
+    [class^="PullRequestFileTree-module__FileTreeScrollable__"],
+    [class^="Diff-module__diffTargetable__"],
+    [class^="ReposList-module__ReposListContainer__"],
+    /*.container div[class^="BlobViewContent-module__"], */
     .js-gist-file-update-container,
     .js-profile-editable-replace,
+    [class^="CodeViewSidebar-module"],
     div[data-selector="repos-split-pane-content"] > div:nth-child(3) > div:nth-child(1),
     div[data-selector="repos-split-pane-content"] div[id="readme"],
+    div:has( > [itemtype="https://schema.org/abstract"]),
+    /* div:has( > article.markdown-body.entry-content), */
     footer,
     table,
     th {
@@ -543,6 +554,7 @@ regexp("https?://github.com/users/.*projects/.*") {
 }
 
 @-moz-document regexp("https?://github.com/.*(issues|pull).*") {
+    li[class^="ListItem-module__listItem"],
     #partial-discussion-sidebar,
     div[class^="IssueRow"],
     div[class^="PullRequestRow"] {
@@ -606,7 +618,14 @@ regexp("https?://github.com/users/.*projects/.*") {
 }
 
 @-moz-document regexp("https?://github.com/orgs/.*") {
+    li[class^="listItem_"],
     main > div > div {
+        background-color: var(--color-page-header-bg);
+    }
+}
+
+@-moz-document regexp("https?://github.com/.*/pull/\d+/changes") {
+div[class^="prc-PageLayout-PageLayoutContent"] {
         background-color: var(--color-page-header-bg);
     }
 }
